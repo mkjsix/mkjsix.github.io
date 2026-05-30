@@ -354,6 +354,9 @@ footer {
 }
 
 @media (max-width: 720px) {
+  .qa-q {
+    margin-top: 28px;
+  }
   .hero {
     padding: 56px 0 0;
   }
