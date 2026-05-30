@@ -1,17 +1,17 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
   return posts.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id.replace(/\.md$/, '') },
     props: { post },
   }));
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
@@ -22,13 +22,14 @@ const formatDate = (date: Date) =>
     <link rel="canonical" href={post.data.canonical_url} slot="head" />
   )}
 
-  <div class="hero">
+  <div class="hero hero--first">
     <p class="hero-eyebrow">
       {formatDate(post.data.date)}
       {post.data.tags.length > 0 && <> &middot; {post.data.tags.join(', ')}</>}
     </p>
     <h1 class="hero-headline">{post.data.title}</h1>
   </div>
+  <hr class="section-separator" />
 
   <div class="page-content post-content">
     <Content />

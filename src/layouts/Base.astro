@@ -52,10 +52,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           <a href="mailto:info@maurizioturatti.com" class="nav-cta">Get in touch</a>
         </div>
       </nav>
+      <hr class="section-separator section-separator-nav" />
 
       <main>
         <slot />
       </main>
+
+      <hr class="section-separator" />
 
       <footer>
         <span class="footer-name">maurizioturatti.com</span>

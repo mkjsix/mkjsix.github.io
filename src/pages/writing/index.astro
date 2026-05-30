@@ -7,30 +7,36 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
+
+const postPath = (id: string) => `/writing/${id.replace(/\.md$/, '')}`;
 ---
 
 <Base
   title="Writing — Maurizio Turatti"
   description="Articles on software architecture, backend systems, AI integration and engineering leadership."
 >
-  <div class="hero">
+  <div class="hero hero--first">
     <p class="hero-eyebrow">Writing</p>
     <h1 class="hero-headline">Thoughts on architecture, systems and engineering judgment.</h1>
   </div>
+  <hr class="section-separator" />
 
   <div class="page-content">
     {posts.length === 0 ? (
       <p style="color: var(--color-text-muted); font-size: 15px;">Posts coming soon.</p>
     ) : (
       <div class="blog-list">
-        {posts.map((post) => (
-          <a href={`/writing/${post.slug}`} class="blog-item">
-            <span class="blog-title">{post.data.title}</span>
-            <span class="blog-meta">
-              {post.data.tags[0] && <span class="blog-tag">{post.data.tags[0]}</span>}
-              <span class="blog-date">{formatDate(post.data.date)}</span>
-            </span>
-          </a>
+        {posts.map((post, index) => (
+          <>
+            <a href={postPath(post.id)} class="blog-item">
+              <span class="blog-title">{post.data.title}</span>
+              <span class="blog-meta">
+                {post.data.tags[0] && <span class="blog-tag">{post.data.tags[0]}</span>}
+                <span class="blog-date">{formatDate(post.data.date)}</span>
+              </span>
+            </a>
+            {index < posts.length - 1 && <hr class="section-separator blog-separator" />}
+          </>
         ))}
       </div>
     )}
