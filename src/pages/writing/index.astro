@@ -1,0 +1,38 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
+---
+
+<Base
+  title="Writing — Maurizio Turatti"
+  description="Articles on software architecture, backend systems, AI integration and engineering leadership."
+>
+  <div class="hero">
+    <p class="hero-eyebrow">Writing</p>
+    <h1 class="hero-headline">Thoughts on architecture, systems and engineering judgment.</h1>
+  </div>
+
+  <div class="page-content">
+    {posts.length === 0 ? (
+      <p style="color: var(--color-text-muted); font-size: 15px;">Posts coming soon.</p>
+    ) : (
+      <div class="blog-list">
+        {posts.map((post) => (
+          <a href={`/writing/${post.slug}`} class="blog-item">
+            <span class="blog-title">{post.data.title}</span>
+            <span class="blog-meta">
+              {post.data.tags[0] && <span class="blog-tag">{post.data.tags[0]}</span>}
+              <span class="blog-date">{formatDate(post.data.date)}</span>
+            </span>
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</Base>
