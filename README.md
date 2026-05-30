@@ -1,43 +1,68 @@
-# Astro Starter Kit: Minimal
+# maurizioturatti.com
 
-```sh
-npm create astro@latest -- --template minimal
+Personal website for Maurizio Turatti, focused on software architecture, backend systems, AI integration, and technical leadership.
+
+Built with [Astro](https://astro.build) as a static site.
+
+## Live site
+
+- https://maurizioturatti.com
+
+## Tech stack
+
+- Astro 6
+- TypeScript support
+- Astro Content Collections for writing posts
+- Static output (`dist/`)
+
+## Main routes
+
+- `/` - Home page (positioning, experience, and contact CTA)
+- `/work-with-me` - Engagement models and contact details
+- `/writing` - Article index
+- `/writing/[slug]` - Individual article page
+
+## Writing workflow
+
+Posts live in `src/content/blog/*.md` and are validated by the schema in `src/content.config.ts`.
+
+Required frontmatter fields:
+
+- `title`
+- `description`
+- `date`
+- `tags` (optional, defaults to `[]`)
+- `draft` (optional, defaults to `false`)
+- `canonical_url` (optional)
+
+Only posts with `draft: false` are listed in `/writing`.
+
+## Local development
+
+Requirements:
+
+- Node.js >= 22.12.0
+
+Install and run:
+
+```bash
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The dev server runs at `http://localhost:4321`.
 
-## 🚀 Project Structure
+## Build and preview
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm run build
+npm run preview
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Production files are generated in `dist/`.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Deployment notes
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- The project is configured as a static Astro site (`output: 'static'`).
+- Canonical site URL is set in `astro.config.mjs`.
+- Custom domain is configured via `public/CNAME`.
