@@ -91,6 +91,17 @@ nav {
 }
 .nav-cta:hover { background: var(--color-card-bg); }
 
+/* Avatar circolare accanto al nome */
+.avatar {
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 2px solid var(--color-border-strong);
+  aspect-ratio: 1/1;
+  display: inline-block;
+}
+
 /* Hero */
 .hero {
   padding: 52px 0 0;
