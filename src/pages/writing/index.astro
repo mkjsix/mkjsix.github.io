@@ -1,14 +1,151 @@
 ---
-import Base from '../../layouts/Base.astro';
-import { getCollection } from 'astro:content';
+import Base from "../../layouts/Base.astro";
+import { getCollection } from "astro:content";
 
-const posts = (await getCollection('blog', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
 
 const formatDate = (date: Date) =>
-  date.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' });
+  date.toLocaleDateString("en-GB", { month: "short", year: "numeric" });
 
-const postPath = (id: string) => `/writing/${id.replace(/\.md$/, '')}`;
+const postPath = (id: string) => `/writing/${id.replace(/\.md$/, "")}`;
+
+const mediumLinks = [
+  {
+    title:
+      "Intelligenza artificiale, sistemi complessi e l'illusione della coscienza",
+    url: "https://medium.com/@mkj6/intelligenza-artificiale-sistemi-complessi-e-lillusione-della-coscienza-fa636e4fb1eb",
+    date: "Feb 2026",
+    tag: "AI",
+  },
+  {
+    title: "Facet: A Different Approach to Web Development",
+    url: "https://medium.com/softinstigate-team/facet-a-different-approach-to-web-development-af884abe0b69",
+    date: "Jan 2026",
+    tag: "Frontend",
+  },
+  {
+    title:
+      "Splitting User Stories and Product Planning with the Cake and Hamburger Models",
+    url: "https://medium.com/@mkj6/splitting-user-stories-and-product-planning-with-the-cake-and-hamburger-models-5e757fe7547c",
+    date: "Jan 2026",
+    tag: "Process",
+  },
+  {
+    title: "The European Startups Narrative is Broken",
+    url: "https://medium.com/@mkj6/the-european-startups-narrative-is-broken-e11f64f0342f",
+    date: "Jan 2026",
+    tag: "Business",
+  },
+  {
+    title: "What is RESTHeart?",
+    url: "https://medium.com/softinstigate-team/what-is-restheart-02043f0f05a8",
+    date: "Oct 2025",
+    tag: "Backend",
+  },
+  {
+    title:
+      "RESTHeart Cloud Examples: A Multi-Framework Reference Implementation",
+    url: "https://medium.com/softinstigate-team/restheart-cloud-examples-a-multi-framework-reference-implementation-ec1b3b440c8b",
+    date: "Oct 2025",
+    tag: "Backend",
+  },
+  {
+    title: "Introducing RESTHeart's Permission System",
+    url: "https://medium.com/softinstigate-team/introducing-resthearts-permission-system-cc7016ace9ec",
+    date: "Oct 2025",
+    tag: "Backend",
+  },
+  {
+    title:
+      "MongoDB Deprecates Data API and HTTPS Endpoints: How RESTHeart Can Help",
+    url: "https://medium.com/softinstigate-team/mongodb-deprecates-data-api-and-https-endpoints-how-restheart-can-help-58ea0c44660d",
+    date: "Feb 2025",
+    tag: "Backend",
+  },
+  {
+    title: "RESTHeart with FerretDB: a tutorial",
+    url: "https://medium.com/softinstigate-team/restheart-with-ferretdb-a-tutorial-1b43432ed2e0",
+    date: "Oct 2023",
+    tag: "Backend",
+  },
+  {
+    title: "La fase di Discovery nei progetti software Lean",
+    url: "https://medium.com/softinstigate-team/la-fase-di-discovery-nei-progetti-software-lean-646c4075b436",
+    date: "Apr 2020",
+    tag: "Process",
+  },
+  {
+    title: "The origins of our product",
+    url: "https://medium.com/softinstigate-team/the-origins-of-our-product-9ed6978c9448",
+    date: "Jun 2019",
+    tag: "Backend",
+  },
+  {
+    title: "Le origini del nostro primo prodotto",
+    url: "https://medium.com/softinstigate-team/le-origini-del-nostro-primo-prodotto-6ace4891986d",
+    date: "Oct 2018",
+    tag: "Backend",
+  },
+  {
+    title: "RESTful API memo: PUT and POST verbs",
+    url: "https://medium.com/softinstigate-team/restful-api-memo-put-and-post-verbs-1351ffabc359",
+    date: "Jan 2018",
+    tag: "Backend",
+  },
+  {
+    title: "Do most programmers hate Scrum?",
+    url: "https://medium.com/softinstigate-team/do-most-programmers-hate-agile-274079ddb0d9",
+    date: "Jun 2017",
+    tag: "Process",
+  },
+  {
+    title: "RESTHeart, the REST API Server for MongoDB",
+    url: "https://medium.com/softinstigate-team/restheart-the-rest-api-server-for-mongodb-4d84ca3376bc",
+    date: "Mar 2017",
+    tag: "Backend",
+  },
+];
+
+const softinstigateLinks = [
+  {
+    title: "Enterprise AI",
+    url: "https://www.softinstigate.com/it/blog/posts/enterprise-ai/",
+    date: "Oct 2024",
+    tag: "AI",
+  },
+  {
+    title: "Java applications with MongoDB on AWS",
+    url: "https://www.softinstigate.com/it/blog/posts/pipeline/",
+    date: "Oct 2024",
+    tag: "Backend",
+  },
+  {
+    title: "What's in a story? BDD and user stories",
+    url: "https://www.softinstigate.com/it/blog/posts/whats-in-a-story/",
+    date: "May 2023",
+    tag: "Process",
+  },
+  {
+    title: "The Discovery phase in software projects",
+    url: "https://www.softinstigate.com/it/blog/posts/discovery/",
+    date: "Mar 2021",
+    tag: "Process",
+  },
+  {
+    title: "OpenAssembly and digital voting management",
+    url: "https://www.softinstigate.com/it/blog/posts/openassembly/",
+    date: "Apr 2021",
+    tag: "Product",
+  },
+  {
+    title: "Ouro: measuring corporate environmental impact",
+    url: "https://www.softinstigate.com/it/blog/posts/ouro/",
+    date: "Aug 2019",
+    tag: "Product",
+  },
+];
 ---
 
 <Base
@@ -17,28 +154,85 @@ const postPath = (id: string) => `/writing/${id.replace(/\.md$/, '')}`;
 >
   <div class="hero hero--first">
     <p class="hero-eyebrow">Writing</p>
-    <h1 class="hero-headline">Thoughts on architecture, systems and engineering judgment.</h1>
+    <h1 class="hero-headline">
+      Thoughts on architecture, systems and engineering judgment.
+    </h1>
   </div>
   <hr class="section-separator" />
 
   <div class="page-content">
-    {posts.length === 0 ? (
-      <p style="color: var(--color-text-muted); font-size: 15px;">Posts coming soon.</p>
-    ) : (
-      <div class="blog-list">
-        {posts.map((post, index) => (
+    {
+      posts.length > 0 && (
+        <div class="blog-list">
+          {posts.map((post, index) => (
+            <>
+              <a href={postPath(post.id)} class="blog-item">
+                <span class="blog-title">{post.data.title}</span>
+                <span class="blog-meta">
+                  {post.data.tags[0] && (
+                    <span class="blog-tag">{post.data.tags[0]}</span>
+                  )}
+                  <span class="blog-date">{formatDate(post.data.date)}</span>
+                </span>
+              </a>
+              {index < posts.length - 1 && (
+                <hr class="section-separator blog-separator" />
+              )}
+            </>
+          ))}
+        </div>
+      )
+    }
+
+    <div class="blog-list" style="margin-top: 48px;">
+      <p class="external-section-label">On Medium</p>
+      {
+        mediumLinks.map((link, index) => (
           <>
-            <a href={postPath(post.id)} class="blog-item">
-              <span class="blog-title">{post.data.title}</span>
+            <a href={link.url} target="_blank" rel="noopener" class="blog-item">
+              <span class="blog-title">{link.title}</span>
               <span class="blog-meta">
-                {post.data.tags[0] && <span class="blog-tag">{post.data.tags[0]}</span>}
-                <span class="blog-date">{formatDate(post.data.date)}</span>
+                <span class="blog-tag">{link.tag}</span>
+                <span class="blog-date">{link.date}</span>
               </span>
             </a>
-            {index < posts.length - 1 && <hr class="section-separator blog-separator" />}
+            {index < mediumLinks.length - 1 && (
+              <hr class="section-separator blog-separator" />
+            )}
           </>
-        ))}
-      </div>
-    )}
+        ))
+      }
+    </div>
+
+    <div class="blog-list" style="margin-top: 48px;">
+      <p class="external-section-label">On SoftInstigate</p>
+      {
+        softinstigateLinks.map((link, index) => (
+          <>
+            <a href={link.url} target="_blank" rel="noopener" class="blog-item">
+              <span class="blog-title">{link.title}</span>
+              <span class="blog-meta">
+                <span class="blog-tag">{link.tag}</span>
+                <span class="blog-date">{link.date}</span>
+              </span>
+            </a>
+            {index < softinstigateLinks.length - 1 && (
+              <hr class="section-separator blog-separator" />
+            )}
+          </>
+        ))
+      }
+    </div>
   </div>
 </Base>
+
+<style>
+  .external-section-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 16px;
+  }
+</style>
