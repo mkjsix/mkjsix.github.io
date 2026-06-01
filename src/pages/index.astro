@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import ContactCta from "../components/ContactCta.astro";
 ---
 
 <Base>
@@ -95,7 +96,9 @@ import Base from "../layouts/Base.astro";
             </p>
           </div>
           <div class="surface-card surface-card--compact">
-            <p class="card-label card-label--tight">Mobility &amp; public sector</p>
+            <p class="card-label card-label--tight">
+              Mobility &amp; public sector
+            </p>
             <p class="card-text card-text--strong">
               Traffic data platform integrating 15+ regional and national
               sources. Ten years in production without critical outages.
@@ -141,10 +144,5 @@ import Base from "../layouts/Base.astro";
     </div>
   </div>
 
-  <div class="cta-block">
-    <div>
-      <p class="cta-text">Ready to talk?</p>
-    </div>
-    <a href="mailto:info@maurizioturatti.com" class="cta-btn">Get in touch</a>
-  </div>
+  <ContactCta subtext="info@maurizioturatti.com" />
 </Base>

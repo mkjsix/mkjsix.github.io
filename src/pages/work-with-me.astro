@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import ContactCta from '../components/ContactCta.astro';
 ---
 
 <Base
@@ -45,11 +46,5 @@ import Base from '../layouts/Base.astro';
     </div>
   </div>
 
-  <div class="cta-block">
-    <div>
-      <p class="cta-text">Ready to talk?</p>
-      <p class="cta-sub">info@maurizioturatti.com</p>
-    </div>
-    <a href="mailto:info@maurizioturatti.com" class="cta-btn">Get in touch</a>
-  </div>
+  <ContactCta subtext="info@maurizioturatti.com" />
 </Base>
