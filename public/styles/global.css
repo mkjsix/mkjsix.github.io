@@ -1,6 +1,6 @@
 /* Footer legal info */
 .footer-legal {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-muted);
   display: flex;
   flex-direction: row;
@@ -81,7 +81,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 500;
   letter-spacing: -0.3px;
   text-decoration: none;
@@ -101,14 +101,14 @@ nav {
   list-style: none;
 }
 .nav-links a {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--color-text-muted);
   text-decoration: none;
   transition: color 0.15s;
 }
 .nav-links a:hover { color: var(--color-text); }
 .nav-cta {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--color-text);
   border: 0.5px solid var(--color-border-strong);
@@ -139,7 +139,7 @@ nav {
   margin: 6px 0 12px;
 }
 .hero-eyebrow {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -147,7 +147,7 @@ nav {
   margin-bottom: 20px;
 }
 .hero-headline {
-  font-size: 34px;
+  font-size: 35px;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.6px;
@@ -164,14 +164,14 @@ nav {
 }
 
 .section-title {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 500;
   margin-bottom: 16px;
   letter-spacing: -0.2px;
 }
 
 .section-body {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.75;
   color: var(--color-text-muted);
   max-width: 640px;
@@ -197,7 +197,7 @@ nav {
 }
 
 .section-body--lead {
-  font-size: 17px;
+  font-size: 18px;
 }
 
 .section-body--spacious p {
@@ -229,7 +229,7 @@ nav {
 }
 
 .card-label {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.07em;
   text-transform: uppercase;
@@ -242,14 +242,14 @@ nav {
 }
 
 .card-title {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--color-text);
   margin-bottom: 8px;
 }
 
 .card-text {
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.55;
   color: var(--color-text-muted);
 }
@@ -273,18 +273,18 @@ nav {
   .cta-block { flex-direction: column; align-items: flex-start; }
 }
 .cta-text {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 500;
   color: var(--color-accent-text);
   line-height: 1.4;
 }
 .cta-sub {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-accent-sub);
   margin-top: 4px;
 }
 .cta-btn {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   background: var(--color-accent-text);
   color: var(--color-accent-bg);
@@ -311,7 +311,7 @@ nav {
 }
 .blog-separator { margin: 0; }
 .blog-title {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 500;
   color: var(--color-text);
   flex: 1;
@@ -323,18 +323,18 @@ nav {
   flex-shrink: 0;
 }
 .blog-tag {
-  font-size: 11px;
+  font-size: 12px;
   padding: 3px 8px;
   border-radius: var(--radius-md);
   background: var(--color-card-bg);
   color: var(--color-text-muted);
 }
 .blog-date {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--color-text-muted);
 }
 .section-label {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -347,18 +347,18 @@ nav {
   max-width: 680px;
 }
 .post-content h2 {
-  font-size: 22px;
+  font-size: 23px;
   font-weight: 500;
   margin: 2rem 0 0.75rem;
   letter-spacing: -0.3px;
 }
 .post-content h3 {
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 500;
   margin: 1.5rem 0 0.5rem;
 }
 .post-content p {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.75;
   color: var(--color-text-muted);
   margin-bottom: 1.25rem;
@@ -409,7 +409,7 @@ nav {
 }
 
 .post-back-link {
-  font-size: 14px;
+  font-size: 15px;
   color: var(--color-text-muted);
   text-decoration: none;
 }
@@ -421,10 +421,10 @@ footer {
   justify-content: space-between;
   align-items: center;
 }
-.footer-name { font-size: 13px; color: var(--color-text-muted); }
+.footer-name { font-size: 14px; color: var(--color-text-muted); }
 .footer-links { display: flex; gap: 16px; }
 .footer-links a {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-text-muted);
   text-decoration: none;
   display: flex;
@@ -464,7 +464,7 @@ footer {
     gap: 10px 14px;
   }
 
-  .nav-logo { font-size: 15px; }
+  .nav-logo { font-size: 16px; }
 
   .nav-links {
     order: 3;
@@ -472,10 +472,10 @@ footer {
     gap: 18px;
   }
 
-  .nav-links a { font-size: 13px; }
+  .nav-links a { font-size: 14px; }
 
   .nav-cta {
-    font-size: 13px;
+    font-size: 14px;
     padding: 6px 12px;
   }
 
@@ -487,6 +487,6 @@ footer {
 
   .footer-name,
   .footer-links a {
-    font-size: 12px;
+    font-size: 13px;
   }
 }
