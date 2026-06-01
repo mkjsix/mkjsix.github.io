@@ -204,32 +204,57 @@ nav {
   margin-bottom: 20px;
 }
 
-/* Case study grid */
-.cases {
+/* Shared card grid */
+.card-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   margin-top: 20px;
 }
-@media (max-width: 600px) {
-  .cases { grid-template-columns: 1fr; }
+.card-grid--spaced {
+  margin: 36px 0;
 }
-.case-card {
+@media (max-width: 600px) {
+  .card-grid { grid-template-columns: 1fr; }
+}
+
+.surface-card {
   background: var(--color-card-bg);
   border-radius: var(--radius-lg);
+  padding: 20px;
+}
+
+.surface-card--compact {
   padding: 18px 20px;
 }
-.case-sector {
+
+.card-label {
   font-size: 11px;
   font-weight: 500;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--color-text-muted);
+  margin-bottom: 10px;
+}
+
+.card-label--tight {
   margin-bottom: 8px;
 }
-.case-desc {
+
+.card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.card-text {
   font-size: 14px;
   line-height: 1.55;
+  color: var(--color-text-muted);
+}
+
+.card-text--strong {
   color: var(--color-text);
 }
 
@@ -270,41 +295,6 @@ nav {
   white-space: nowrap;
   text-decoration: none;
   display: inline-block;
-}
-
-/* Mode cards (Work with me) */
-.modes {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin: 36px 0;
-}
-@media (max-width: 600px) {
-  .modes { grid-template-columns: 1fr; }
-}
-.mode-card {
-  background: var(--color-card-bg);
-  border-radius: var(--radius-lg);
-  padding: 20px;
-}
-.mode-label {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  margin-bottom: 10px;
-}
-.mode-title {
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-text);
-  margin-bottom: 8px;
-}
-.mode-desc {
-  font-size: 14px;
-  line-height: 1.55;
-  color: var(--color-text-muted);
 }
 
 /* Blog list */
