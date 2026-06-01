@@ -93,51 +93,60 @@ const mediumLinks = [
     <h1 class="hero-headline">
       Practical notes from the architecture trenches.
     </h1>
-    <p class="section-body section-body--lead">Thoughts on architecture, systems and engineering.</p>
   </div>
 
-  <div class="page-content">
+  <div class="page-content section-stack">
+    <div class="section-block">
+      <div class="section-body section-body--lead">
+        <p>Thoughts on architecture, systems and engineering.</p>
+      </div>
+    </div>
+
     {
       posts.length > 0 && (
-        <div class="blog-list">
-          {posts.map((post, index) => (
-            <>
-              <a href={postPath(post.id)} class="blog-item">
-                <span class="blog-title">{post.data.title}</span>
-                <span class="blog-meta">
-                  {post.data.tags[0] && (
-                    <span class="blog-tag">{post.data.tags[0]}</span>
-                  )}
-                  <span class="blog-date">{formatDate(post.data.date)}</span>
-                </span>
-              </a>
-              {index < posts.length - 1 && (
-                <hr class="section-separator blog-separator" />
-              )}
-            </>
-          ))}
+        <div class="section-block">
+          <div class="blog-list">
+            {posts.map((post, index) => (
+              <>
+                <a href={postPath(post.id)} class="blog-item">
+                  <span class="blog-title">{post.data.title}</span>
+                  <span class="blog-meta">
+                    {post.data.tags[0] && (
+                      <span class="blog-tag">{post.data.tags[0]}</span>
+                    )}
+                    <span class="blog-date">{formatDate(post.data.date)}</span>
+                  </span>
+                </a>
+                {index < posts.length - 1 && (
+                  <hr class="section-separator blog-separator" />
+                )}
+              </>
+            ))}
+          </div>
         </div>
       )
     }
 
-    <div class:list={["blog-list", posts.length > 0 && "blog-list--spaced"]}>
-      <p class="section-label">On Medium</p>
-      {
-        mediumLinks.map((link, index) => (
-          <>
-            <a href={link.url} target="_blank" rel="noopener" class="blog-item">
-              <span class="blog-title">{link.title}</span>
-              <span class="blog-meta">
-                <span class="blog-tag">{link.tag}</span>
-                <span class="blog-date">{link.date}</span>
-              </span>
-            </a>
-            {index < mediumLinks.length - 1 && (
-              <hr class="section-separator blog-separator" />
-            )}
-          </>
-        ))
-      }
+    <div class="section-block">
+      <div class="blog-list">
+        <p class="section-label">On Medium</p>
+        {
+          mediumLinks.map((link, index) => (
+            <>
+              <a href={link.url} target="_blank" rel="noopener" class="blog-item">
+                <span class="blog-title">{link.title}</span>
+                <span class="blog-meta">
+                  <span class="blog-tag">{link.tag}</span>
+                  <span class="blog-date">{link.date}</span>
+                </span>
+              </a>
+              {index < mediumLinks.length - 1 && (
+                <hr class="section-separator blog-separator" />
+              )}
+            </>
+          ))
+        }
+      </div>
     </div>
   </div>
 </Base>

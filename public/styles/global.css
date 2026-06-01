@@ -299,7 +299,6 @@ nav {
 
 /* Blog list */
 .blog-list { margin-top: 8px; }
-.blog-list--spaced { margin-top: 48px; }
 .blog-item {
   display: flex;
   justify-content: space-between;
