@@ -1,11 +1,38 @@
 ---
 import Base from '../layouts/Base.astro';
 import ContactCta from '../components/ContactCta.astro';
+
+const servicePageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://maurizioturatti.com/work-with-me/#service',
+  serviceType: 'Software architecture consulting',
+  provider: {
+    '@type': 'Person',
+    name: 'Maurizio Turatti',
+    url: 'https://maurizioturatti.com/',
+  },
+  areaServed: 'Europe and North America',
+  url: 'https://maurizioturatti.com/work-with-me/',
+  description: 'Architecture reviews, technical leadership and hands-on backend advisory.',
+  knowsAbout: [
+    'Software Architecture',
+    'Technical Leadership',
+    'Backend Engineering',
+    'Java',
+    'MongoDB',
+    'AWS',
+    'REST API Design',
+    'AI Integration',
+  ],
+};
 ---
 
 <Base
   title="Work with me — Maurizio Turatti"
   description="Every engagement starts with a conversation. Architecture reviews, technical leadership, hands-on advisory."
+  ogImage="/images/maurizio.jpeg"
+  jsonLd={servicePageJsonLd}
 >
   <div class="hero hero--first">
     <p class="hero-eyebrow">Work with me</p>

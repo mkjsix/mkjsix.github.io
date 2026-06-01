@@ -11,6 +11,17 @@ const formatDate = (date: Date) =>
 
 const postPath = (id: string) => `/writing/${id.replace(/\.md$/, "")}`;
 
+const blogJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  '@id': 'https://maurizioturatti.com/writing/#blog',
+  url: 'https://maurizioturatti.com/writing/',
+  name: 'Writing by Maurizio Turatti',
+  description:
+    'Articles on software architecture, backend systems, AI integration and engineering leadership.',
+  inLanguage: 'en',
+};
+
 const mediumLinks = [
   {
     title: "Facet: A Different Approach to Web Development",
@@ -87,6 +98,8 @@ const mediumLinks = [
 <Base
   title="Writing — Maurizio Turatti"
   description="Articles on software architecture, backend systems, AI integration and engineering leadership."
+  ogImage="/images/maurizio.jpeg"
+  jsonLd={blogJsonLd}
 >
   <div class="hero hero--first">
     <p class="hero-eyebrow">Writing</p>

@@ -1,9 +1,36 @@
 ---
 import Base from "../layouts/Base.astro";
 import ContactCta from "../components/ContactCta.astro";
+
+const consultingJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://maurizioturatti.com/#service",
+  name: "Maurizio Turatti",
+  image: "https://maurizioturatti.com/images/maurizio.jpeg",
+  url: "https://maurizioturatti.com/",
+  description:
+    "Software architecture and technical leadership for teams that need to move faster.",
+  areaServed: "Europe and North America",
+  knowsAbout: [
+    "Software Architecture",
+    "Technical Leadership",
+    "Backend Engineering",
+    "Java",
+    "MongoDB",
+    "AWS",
+    "REST API Design",
+    "AI Integration"
+  ],
+};
 ---
 
-<Base>
+<Base
+  title="Software Architecture and Technical Leadership — Maurizio Turatti"
+  description="Software architecture and technical leadership for teams that need to move fast without breaking systems."
+  ogImage="/images/maurizio.jpeg"
+  jsonLd={consultingJsonLd}
+>
   <div class="hero hero--first">
     <h1 class="hero-headline">
       Software architecture and technical leadership for teams that need to move
