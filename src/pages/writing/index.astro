@@ -119,8 +119,8 @@ const mediumLinks = [
       )
     }
 
-    <div class="blog-list" style="margin-top: 48px;">
-      <p class="external-section-label">On Medium</p>
+    <div class="blog-list blog-list--spaced">
+      <p class="section-label">On Medium</p>
       {
         mediumLinks.map((link, index) => (
           <>
@@ -140,14 +140,3 @@ const mediumLinks = [
     </div>
   </div>
 </Base>
-
-<style>
-  .external-section-label {
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-text-muted);
-    margin-bottom: 16px;
-  }
-</style>
