@@ -91,8 +91,9 @@ const mediumLinks = [
   <div class="hero hero--first">
     <p class="hero-eyebrow">Writing</p>
     <h1 class="hero-headline">
-      Thoughts on architecture, systems and engineering.
+      Practical notes from the architecture trenches.
     </h1>
+    <p class="section-body section-body--lead">Thoughts on architecture, systems and engineering.</p>
   </div>
 
   <div class="page-content">
@@ -119,7 +120,7 @@ const mediumLinks = [
       )
     }
 
-    <div class="blog-list blog-list--spaced">
+    <div class:list={["blog-list", posts.length > 0 && "blog-list--spaced"]}>
       <p class="section-label">On Medium</p>
       {
         mediumLinks.map((link, index) => (
