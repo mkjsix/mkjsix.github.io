@@ -15,12 +15,47 @@ const { Content } = await render(post);
 
 const formatDate = (date: Date) =>
   date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const canonicalURL = post.data.canonical_url ?? new URL(Astro.url.pathname, Astro.site).toString();
+const ogImage = post.data.image ?? '/images/maurizio.jpeg';
+const ogImageURL = new URL(ogImage, Astro.site).toString();
+
+const blogPostingJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: post.data.date.toISOString(),
+  dateModified: (post.data.updated ?? post.data.date).toISOString(),
+  mainEntityOfPage: canonicalURL,
+  image: [ogImageURL],
+  author: {
+    '@type': 'Person',
+    name: 'Maurizio Turatti',
+    url: 'https://maurizioturatti.com/',
+  },
+  publisher: {
+    '@type': 'Person',
+    name: 'Maurizio Turatti',
+  },
+  keywords: post.data.tags,
+  inLanguage: 'en',
+};
 ---
 
-<Base title={`${post.data.title} — Maurizio Turatti`} description={post.data.description}>
-  {post.data.canonical_url && (
-    <link rel="canonical" href={post.data.canonical_url} slot="head" />
-  )}
+<Base
+  title={`${post.data.title} — Maurizio Turatti`}
+  description={post.data.description}
+  canonical={post.data.canonical_url}
+  noindex={post.data.noindex}
+  ogType="article"
+  ogImage={ogImage}
+  ogImageAlt={post.data.image_alt ?? `Cover image for ${post.data.title}`}
+  publishedTime={post.data.date.toISOString()}
+  modifiedTime={(post.data.updated ?? post.data.date).toISOString()}
+  articleTags={post.data.tags}
+  jsonLd={blogPostingJsonLd}
+>
 
   <div class="hero hero--first">
     <p class="hero-eyebrow">
