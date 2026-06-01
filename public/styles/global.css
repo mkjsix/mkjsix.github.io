@@ -199,6 +199,10 @@ nav {
   text-underline-offset: 3px;
 }
 
+.section-figure {
+  margin: 24px 0;
+}
+
 .section-body--lead {
   font-size: 18px;
 }
