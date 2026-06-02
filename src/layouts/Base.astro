@@ -1,4 +1,6 @@
 ---
+import PostHog from "../components/posthog.astro";
+
 interface Props {
   title?: string;
   description?: string;
@@ -133,6 +135,7 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
     />
 
     <link rel="stylesheet" href="/styles/global.css" />
+    <PostHog />
   </head>
   <body>
     <div class="container">
