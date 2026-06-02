@@ -17,7 +17,7 @@ const formatDate = (date: Date) =>
   date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
 const canonicalURL = post.data.canonical_url ?? new URL(Astro.url.pathname, Astro.site).toString();
-const ogImage = post.data.image ?? '/images/maurizio.jpeg';
+const ogImage = post.data.image ?? '/images/og-image.png';
 const ogImageURL = new URL(ogImage, Astro.site).toString();
 
 const blogPostingJsonLd = {
