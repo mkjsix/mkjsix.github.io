@@ -65,6 +65,11 @@ const blogPostingJsonLd = {
     <h1 class="hero-headline">{post.data.title}</h1>
   </div>
   <hr class="section-separator" />
+  {post.data.image && (
+    <figure class="post-cover">
+      <img src={post.data.image} alt={post.data.image_alt ?? post.data.title} loading="eager" />
+    </figure>
+  )}
 
   <div class="page-content post-content">
     <Content />
