@@ -368,6 +368,15 @@ nav {
 .post-content {
   max-width: 680px;
 }
+.post-cover {
+  margin: 0;
+  max-width: 680px;
+}
+.post-cover img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
 .post-content h2 {
   font-size: 23px;
   font-weight: 500;
