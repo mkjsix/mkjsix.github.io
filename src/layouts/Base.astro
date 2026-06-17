@@ -129,6 +129,10 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     ))}
     <link rel="stylesheet" href="/styles/global.css" />
+    <!-- Calendly popup widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
     <PostHog />
   </head>
   <body>
@@ -143,7 +147,7 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
             <li><a href="/writing">Writing</a></li>
             <li><a href="/work-with-me">Work with me</a></li>
           </ul>
-          <a href="mailto:info@maurizioturatti.com" class="nav-cta">Get in touch</a>
+          <a href="https://calendly.com/maurizioturatti-info/30min" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/maurizioturatti-info/30min'}); return false;">Book a call</a>
         </div>
       </nav>
       <hr class="section-separator section-separator-nav" />
