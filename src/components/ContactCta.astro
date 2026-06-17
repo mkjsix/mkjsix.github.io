@@ -10,14 +10,14 @@ const {
   title = 'Ready to talk?',
   subtext,
   email = 'info@maurizioturatti.com',
-  buttonLabel = 'Get in touch',
+  buttonLabel = 'Book a call',
 } = Astro.props;
 ---
 
 <div class="cta-block">
   <div>
     <p class="cta-text">{title}</p>
-    {subtext && <p class="cta-sub">{subtext}</p>}
+    {subtext && <p class="cta-sub"><a href={`mailto:${subtext}`}>{subtext}</a></p>}
   </div>
-  <a href={`mailto:${email}`} class="cta-btn">{buttonLabel}</a>
+  <a href="https://calendly.com/maurizioturatti-info/30min" class="cta-btn" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/maurizioturatti-info/30min'}); return false;">{buttonLabel}</a>
 </div>
