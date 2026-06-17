@@ -165,6 +165,23 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
           </details>
         </div>
       </nav>
+      <script>
+        const navDetails = document.querySelector('.nav-menu');
+        if (navDetails) {
+          // Close drawer when a link inside is clicked
+          navDetails.querySelectorAll('.nav-drawer a').forEach((a) => {
+            a.addEventListener('click', () => {
+              navDetails.removeAttribute('open');
+            });
+          });
+          // Close drawer when clicking outside
+          document.addEventListener('click', (e) => {
+            if (navDetails.hasAttribute('open') && !navDetails.contains(e.target)) {
+              navDetails.removeAttribute('open');
+            }
+          });
+        }
+      </script>
       <hr class="section-separator section-separator-nav" />
 
       <main>
