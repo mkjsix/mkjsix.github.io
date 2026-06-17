@@ -150,6 +150,19 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
             <li><a href="/work-with-me" aria-current={Astro.url.pathname === '/work-with-me/' ? 'page' : undefined}>Work with me</a></li>
           </ul>
           <a href="https://calendly.com/maurizioturatti-info/30min" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/maurizioturatti-info/30min'}); return false;">Book a conversation</a>
+          <details class="nav-menu">
+            <summary class="nav-toggle" aria-label="Menu">
+              <span class="nav-hamburger"></span>
+            </summary>
+            <div class="nav-drawer">
+              <ul class="nav-drawer-links">
+                <li><a href="/about" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a></li>
+                <li><a href="/writing" aria-current={Astro.url.pathname.startsWith('/writing') ? 'page' : undefined}>Writing</a></li>
+                <li><a href="/work-with-me" aria-current={Astro.url.pathname === '/work-with-me/' ? 'page' : undefined}>Work with me</a></li>
+              </ul>
+              <a href="https://calendly.com/maurizioturatti-info/30min" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/maurizioturatti-info/30min'}); return false;">Book a conversation</a>
+            </div>
+          </details>
         </div>
       </nav>
       <hr class="section-separator section-separator-nav" />
