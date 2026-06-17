@@ -150,37 +150,50 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
             <li><a href="/work-with-me" aria-current={Astro.url.pathname === '/work-with-me/' ? 'page' : undefined}>Work with me</a></li>
           </ul>
           <a href="https://calendly.com/maurizioturatti-info/30min" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/maurizioturatti-info/30min'}); return false;">Book a conversation</a>
-          <details class="nav-menu">
-            <summary class="nav-toggle" aria-label="Menu">
-              <span class="nav-hamburger"></span>
-            </summary>
-            <div class="nav-drawer">
-              <ul class="nav-drawer-links">
-                <li><a href="/about" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a></li>
-                <li><a href="/writing" aria-current={Astro.url.pathname.startsWith('/writing') ? 'page' : undefined}>Writing</a></li>
-                <li><a href="/work-with-me" aria-current={Astro.url.pathname === '/work-with-me/' ? 'page' : undefined}>Work with me</a></li>
-              </ul>
-              <a href="https://calendly.com/maurizioturatti-info/30min" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/maurizioturatti-info/30min'}); return false;">Book a conversation</a>
-            </div>
-          </details>
+          <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+            <span class="nav-hamburger"></span>
+          </button>
+          <div class="nav-drawer" hidden>
+            <ul class="nav-drawer-links">
+              <li><a href="/about" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a></li>
+              <li><a href="/writing" aria-current={Astro.url.pathname.startsWith('/writing') ? 'page' : undefined}>Writing</a></li>
+              <li><a href="/work-with-me" aria-current={Astro.url.pathname === '/work-with-me/' ? 'page' : undefined}>Work with me</a></li>
+            </ul>
+            <a href="https://calendly.com/maurizioturatti-info/30min" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/maurizioturatti-info/30min'}); return false;">Book a conversation</a>
+          </div>
         </div>
       </nav>
       <script>
-        const navDetails = document.querySelector('.nav-menu');
-        if (navDetails) {
-          // Close drawer when a link inside is clicked
-          navDetails.querySelectorAll('.nav-drawer a').forEach((a) => {
-            a.addEventListener('click', () => {
-              navDetails.removeAttribute('open');
-            });
+        (function() {
+          const toggle = document.querySelector('.nav-toggle');
+          const drawer = document.querySelector('.nav-drawer');
+          if (!toggle || !drawer) return;
+
+          function openMenu() {
+            drawer.removeAttribute('hidden');
+            toggle.setAttribute('aria-expanded', 'true');
+            toggle.classList.add('nav-toggle--open');
+          }
+          function closeMenu() {
+            drawer.setAttribute('hidden', '');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.classList.remove('nav-toggle--open');
+          }
+
+          toggle.addEventListener('click', function() {
+            if (drawer.hasAttribute('hidden')) { openMenu(); } else { closeMenu(); }
           });
-          // Close drawer when clicking outside
-          document.addEventListener('click', (e) => {
-            if (navDetails.hasAttribute('open') && !navDetails.contains(e.target)) {
-              navDetails.removeAttribute('open');
+
+          drawer.querySelectorAll('a').forEach(function(a) {
+            a.addEventListener('click', closeMenu);
+          });
+
+          document.addEventListener('click', function(e) {
+            if (!drawer.hasAttribute('hidden') && !drawer.contains(e.target) && !toggle.contains(e.target)) {
+              closeMenu();
             }
           });
-        }
+        })();
       </script>
       <hr class="section-separator section-separator-nav" />
 
