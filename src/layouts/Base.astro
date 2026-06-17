@@ -20,7 +20,7 @@ interface Props {
 
 const {
   title = 'Maurizio Turatti',
-  description = 'Software architecture and technical leadership for teams that need to move fast. Hands-on work with Java, MongoDB, AWS, API design.',
+  description = 'Software architecture and technical leadership for teams that need to move fast. Fractional CTO and advisory engagements across people, processes, and platforms.',
   canonical,
   noindex = false,
   ogType = 'website',
@@ -58,18 +58,17 @@ const personJsonLd = {
   name: 'Maurizio Turatti',
   url: siteOrigin,
   image: ogImageURL,
-  jobTitle: 'Software Architect',
+  jobTitle: 'Software Architect & Product Engineer',
   knowsAbout: [
     'Software Architecture',
     'Technical Leadership',
-    'Backend Engineering',
-    'Java',
-    'MongoDB',
-    'AWS',
-    'REST API Design',
+    'Fractional CTO',
+    'Technical Strategy',
+    'Distributed Systems',
+    'Stakeholder Management',
     'AI Integration',
   ],
-  sameAs: ['https://www.linkedin.com/in/maurizioturatti', 'https://github.com/mkjsix'],
+  sameAs: ['https://www.linkedin.com/in/maurizioturatti', 'https://github.com/mkjsix', 'https://x.com/mkj6'],
 };
 
 const pageJsonLd = jsonLd
@@ -107,9 +106,11 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="Maurizio Turatti" />
     <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:image:alt" content={ogImageAlt} />
 
     <!-- Twitter -->
+    <meta name="twitter:site" content="@mkj6" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -140,14 +141,15 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
       <nav>
         <div class="nav-inner">
           <a href="/" class="nav-logo">
-            <img src="/images/maurizio.jpeg" alt="Avatar Maurizio Turatti" class="avatar" width="36" height="36" />
+            <img src="/images/maurizio.jpeg" alt="Avatar Maurizio Turatti" class="avatar" width="44" height="44" />
             <span>Maurizio Turatti</span>
           </a>
           <ul class="nav-links">
-            <li><a href="/writing">Writing</a></li>
-            <li><a href="/work-with-me">Work with me</a></li>
+            <li><a href="/about" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a></li>
+            <li><a href="/writing" aria-current={Astro.url.pathname.startsWith('/writing') ? 'page' : undefined}>Writing</a></li>
+            <li><a href="/work-with-me" aria-current={Astro.url.pathname === '/work-with-me/' ? 'page' : undefined}>Work with me</a></li>
           </ul>
-          <a href="https://calendly.com/maurizioturatti-info/30min" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/maurizioturatti-info/30min'}); return false;">Book a call</a>
+          <a href="https://calendly.com/maurizioturatti-info/30min" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/maurizioturatti-info/30min'}); return false;">Book a conversation</a>
         </div>
       </nav>
       <hr class="section-separator section-separator-nav" />

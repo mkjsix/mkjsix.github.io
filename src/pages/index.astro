@@ -1,6 +1,16 @@
 ---
 import Base from "../layouts/Base.astro";
 import ContactCta from "../components/ContactCta.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString("en-GB", { month: "short", year: "numeric" });
+
+const postPath = (id: string) => `/writing/${id.replace(/\.md$/, "")}`;
 
 const consultingJsonLd = {
   "@context": "https://schema.org",
@@ -10,16 +20,15 @@ const consultingJsonLd = {
   image: "https://maurizioturatti.com/images/og-image.png",
   url: "https://maurizioturatti.com/",
   description:
-    "Software architecture and technical leadership for teams that need to move fast. Hands-on work with Java, MongoDB, AWS, API design.",
+    "Software architecture and technical leadership for teams that need to move fast. Fractional CTO and advisory engagements across people, processes, and platforms.",
   areaServed: "Europe and North America",
   knowsAbout: [
     "Software Architecture",
     "Technical Leadership",
-    "Backend Engineering",
-    "Java",
-    "MongoDB",
-    "AWS",
-    "REST API Design",
+    "Fractional CTO",
+    "Technical Strategy",
+    "Distributed Systems",
+    "Stakeholder Management",
     "AI Integration",
   ],
 };
@@ -27,121 +36,106 @@ const consultingJsonLd = {
 
 <Base
   title="Software Architecture and Technical Leadership — Maurizio Turatti"
-  description="Software architecture and technical leadership for teams that need to move fast. Hands-on work with Java, MongoDB, AWS, API design."
+  description="Software architecture and technical leadership for teams that need to move fast. Fractional CTO and advisory engagements across people, processes, and platforms."
   ogImage="/images/og-image.png"
   jsonLd={consultingJsonLd}
 >
+  <!-- Hero -->
   <div class="hero hero--first">
-    <h1 class="hero-headline">
-      Software architecture and technical leadership for teams that need to move
-      fast.
+    <h1 class="hero-headline hero-headline--lg">
+      Software architecture and technical leadership for teams that need to move fast.
     </h1>
+    <p class="hero-sub">
+      I take on fractional CTO and advisory engagements where the combination of
+      judgment and hands-on experience matters.
+    </p>
+    <a
+      href="https://calendly.com/maurizioturatti-info/30min"
+      class="hero-cta"
+      onclick="Calendly.initPopupWidget({url: 'https://calendly.com/maurizioturatti-info/30min'}); return false;"
+      >Book a conversation</a
+    >
   </div>
 
   <div class="section-stack">
-    <div class="section-block">
-      <div class="section-body">
-        <p>
-          I started programming in BASIC as a kid in the eighties, on my first
-          Commodore 64. I learned C on an Amiga 500, then studied Pascal and
-          x86 assembly. By the late nineties I was working professionally with
-          Borland Delphi, then C++, Python and eventually Java, which has been
-          my primary language for over twenty years.
-        </p>
-        <p>
-          I have worked as a researcher in computational geometry and machine
-          learning, as a lead SOA architect at Sun Microsystems for the Italian
-          market, as a solutions engineer at Alfresco supporting the launch of
-          their Italian operations, and as a technical architect at AKQA in
-          Berlin on enterprise digital transformation projects. In 2014 I
-          co-founded SoftInstigate and co-created
-          <a href="https://restheart.org" target="_blank" rel="noopener"
-            >RESTHeart</a
-          >, an open-source backend platform for MongoDB used in production
-          worldwide.
-        </p>
-        <p>
-          Having seen the same class of problems from inside a technology
-          vendor, a global digital agency, and a product company I built myself
-          gives me a perspective that is difficult to acquire any other way. I
-          still write code every day. I take on fractional CTO and advisory
-          engagements where that combination of judgment and hands-on
-          experience matters.
-        </p>
-        <p>
-          You can see my open source work on <a
-            href="https://github.com/mkjsix"
-            target="_blank"
-            rel="noopener">GitHub</a
-          >.
-        </p>      </div>
-    </div>
-
+    <!-- Who this is for — pain points -->
     <div class="section-block">
       <h2 class="section-title">What does this mean?</h2>
-      <div class="section-body">
-        <p>Depending on where you are:</p>
+      <div class="card-grid">
+        <div class="surface-card surface-card--compact">
+          <p class="card-label card-label--tight">Scaling</p>
+          <p class="card-text card-text--strong">
+            Slow APIs, databases under pressure, infrastructure that requires heroics to keep running.
+          </p>
+        </div>
+        <div class="surface-card surface-card--compact">
+          <p class="card-label card-label--tight">Team</p>
+          <p class="card-text card-text--strong">
+            Decisions that stall, technical debt that nobody owns, engineers firefighting instead of building.
+          </p>
+        </div>
+        <div class="surface-card surface-card--compact">
+          <p class="card-label card-label--tight">New build</p>
+          <p class="card-text card-text--strong">
+            You're starting something new and want to get the architecture right from the beginning.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Credibility snippet -->
+    <div class="section-block">
+      <div class="section-body section-body--dark">
         <p>
-          1. <strong>Your system doesn't scale:</strong> slow APIs, databases under
-          pressure, infrastructure that requires heroics to keep running.
-        </p>
-        <p>
-          2. <strong>Your team is stuck:</strong> decisions that stall, technical
-          debt that nobody owns, engineers firefighting instead of building.
-        </p>
-        <p>
-          3. <strong>You're starting something new:</strong> you want to get the architecture
-          right from the beginning.
+          Co-founder of <strong>SoftInstigate</strong> and creator of
+          <a href="https://restheart.org" target="_blank" rel="noopener">RESTHeart</a>,
+          an open-source backend platform for MongoDB used in production worldwide.
+          Former lead architect at <strong>Sun Microsystems</strong> and technical architect at
+          <strong>AKQA</strong> Berlin. I take on fractional CTO and advisory engagements
+          where the combination of judgment and hands-on experience matters.
+          <a href="/about">Full background →</a>
         </p>
       </div>
     </div>
 
+    <!-- What I do -->
     <div class="section-block">
-      <h2 class="section-title">What kind of work do I take on?</h2>
-      <div class="section-body">
+      <h2 class="section-title">What I do</h2>
+      <div class="section-body section-body--dark">
         <p>
-          <strong>Architecture reviews, technical leadership, hands-on backend work</strong> with Java, MongoDB, AWS, API design. For teams that need a senior engineering voice.
+          <strong>Architecture reviews, fractional CTO, and technical leadership</strong>
+          for teams that need to move fast.
         </p>
         <p>
-          A recurring part of my work sits between business and IT. I help translate business requirements into technical decisions and technical constraints into language that product and leadership can act on. That translation layer is often where projects stall, and it is where I tend to be most useful.
+          A recurring part of my work sits between business and IT, translating business requirements
+          into technical decisions and technical constraints into language that product and leadership
+          can act on. That translation layer is often where projects stall, and where I tend to be most useful.
+        </p>
+        <p>
+          AI-augmented development is part of how I work, treated as an infrastructure problem
+          built on top of existing data, processes, and systems. It shifts what's feasible
+          with small, senior engineering groups.
         </p>
       </div>
     </div>
 
+    <!-- Selected results -->
     <div class="section-block">
-      <h2 class="section-title">How do I handle AI?</h2>
+      <h2 class="section-title">Selected work</h2>
       <div class="section-body">
-        <p>
-          AI works best when it is treated as an infrastructure problem. That
-          means building it on top of what you already have: your data, your
-          processes, your existing systems.
-        </p>
-        <p>
-          The outcome of AI-assisted development depends on the context you
-          bring to it: knowing which questions to ask, recognizing when the
-          output is wrong, catching architectural mistakes before they compound.
-        </p>
-        <img
-          src="/images/ai-architecture.svg"
-          alt="Enterprise AI architecture diagram"
-          class="section-figure"
-        />
-      </div>
-    </div>
-
-    <div class="section-block">
-      <h2 class="section-title">Who have I worked with?</h2>
-      <div class="section-body">
-        <p>
-          A cross-section of engagements across two decades and several
-          industries:
-        </p>
         <div class="card-grid">
           <div class="surface-card surface-card--compact">
-            <p class="card-label card-label--tight">Retail</p>
+            <p class="card-label card-label--tight">Luxury e-commerce</p>
             <p class="card-text card-text--strong">
-              Point-of-sale backend across 2,600 stores and 9,500 terminals.
-              Continuous availability, no downtime budget.
+              Technical lead for a global luxury brand's e-commerce platform in China.
+              Coordinated distributed engineering teams across Berlin, Geneva, and Shanghai.
+            </p>
+          </div>
+          <div class="surface-card surface-card--compact">
+            <p class="card-label card-label--tight">Retail, backend modernization</p>
+            <p class="card-text card-text--strong">
+              Technical lead for modernization of a high-volume production backend:
+              2,600+ stores, 9,500+ terminals, 141M+ documents, 1TB+ data.
             </p>
           </div>
           <div class="surface-card surface-card--compact">
@@ -154,43 +148,58 @@ const consultingJsonLd = {
             </p>
           </div>
           <div class="surface-card surface-card--compact">
-            <p class="card-label card-label--tight">Enterprise content</p>
-            <p class="card-text card-text--strong">
-              Content platform used by global brands across Europe and North
-              America. Core APIs built on RESTHeart.
-            </p>
-          </div>
-          <div class="surface-card surface-card--compact">
-            <p class="card-label card-label--tight">Automotive</p>
-            <p class="card-text card-text--strong">
-              Marketplace platform for vehicle data and services, integrated
-              with national registries and dealer networks.
-            </p>
-          </div>
-          <div class="surface-card surface-card--compact">
             <p class="card-label card-label--tight">Environmental compliance</p>
             <p class="card-text card-text--strong">
-              Architecture review for a national registry system managing
-              environmental data for public institutions.
+              Architectural assessment of a national waste tracking platform:
+              1M+ users, 7M API calls/hr, p95 &lt; 300ms.
+              Performance analysis and strategic roadmap.
             </p>
           </div>
           <div class="surface-card surface-card--compact">
-            <p class="card-label card-label--tight">Enterprise integration</p>
+            <p class="card-label card-label--tight">Enterprise content</p>
             <p class="card-text card-text--strong">
-              SOA and EAI architecture for large enterprises across the EMEA
-              region, including finance and telecommunications.
+              Supporting the technical evolution of Crownpeak Cloud Content as a Service,
+              used by global brands across Europe and North America.
+            </p>
+          </div>
+          <div class="surface-card surface-card--compact">
+            <p class="card-label card-label--tight">Open source platform</p>
+            <p class="card-text card-text--strong">
+              RESTHeart: 10+ years of continuous development. Agent-ready backend for MongoDB,
+              adopted in production by startups and Fortune 500 companies worldwide.
             </p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="section-block">
-      <h2 class="section-title">What do you do next?</h2>
-      <div class="section-body">
-        <p>Get in touch and we can discuss how to get started.</p>
+    <!-- Latest writing -->
+    {posts.length > 0 && (
+      <div class="section-block">
+        <h2 class="section-title">Latest writing</h2>
+        <div class="blog-list">
+          {posts.map((post, index) => (
+            <>
+              <a href={postPath(post.id)} class="blog-item">
+                <span class="blog-title">{post.data.title}</span>
+                <span class="blog-meta">
+                  {post.data.tags[0] && (
+                    <span class="blog-tag">{post.data.tags[0]}</span>
+                  )}
+                  <span class="blog-date">{formatDate(post.data.date)}</span>
+                </span>
+              </a>
+              {index < posts.length - 1 && (
+                <hr class="section-separator blog-separator" />
+              )}
+            </>
+          ))}
+        </div>
+        <p class="section-body" style="margin-top: 16px;">
+          <a href="/writing">All writing →</a>
+        </p>
       </div>
-    </div>
+    )}
   </div>
 
   <ContactCta subtext="info@maurizioturatti.com" />

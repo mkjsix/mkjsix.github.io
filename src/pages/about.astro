@@ -1,0 +1,185 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactCta from '../components/ContactCta.astro';
+
+const aboutJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfilePage',
+  '@id': 'https://maurizioturatti.com/about/#profile',
+  url: 'https://maurizioturatti.com/about/',
+  name: 'About Maurizio Turatti',
+  description: 'Software architect and product engineer. Co-founder of SoftInstigate, creator of RESTHeart. A career built on shipping real systems across enterprise, agency, and product.',
+  mainEntity: {
+    '@type': 'Person',
+    name: 'Maurizio Turatti',
+    url: 'https://maurizioturatti.com/',
+    jobTitle: 'Software Architect & Product Engineer',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'SoftInstigate',
+      url: 'https://restheart.org',
+    },
+    alumniOf: {
+      '@type': 'EducationalOrganization',
+      name: 'Università degli Studi di Milano',
+    },
+  },
+};
+---
+
+<Base
+  title="About — Maurizio Turatti"
+  description="Software architect and product engineer. Co-founder of SoftInstigate, creator of RESTHeart. A career built on shipping real systems across enterprise, agency, and product."
+  ogImage="/images/og-image.png"
+  jsonLd={aboutJsonLd}
+>
+  <div class="hero hero--first">
+    <p class="hero-eyebrow">About</p>
+    <h1 class="hero-headline">
+      Shipping real systems.
+    </h1>
+  </div>
+
+  <div class="page-content section-stack">
+    <div class="section-block">
+      <div class="section-body section-body--lead section-body--spacious">
+        <p>
+          Software architect and product engineer with roots in enterprise integration
+          and over two decades of hands-on experience across Java ecosystems, distributed
+          systems, and cloud platforms. Co-founder of SoftInstigate and creator of
+          <a href="https://restheart.org" target="_blank" rel="noopener">RESTHeart</a>,
+          an open-source backend platform for MongoDB used in production worldwide.
+        </p>
+        <p>
+          Having seen the same class of problems from inside a technology vendor,
+          a global digital agency, and a product company I built myself gives me a
+          perspective that is difficult to acquire any other way. A recurring part
+          of my work sits between business and IT: translating business requirements
+          into technical decisions, and technical constraints into language that product
+          and leadership can act on. That translation layer is often where projects
+          stall, and where I tend to be most useful.
+        </p>
+        <p>
+          I bring hands-on expertise in Java, MongoDB, AWS, and distributed systems.
+          My architecture advice is grounded in what actually works under production
+          load. AI-augmented development is part of how I work, treated as an
+          infrastructure problem built on top of existing data, processes, and systems.
+        </p>
+        <p>
+          I take on fractional CTO and advisory engagements where that combination
+          of judgment and hands-on experience matters.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2 class="section-title">Selected work</h2>
+      <div class="section-body">
+        <div class="card-grid">
+          <div class="surface-card surface-card--compact">
+            <p class="card-label card-label--tight">Luxury e-commerce</p>
+            <p class="card-text card-text--strong">
+              Technical lead for a global luxury brand's e-commerce platform in China.
+              Coordinated distributed engineering teams across Berlin, Geneva, and Shanghai.
+            </p>
+          </div>
+          <div class="surface-card surface-card--compact">
+            <p class="card-label card-label--tight">Retail, backend modernization</p>
+            <p class="card-text card-text--strong">
+              Technical lead for modernization and stabilization of a high-volume production
+              backend serving 2,600+ stores and 9,500+ terminals: 141M+ documents, 1TB+ data.
+            </p>
+          </div>
+          <div class="surface-card surface-card--compact">
+            <p class="card-label card-label--tight">
+              Mobility &amp; public sector
+            </p>
+            <p class="card-text card-text--strong">
+              Traffic data platform integrating 15+ regional and national
+              sources. Ten years in production without critical outages.
+            </p>
+          </div>
+          <div class="surface-card surface-card--compact">
+            <p class="card-label card-label--tight">Environmental compliance</p>
+            <p class="card-text card-text--strong">
+              Architectural assessment of a national waste tracking platform:
+              1M+ users, 7M API calls/hr, p95 &lt; 300ms.
+              Performance analysis, bottleneck identification, and strategic roadmap for
+              load distribution and caching.
+            </p>
+          </div>
+          <div class="surface-card surface-card--compact">
+            <p class="card-label card-label--tight">Enterprise content</p>
+            <p class="card-text card-text--strong">
+              Supporting the technical evolution of Crownpeak Cloud Content as a Service,
+              a content platform for global brands across Europe and North America.
+            </p>
+          </div>
+          <div class="surface-card surface-card--compact">
+            <p class="card-label card-label--tight">Open source platform</p>
+            <p class="card-text card-text--strong">
+              RESTHeart: 10+ years of continuous development. Agent-ready backend for MongoDB,
+              adopted in production by startups and Fortune 500 companies worldwide.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2 class="section-title">Career</h2>
+      <div class="section-body section-body--spacious">
+        <p>
+          <strong>SoftInstigate</strong>, Co-Founder &amp; Technical Advisor (2014 – present)<br />
+          Engineering and advisory work across product development and client engagements,
+          with a consistent thread: continuous automation of development and delivery processes,
+          reducing friction between code and production. Work has spanned enterprise architecture,
+          cloud transformation, and technical leadership for greenfield SaaS products across
+          automotive, retail, sustainability, and public sector. Current focus: backend architecture
+          and platform strategy for teams where AI-augmented development shifts what's feasible
+          with small, senior engineering groups.
+        </p>
+        <p>
+          <strong>AKQA</strong>, Technical Architect, Berlin (2013 – 2014)<br />
+          Technical architect for enterprise digital transformation at a global digital agency.
+          Delivered the Montblanc e-commerce platform in China, coordinating distributed
+          engineering teams across Berlin, Geneva, and Shanghai.
+        </p>
+        <p>
+          <strong>Sourcesense</strong>, Delivery Manager (2011 – 2013)<br />
+          Led a consulting team delivering open-source enterprise solutions across finance,
+          telecom, and public sector. Combined technical leadership with commercial responsibilities.
+        </p>
+        <p>
+          <strong>Alfresco</strong>, Senior Solutions Engineer, Italy (2010 – 2011)<br />
+          Supported the launch of Alfresco's Italian market operations. Pre-sales consulting and
+          technical engagements for enterprise content management.
+        </p>
+        <p>
+          <strong>Earlier career (1997 – 2010)</strong><br />
+          Progressive career across enterprise integration, distributed systems, and software
+          research: lead SOA architect at Sun Microsystems for Italy and the EMEA region,
+          SOA/EAI consulting at SeeBeyond, founding an independent consulting practice,
+          and research in computational geometry and machine learning at the Università degli Studi di Milano.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <h2 class="section-title">Open source</h2>
+      <div class="section-body">
+        <p>
+          <a href="https://github.com/SoftInstigate/restheart" target="_blank" rel="noopener"><strong>RESTHeart</strong></a> —
+          The agent-ready backend for MongoDB (Java, GraalVM)<br />
+          <a href="https://github.com/SoftInstigate/facet" target="_blank" rel="noopener"><strong>Facet</strong></a> —
+          Data-driven web framework: turn APIs into HTML, zero code<br />
+          <a href="https://github.com/SoftInstigate/ermes-mail" target="_blank" rel="noopener"><strong>Ermes Mail</strong></a> —
+          Async e-mail library and CLI for Java<br />
+          <a href="https://github.com/mkjsix" target="_blank" rel="noopener">All projects on GitHub →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <ContactCta subtext="info@maurizioturatti.com" />
+</Base>
