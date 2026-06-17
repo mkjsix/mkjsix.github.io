@@ -306,6 +306,13 @@ nav {
   color: var(--color-accent-sub);
   margin-top: 4px;
 }
+.cta-sub a {
+  color: inherit;
+  text-decoration: none;
+}
+.cta-sub a:hover {
+  text-decoration: underline;
+}
 .cta-btn {
   font-size: 14px;
   font-weight: 500;
