@@ -109,6 +109,14 @@ nav {
   text-decoration: none;
   color: var(--color-text);
 }
+.nav-logo span {
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color 0.15s;
+}
+.nav-logo:hover span {
+  border-bottom-color: var(--color-border-strong);
+}
 .avatar {
   width: 44px;
   height: 44px;
