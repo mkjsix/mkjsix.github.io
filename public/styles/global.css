@@ -283,6 +283,17 @@ nav {
   margin-bottom: 20px;
 }
 
+.section-body cite {
+  display: block;
+  font-family: var(--font-serif);
+  font-style: normal;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--color-text);
+  padding-left: 16px;
+  border-left: 3px solid var(--color-accent-sub);
+}
+
 /* Shared card grid */
 .card-grid {
   display: grid;

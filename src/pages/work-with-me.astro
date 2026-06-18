@@ -1,28 +1,29 @@
 ---
-import Base from '../layouts/Base.astro';
-import ContactCta from '../components/ContactCta.astro';
+import Base from "../layouts/Base.astro";
+import ContactCta from "../components/ContactCta.astro";
 
 const servicePageJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Service',
-  '@id': 'https://maurizioturatti.com/work-with-me/#service',
-  serviceType: 'Fractional CTO and software architecture advisory',
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://maurizioturatti.com/work-with-me/#service",
+  serviceType: "Fractional CTO and software architecture advisory",
   provider: {
-    '@type': 'Person',
-    name: 'Maurizio Turatti',
-    url: 'https://maurizioturatti.com/',
+    "@type": "Person",
+    name: "Maurizio Turatti",
+    url: "https://maurizioturatti.com/",
   },
-  areaServed: 'Europe and North America',
-  url: 'https://maurizioturatti.com/work-with-me/',
-  description: 'Fractional CTO, architecture reviews, and technical leadership. Advisory for teams that need to move fast.',
+  areaServed: "Europe and North America",
+  url: "https://maurizioturatti.com/work-with-me/",
+  description:
+    "Fractional CTO, architecture reviews, and technical leadership. Advisory for teams that need to move fast.",
   knowsAbout: [
-    'Software Architecture',
-    'Technical Leadership',
-    'Fractional CTO',
-    'Technical Strategy',
-    'Stakeholder Management',
-    'Distributed Systems',
-    'AI Integration',
+    "Software Architecture",
+    "Technical Leadership",
+    "Fractional CTO",
+    "Technical Strategy",
+    "Stakeholder Management",
+    "Distributed Systems",
+    "AI Integration",
   ],
 };
 ---
@@ -41,16 +42,37 @@ const servicePageJsonLd = {
   <div class="page-content section-stack">
     <div class="section-block">
       <div class="section-body section-body--lead section-body--spacious">
-      <p>Someone reaches out because they have a problem, or an intuition, and they are not sure what kind of help they need. Maybe the system is buckling under growth. Maybe the team keeps making the same trade-offs in circles. Maybe they are starting something new and want to get the architecture right from the beginning. The starting point is always the same: understand what is actually going on.</p>
+        <p>
+          Someone reaches out because they have a problem, or an intuition, and
+          they are not sure what kind of help they need. Maybe the system is
+          buckling under growth. Maybe the team keeps making the same trade-offs
+          in circles. Maybe they are starting something new and want to get the
+          architecture right from the beginning. The starting point is always
+          the same: understand what is actually going on.
+        </p>
       </div>
     </div>
 
     <div class="section-block">
       <h2 class="section-title">How does an assessment work?</h2>
       <div class="section-body section-body--spacious">
-        <p>Every engagement starts with a bottleneck analysis. The first job is to produce a documented assessment of your situation: where the constraints are, what is blocking velocity, and which interventions will have the most impact. Half the time the real bottleneck is not where you think it is.</p>
-        <p>That assessment becomes the foundation for a roadmap of interventions we agree on together, prioritised by what will move the needle first.</p>
-        <p>If there is a fit, we define the engagement. If there is not, I will tell you, and often point you in a better direction.</p>
+        <p>
+          Every engagement starts with a bottleneck analysis. The first job is
+          to produce a documented assessment of your situation: where the
+          constraints are, what is blocking velocity, and which interventions
+          will have the most impact.
+        </p>
+        <p>
+          <cite>Half the time the real bottleneck is not where you think it is.</cite>
+        </p>
+        <p>
+          That assessment becomes the foundation for a roadmap of interventions
+          we agree on together, prioritised by what will move the needle first.
+        </p>
+        <p>
+          If there is a fit, we define the engagement. If there is not, I will
+          tell you, and often point you in a better direction.
+        </p>
       </div>
     </div>
 
@@ -60,17 +82,30 @@ const servicePageJsonLd = {
         <div class="surface-card">
           <p class="card-label">Fractional CTO</p>
           <p class="card-title">Ongoing technical leadership</p>
-          <p class="card-text">Guiding a team, staying available for decisions, remaining close to the product over time. Translating business requirements into technical decisions and technical constraints into language that product and leadership can act on.</p>
+          <p class="card-text">
+            Guiding a team, staying available for decisions, remaining close to
+            the product over time. Translating business requirements into
+            technical decisions and technical constraints into language that
+            product and leadership can act on.
+          </p>
         </div>
         <div class="surface-card">
           <p class="card-label">Architecture review</p>
           <p class="card-title">Fixed scope, clear objectives</p>
-          <p class="card-text">System design reviews, performance investigations, cloud migration planning. You know what you are paying for, and I have skin in the outcome.</p>
+          <p class="card-text">
+            System design reviews, performance investigations, cloud migration
+            planning. You know what you are paying for, and I have skin in the
+            outcome.
+          </p>
         </div>
         <div class="surface-card">
           <p class="card-label">Advisory retainer</p>
           <p class="card-title">When you need a senior voice on call</p>
-          <p class="card-text">Available for architecture decisions, technical strategy, and roadmapping. The right structure when the work involves people as well as code.</p>
+          <p class="card-text">
+            Available for architecture decisions, technical strategy, and
+            roadmapping. The right structure when the work involves people as
+            well as code.
+          </p>
         </div>
       </div>
     </div>
@@ -78,13 +113,24 @@ const servicePageJsonLd = {
     <div class="section-block">
       <h2 class="section-title">What kind of results can I expect?</h2>
       <div class="section-body section-body--spacious">
-        <p>It depends on the engagement, but the pattern is consistent: decisions get made faster, teams stop going in circles, and the technical path forward becomes clear. My advice is grounded in what actually works under production load, built over two decades across vendor, agency, and product company contexts.</p>
+        <p>
+          It depends on the engagement, but the pattern is consistent: decisions
+          get made faster, teams stop going in circles, and the technical path
+          forward becomes clear. My advice is grounded in what actually works
+          under production load, built over two decades across vendor, agency,
+          and product company contexts.
+        </p>
       </div>
     </div>
 
     <div class="section-block">
       <div class="section-body section-body--lead section-body--spacious">
-      <p>Describe your situation in a few lines, write to <a href="mailto:info@maurizioturatti.com">info@maurizioturatti.com</a>, or book a conversation below. If there is a potential fit, we will find a time to talk.</p>
+        <p>
+          Describe your situation in a few lines, write to <a
+            href="mailto:info@maurizioturatti.com">info@maurizioturatti.com</a
+          >, or book a conversation below. If there is a potential fit, we will
+          find a time to talk.
+        </p>
       </div>
     </div>
   </div>
