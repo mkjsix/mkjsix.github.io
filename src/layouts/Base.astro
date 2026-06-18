@@ -92,6 +92,11 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- Preconnect to third-party origins for faster DNS/TCP/TLS -->
+    <link rel="preconnect" href="https://eu-assets.i.posthog.com" crossorigin />
+    <link rel="preconnect" href="https://eu.i.posthog.com" crossorigin />
+    <link rel="preconnect" href="https://assets.calendly.com" crossorigin />
+
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content={robotsContent} />
@@ -142,7 +147,10 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
       <nav>
         <div class="nav-inner">
           <a href="/" class="nav-logo">
-            <img src="/images/maurizio.jpeg" alt="Avatar Maurizio Turatti" class="avatar" width="44" height="44" />
+            <picture>
+              <source srcset="/images/maurizio.webp" type="image/webp" />
+              <img src="/images/maurizio.jpeg" alt="Avatar Maurizio Turatti" class="avatar" width="44" height="44" loading="eager" />
+            </picture>
             <span>Maurizio Turatti</span>
           </a>
           <ul class="nav-links">
