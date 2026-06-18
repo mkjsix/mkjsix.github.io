@@ -35,7 +35,7 @@ When changing post fields, update both markdown content and `src/content.config.
 ## Styling and layout conventions
 
 - Shared page shell is `src/layouts/Base.astro`.
-- Global stylesheet loaded by the layout is `/styles/global.css`, which resolves to `public/styles/global.css`.
+- Global stylesheet is `src/styles/global.css`, imported by `src/layouts/Base.astro` (Vite-hashed on build).
 - Keep existing visual language and typography unless a change request explicitly asks for a redesign.
 
 ## Editing guidance
