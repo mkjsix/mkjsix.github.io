@@ -130,8 +130,9 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
     {structuredData.map((schema) => (
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     ))}
-    <!-- Calendly popup widget -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+    <!-- Calendly popup widget (CSS deferred to avoid render-blocking) -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" /></noscript>
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
     <PostHog />
