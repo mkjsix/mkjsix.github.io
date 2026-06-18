@@ -2,6 +2,7 @@
 import '@fontsource/dm-sans/400.css';
 import '@fontsource/dm-sans/500.css';
 import '@fontsource/dm-serif-display/400.css';
+import '../styles/global.css';
 import PostHog from "../components/posthog.astro";
 
 interface Props {
@@ -129,7 +130,6 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
     {structuredData.map((schema) => (
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     ))}
-    <link rel="stylesheet" href="/styles/global.css" />
     <!-- Calendly popup widget -->
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
