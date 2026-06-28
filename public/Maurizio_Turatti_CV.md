@@ -199,7 +199,7 @@ RESTHeart: 2M+ open-source downloads, 10+ years in production. Adopted by Fortun
 **SoftInstigate** · Italy
 09/2014 – present
 
-Engineering and advisory work spanning product development, platform strategy, and client engagements. Led architecture, cloud transformation, and technical delivery for SaaS and e-commerce products across automotive, retail, sustainability, and public sector, with a focus on scalability, availability, and security at every layer of the stack.
+Engineering and advisory work spanning product development, platform strategy, and client engagements. Led architecture, cloud transformation, and technical delivery for SaaS and e-commerce products across automotive, retail, sustainability, and public sector, with a focus on scalability, availability, and security at every layer of the stack. Owned the DevOps and automation layer: CI/CD pipelines, infrastructure provisioning, observability, and production operations.
 
 **Key achievements**
 - Co-created RESTHeart, an open-source backend for MongoDB with 2M+ downloads, 10+ years in production, adopted by Fortune 500 companies including Unisys, Northrop Grumman, and Crownpeak
