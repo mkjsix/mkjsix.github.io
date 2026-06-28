@@ -11,9 +11,8 @@ language: en
 # --- IDENTITY ---
 name: Maurizio Turatti
 title: Software Architect and Technical Advisor
-location: Arona (NO), Italy
+location: Italy
 email: info@maurizioturatti.com
-phone: "+39 347 964 7167"
 website: https://maurizioturatti.com
 linkedin: https://www.linkedin.com/in/maurizioturatti
 github: https://github.com/mkjsix
@@ -130,17 +129,12 @@ open_source:
     description: Async e-mail library and CLI for Java
     url: https://github.com/SoftInstigate/ermes-mail
 
-# --- GDPR ---
-gdpr_consent: >
-  I hereby consent to the processing of my personal data contained in
-  this document for the purposes of recruitment and selection, in
-  accordance with Regulation (EU) 2016/679 (GDPR).
 ---
 
 # Maurizio Turatti
 
 **Software Architect and Technical Advisor**
-Arona (NO), Italy | info@maurizioturatti.com | +39 347 964 7167
+Italy | info@maurizioturatti.com
 https://maurizioturatti.com | https://www.linkedin.com/in/maurizioturatti | https://github.com/mkjsix
 
 ---
@@ -384,5 +378,3 @@ Practical notes from the architecture trenches: thoughts on architecture, system
 - English: Professional Working Proficiency
 
 ---
-
-*I hereby consent to the processing of my personal data contained in this document for the purposes of recruitment and selection, in accordance with Regulation (EU) 2016/679 (GDPR).*
