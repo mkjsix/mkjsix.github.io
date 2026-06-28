@@ -34,6 +34,10 @@ const aboutJsonLd = {
   ogImage="/images/og-image.png"
   jsonLd={aboutJsonLd}
 >
+  <Fragment slot="head">
+    <link rel="alternate" type="text/markdown" href="/Maurizio_Turatti_CV.md" title="Maurizio Turatti CV (Markdown)" />
+    <meta name="keywords" content="Maurizio Turatti CV, software architect CV, technical advisor CV, architecture consultant CV" />
+  </Fragment>
   <div class="hero hero--first">
     <p class="hero-eyebrow">About</p>
     <h1 class="hero-headline">Shipping real systems.</h1>
@@ -78,9 +82,10 @@ const aboutJsonLd = {
           I take on fractional CTO and advisory engagements where that
           combination of judgment and hands-on experience matters.
         </p>
-        <p>
-          <a href="/Maurizio_Turatti_CV.pdf" download>Download CV (PDF) →</a>
-        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:16px;">
+          <a href="/Maurizio_Turatti_CV.pdf" download class="cta-btn cta-btn--primary">Download CV (PDF)</a>
+          <a href="/Maurizio_Turatti_CV.md" download="Maurizio_Turatti_CV.md" class="cta-btn cta-btn--secondary">Download CV (Markdown)</a>
+        </div>
       </div>
     </div>
 
