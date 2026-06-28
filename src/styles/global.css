@@ -241,12 +241,25 @@ nav {
   color: var(--color-text-muted);
 }
 
-.section-body p {
+.section-body p,
+.section-body ul {
   margin-bottom: 12px;
 }
 
-.section-body p:last-child {
+.section-body p:last-child,
+.section-body ul:last-child {
   margin-bottom: 0;
+}
+
+.section-body ul {
+  padding-left: 1.5rem;
+}
+
+.section-body li {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+  margin-bottom: 0.4rem;
 }
 
 .section-body strong {
@@ -265,7 +278,8 @@ nav {
   font-size: 18px;
 }
 
-.section-body--spacious p {
+.section-body--spacious p,
+.section-body--spacious ul {
   margin-bottom: 20px;
 }
 
