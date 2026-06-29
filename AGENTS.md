@@ -8,7 +8,6 @@ Instructions for AI coding agents working in this repository.
 - Runtime requirement: Node.js >= 22.12.0.
 - Main routes:
   - `/` in `src/pages/index.astro`
-  - `/work-with-me` in `src/pages/work-with-me.astro`
   - `/writing` in `src/pages/writing/index.astro`
   - `/writing/[slug]` in `src/pages/writing/[slug].astro`
 

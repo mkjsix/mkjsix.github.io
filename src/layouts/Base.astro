@@ -21,7 +21,7 @@ interface Props {
 
 const {
   title = 'Maurizio Turatti',
-  description = 'Software architecture and technical leadership for products that need to move fast. Fractional CTO, architecture reviews, and technical due diligence.',
+  description = 'Software architecture and technical leadership for products that need to move fast. CTO advisory, architecture reviews, and technical due diligence.',
   canonical,
   noindex = false,
   ogType = 'website',
@@ -59,11 +59,11 @@ const personJsonLd = {
   name: 'Maurizio Turatti',
   url: siteOrigin,
   image: ogImageURL,
-  jobTitle: 'Software Architect & Product Engineer',
+  jobTitle: 'Software Architect and Technical Leader',
   knowsAbout: [
     'Software Architecture',
     'Technical Leadership',
-    'Fractional CTO',
+    'CTO Advisory',
     'Architecture Review',
     'Technical Due Diligence',
     'Technical Strategy',
@@ -160,7 +160,6 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
           <ul class="nav-links">
             <li><a href="/about" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a></li>
             <li><a href="/writing" aria-current={Astro.url.pathname.startsWith('/writing') ? 'page' : undefined}>Writing</a></li>
-            <li><a href="/work-with-me" aria-current={Astro.url.pathname === '/work-with-me/' ? 'page' : undefined}>Work with me</a></li>
           </ul>
           <a href="https://calendly.com/maurizioturatti-info/30min" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/maurizioturatti-info/30min'}); return false;">Book a conversation</a>
           <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
@@ -170,7 +169,6 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
             <ul class="nav-drawer-links">
               <li><a href="/about" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a></li>
               <li><a href="/writing" aria-current={Astro.url.pathname.startsWith('/writing') ? 'page' : undefined}>Writing</a></li>
-              <li><a href="/work-with-me" aria-current={Astro.url.pathname === '/work-with-me/' ? 'page' : undefined}>Work with me</a></li>
             </ul>
             <a href="https://calendly.com/maurizioturatti-info/30min" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/maurizioturatti-info/30min'}); return false;">Book a conversation</a>
           </div>
