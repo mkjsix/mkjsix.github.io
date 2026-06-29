@@ -4,7 +4,7 @@ description: "Clean code, optimized queries, a strong team. And still, something
 date: 2026-06-15
 tags: ["Engineering", "Consulting"]
 draft: false
-image: "/images/blog/the-system-is-working/cover.webp"
+image: "./cover.webp"
 image_alt: "A clean, well-organized system that hides deeper structural problems"
 ---
 

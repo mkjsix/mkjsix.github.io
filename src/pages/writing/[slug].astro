@@ -1,11 +1,12 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft);
   return posts.map((post) => ({
-    params: { slug: post.id.replace(/\.md$/, '') },
+    params: { slug: post.id.replace(/\/index$/, '') },
     props: { post },
   }));
 }
@@ -17,7 +18,7 @@ const formatDate = (date: Date) =>
   date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 
 const canonicalURL = post.data.canonical_url ?? new URL(Astro.url.pathname, Astro.site).toString();
-const ogImage = post.data.image ?? '/images/og-image.png';
+const ogImage = post.data.image ? post.data.image.src : '/images/og-image.png';
 const ogImageURL = new URL(ogImage, Astro.site).toString();
 
 const blogPostingJsonLd = {
@@ -67,7 +68,7 @@ const blogPostingJsonLd = {
   <hr class="section-separator" />
   {post.data.image && (
     <figure class="post-cover">
-      <img src={post.data.image} alt={post.data.image_alt ?? post.data.title} loading="eager" />
+      <Image src={post.data.image} alt={post.data.image_alt ?? post.data.title} loading="eager" />
     </figure>
   )}
 

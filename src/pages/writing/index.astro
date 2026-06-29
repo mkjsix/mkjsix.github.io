@@ -9,7 +9,7 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
 const formatDate = (date: Date) =>
   date.toLocaleDateString("en-GB", { month: "short", year: "numeric" });
 
-const postPath = (id: string) => `/writing/${id.replace(/\.md$/, "")}`;
+const postPath = (id: string) => `/writing/${id.replace(/\/index$/, '')}`;
 
 const blogJsonLd = {
   '@context': 'https://schema.org',
