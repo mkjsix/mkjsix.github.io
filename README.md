@@ -10,7 +10,7 @@ Built with [Astro](https://astro.build) as a static site.
 
 ## Tech stack
 
-- Astro 6
+- Astro 7
 - TypeScript support
 - Astro Content Collections for writing posts
 - Static output (`dist/`)
