@@ -22,12 +22,14 @@ See `README.md` for high-level project info.
 
 ## Content and routing conventions
 
-- Blog posts live in `src/content/blog/*.md`.
+- Each blog post is a folder under `src/content/blog/` with an `index.md` file.
+- Post assets (images, etc.) are co-located in the same folder.
 - Content schema is defined in `src/content.config.ts`.
 - Required frontmatter: `title`, `description`, `date`.
-- Optional frontmatter: `tags`, `draft`, `canonical_url`.
+- Optional frontmatter: `tags`, `draft`, `canonical_url`, `image`, `image_alt`.
+- Use relative paths for `image` (e.g. `image: "./cover.webp"`).
 - `draft: true` posts are filtered out from both writing index and static paths.
-- Slugs are generated from content file IDs by removing `.md`.
+- Slugs are the folder name (the `id` of the collection entry).
 
 When changing post fields, update both markdown content and `src/content.config.ts` together.
 
