@@ -18,7 +18,6 @@ Built with [Astro](https://astro.build) as a static site.
 ## Main routes
 
 - `/` - Home page (positioning, experience, and contact CTA)
-- `/work-with-me` - Engagement models and contact details
 - `/writing` - Article index
 - `/writing/[slug]` - Individual article page
 
