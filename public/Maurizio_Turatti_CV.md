@@ -10,7 +10,7 @@ language: en
 
 # --- IDENTITY ---
 name: Maurizio Turatti
-title: Software Architect and Technical Advisor
+title: Software Architect and Technical Leader
 location: Italy
 email: info@maurizioturatti.com
 website: https://maurizioturatti.com
@@ -19,14 +19,16 @@ github: https://github.com/mkjsix
 
 # --- POSITIONING ---
 target_roles:
-  - Fractional CTO
-  - Technical Advisor
+  - CTO
+  - Head of Engineering
+  - VP Engineering
+  - Head of Delivery
   - Principal Software Architect
+  - Technical Advisor
   - Architecture Reviewer
-  - Technical Due Diligence Consultant
 
-engagement_model: independent consultant
-availability: fractional and advisory engagements
+engagement_model: employed or independent
+availability: open to fulltime, fractional, and advisory engagements
 
 # --- EXPERIENCE SUMMARY ---
 years_of_experience: 25
@@ -35,7 +37,7 @@ seniority: principal
 # --- SKILLS TAXONOMY ---
 skills:
   strategy_and_leadership:
-    - Fractional CTO
+    - CTO / Technical Leadership
     - Architecture Review
     - Technical Due Diligence
     - Stakeholder Management
@@ -129,12 +131,17 @@ open_source:
     description: Async e-mail library and CLI for Java
     url: https://github.com/SoftInstigate/ermes-mail
 
+# --- GDPR ---
+gdpr_consent: >
+  I hereby consent to the processing of my personal data contained in
+  this document for the purposes of recruitment and selection, in
+  accordance with Regulation (EU) 2016/679 (GDPR).
 ---
 
 # Maurizio Turatti
 
-**Software Architect and Technical Advisor**
-Italy | info@maurizioturatti.com
+**Software Architect and Technical Leader**
+Arona (NO), Italy | info@maurizioturatti.com | +39 347 964 7167
 https://maurizioturatti.com | https://www.linkedin.com/in/maurizioturatti | https://github.com/mkjsix
 
 ---
@@ -147,13 +154,13 @@ Software architect and product engineer with 25+ years of experience. Co-founder
 
 ## Introduction
 
-Having seen the same class of problems from inside a technology vendor, a global digital agency, and a product company I built myself gives me a perspective that is difficult to acquire any other way. I take on fractional CTO and advisory engagements where that combination of judgment and hands-on experience matters: architecture decisions that need to stick, technical assessments an organization can trust, and delivery that has stalled and needs someone to unblock it.
+Having seen the same class of problems from inside a technology vendor, a global digital agency, and a product company I built myself gives me a perspective that is difficult to acquire any other way. I work at the intersection of technical leadership and product strategy, where architecture decisions need to stick, engineering and business need to stay aligned, and the people building the system need direction as much as the system itself does.
 
 ---
 
 ## Technical Skills
 
-**Strategy and Leadership:** Fractional CTO, Architecture Review, Technical Due Diligence, Stakeholder Management, Business Development
+**Strategy and Leadership:** CTO / Technical Leadership, Architecture Review, Technical Due Diligence, Stakeholder Management, Business Development
 
 **Architecture:** Distributed Systems, Microservices, Cloud-Native, SOA, EAI, DDD, CQRS (Command Query Responsibility Segregation), API Design
 
@@ -176,17 +183,17 @@ Having seen the same class of problems from inside a technology vendor, a global
 **Luxury E-commerce**
 Technical lead for a global luxury brand's e-commerce platform in China. Coordinated distributed engineering teams across Berlin, Geneva, and Shanghai.
 
-**Mobility and Public Sector**
-Traffic data platform (GART) for ACI group, in production since 2017 with zero critical outages. 15+ data sources in DATEX II format, 7/7 365-day SLA. AWS ECS, Lambda, CloudFront, MongoDB Atlas.
+**Mobility and Traffic Management**
+GART: real-time traffic data platform, 6+ national sources (CCISS, DATEX II, ASPI, TMC), 18 microservices on AWS, 10,000+ events/day, 99.9% uptime. Serving HERE, TomTom, Radio24. In production since 2017.
 
 **Enterprise Content**
 RESTHeart integrated as core persistence and API layer for Crownpeak Content-as-a-Service, deployed on Kubernetes to thousands of enterprise clients globally across Europe and North America.
 
 **Public Sector**
-Architectural assessment of a public-facing compliance platform: 1M+ users, millions of requests per hour, sub-second response times. Performance analysis, bottleneck identification, and strategic roadmap.
+Architectural discovery and operational roadmap for a public-sector compliance platform: 400K+ entities, 9M+ API calls/hour at peak. Bottleneck identification across caching, database separation, and scalability.
 
 **Retail Backend Modernization**
-Technical lead for modernization of a high-volume production backend: 2,600+ stores, 9,500+ terminals, 141M+ documents, 1TB+ data. Throughput target exceeded by 79%: 537 req/sec vs 300 required. Query time reduced 216x.
+Backend modernization for a high-volume retail platform: 2,600+ stores, 9,500+ terminals, 141M+ documents, 1TB+ data. Throughput exceeded by 79%, query time reduced 216x.
 
 **Open Source Platform**
 RESTHeart: 2M+ open-source downloads, 10+ years in production. Adopted by Fortune 500 companies including Unisys, Northrop Grumman, and Crownpeak.
@@ -195,16 +202,17 @@ RESTHeart: 2M+ open-source downloads, 10+ years in production. Adopted by Fortun
 
 ## Experience
 
-### Technical Advisor | Product Engineer | Co-Founder
+### Co-Founder | Head of Delivery
 **SoftInstigate** · Italy
 09/2014 – present
 
-Engineering and advisory work spanning product development, platform strategy, and client engagements. Led architecture, cloud transformation, and technical delivery for SaaS and e-commerce products across automotive, retail, sustainability, and public sector, with a focus on scalability, availability, and security at every layer of the stack. Owned the DevOps and automation layer: CI/CD pipelines, infrastructure provisioning, observability, and production operations.
+Co-founded SoftInstigate in 2014. Led engineering delivery, DevOps automation, infrastructure, and software quality across all client projects and internal products. Responsible for client relationships, business development, and commercial partnerships, while contributing to the technical architecture of the company's open-source and commercial SaaS platforms.
 
 **Key achievements**
 - Co-created RESTHeart, an open-source backend for MongoDB with 2M+ downloads, 10+ years in production, adopted by Fortune 500 companies including Unisys, Northrop Grumman, and Crownpeak
-- Designed and delivered GART, a traffic data platform for the ACI group, in production since 2017 with zero critical outages under a 7/7 365-day SLA
+- Designed and delivered GART (Gateway Agenzia Radio Traffic), a real-time traffic data platform integrating 6+ national sources (CCISS, DATEX II, ASPI, TMC), 18 microservices on AWS, 10,000+ events/day, in production since 2017 with 99.9% uptime
 - Led backend modernization for a retail platform serving 2,600+ stores and 9,500+ terminals (141M+ documents, 1TB+ data); throughput target exceeded by 79%, query time reduced 216x
+- Architectural discovery and operational roadmap for a public-sector compliance platform: 400K+ entities, 9M+ API calls/hour at peak
 
 *Technology stack: Java, GraalVM, Node.js, Angular, MongoDB, AWS (ECS, API Gateway, Lambda, CloudFront), Docker, REST APIs, CI/CD, AI-assisted development*
 
@@ -378,3 +386,5 @@ Practical notes from the architecture trenches: thoughts on architecture, system
 - English: Professional Working Proficiency
 
 ---
+
+*I hereby consent to the processing of my personal data contained in this document for the purposes of recruitment and selection, in accordance with Regulation (EU) 2016/679 (GDPR).*
