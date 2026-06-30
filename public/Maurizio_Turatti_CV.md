@@ -141,7 +141,7 @@ gdpr_consent: >
 # Maurizio Turatti
 
 **Software Architect and Technical Leader**
-Arona (NO), Italy | info@maurizioturatti.com | +39 347 964 7167
+Italy | info@maurizioturatti.com |
 https://maurizioturatti.com | https://www.linkedin.com/in/maurizioturatti | https://github.com/mkjsix
 
 ---
@@ -154,7 +154,7 @@ Software architect and product engineer with 25+ years of experience. Co-founder
 
 ## Introduction
 
-Having seen the same class of problems from inside a technology vendor, a global digital agency, and a product company I built myself gives me a perspective that is difficult to acquire any other way. I work at the intersection of technical leadership and product strategy, where architecture decisions need to stick, engineering and business need to stay aligned, and the people building the system need direction as much as the system itself does.
+My career has always involved owning both sides of a client engagement: the technical solution and the commercial relationship that brings it in. I have written the proposals, scoped the architecture, and then stayed on to build what I scoped, across enterprise integration projects, digital transformation programs, and SaaS platforms. That became the operating model of the company I co-founded: bring in the work, architect it, ship it, keep it running.
 
 ---
 
@@ -196,7 +196,7 @@ Architectural discovery and operational roadmap for a public-sector compliance p
 Backend modernization for a high-volume retail platform: 2,600+ stores, 9,500+ terminals, 141M+ documents, 1TB+ data. Throughput exceeded by 79%, query time reduced 216x.
 
 **Open Source Platform**
-RESTHeart: 2M+ open-source downloads, 10+ years in production. Adopted by Fortune 500 companies including Unisys, Northrop Grumman, and Crownpeak.
+RESTHeart: an agent-ready backend for MongoDB, used in production for 10+ years. Adopted by Fortune 500 companies including Unisys, Northrop Grumman, and Crownpeak.
 
 ---
 
