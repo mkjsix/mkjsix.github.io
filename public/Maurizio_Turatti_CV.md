@@ -10,7 +10,7 @@ language: en
 
 # --- IDENTITY ---
 name: Maurizio Turatti
-title: Software Architect and Technical Leader
+title: Architectural Decision-Maker for Complex Technical Challenges
 location: Italy
 email: info@maurizioturatti.com
 website: https://maurizioturatti.com
@@ -93,7 +93,7 @@ skills:
     - Retrieval-Augmented Generation (RAG)
     - Agentic Workflows
     - Model Context Protocol (MCP)
-    - AI-augmented Development
+    - AI approached as architecture and integration problems
 
 # --- EDUCATION ---
 education:
@@ -122,7 +122,6 @@ open_source:
     description: Agent-ready backend for MongoDB
     url: https://github.com/SoftInstigate/restheart
     stack: [Java, GraalVM, MongoDB]
-    downloads: "2M+"
     years_in_production: "10+"
   - name: Facet
     description: Data-driven web framework, turn APIs into HTML without code
@@ -140,7 +139,7 @@ gdpr_consent: >
 
 # Maurizio Turatti
 
-**Software Architect and Technical Leader**
+**Software architecture and technical leadership for products that need to move fast.**
 Italy | info@maurizioturatti.com |
 https://maurizioturatti.com | https://www.linkedin.com/in/maurizioturatti | https://github.com/mkjsix
 
@@ -148,17 +147,17 @@ https://maurizioturatti.com | https://www.linkedin.com/in/maurizioturatti | http
 
 ## Professional Summary
 
-Software architect and product engineer with 25+ years of experience. Co-founder of SoftInstigate, creator of RESTHeart. Background spans enterprise integration, cloud platforms, distributed systems, and AI-augmented development. Former SOA architect at Sun Microsystems (EMEA) and Technical Architect at AKQA Berlin.
+25+ years translating business goals into architectural decisions. Co-founder of SoftInstigate, where I design, build, and operate production systems for enterprise clients. From enterprise integration at Sun Microsystems to cloud platforms and AI-augmented systems, my decisions come from operating real software in production.
 
 ---
 
 ## Introduction
 
-My career has always involved owning both sides of a client engagement: the technical solution and the commercial relationship that brings it in. I have written the proposals, scoped the architecture, and then stayed on to build what I scoped, across enterprise integration projects, digital transformation programs, and SaaS platforms. That became the operating model of the company I co-founded: bring in the work, architect it, ship it, keep it running.
+My career has always involved owning both sides of a client engagement: the technical solution and the commercial relationship. I bring in the work, design the solution, deliver it, and keep it running, across enterprise integration, cloud platforms, and product engineering.
 
 ---
 
-## Technical Skills
+## Skills
 
 **Strategy and Leadership:** CTO / Technical Leadership, Architecture Review, Technical Due Diligence, Stakeholder Management, Business Development
 
@@ -174,47 +173,45 @@ My career has always involved owning both sides of a client engagement: the tech
 
 **Frontend:** Angular, Headless CMS, Static Site Generation, Server-Side Rendering
 
-**AI:** Large Language Model (LLM) integration, Retrieval-Augmented Generation (RAG), Agentic Workflows, Model Context Protocol (MCP)
+**AI:** Large Language Model (LLM) integration, Retrieval-Augmented Generation (RAG), Agentic Workflows, Model Context Protocol (MCP), approached as architecture and integration problems
 
 ---
 
-## Key Projects
+## Selected work
 
-**Luxury E-commerce**
-Technical lead for a global luxury brand's e-commerce platform in China. Coordinated distributed engineering teams across Berlin, Geneva, and Shanghai.
+**Reducing Integration Risk**
+Designed a real-time traffic platform integrating 6+ national sources. We prioritized event ordering over throughput, which preserved data integrity across 18 microservices. 10,000+ events/day, 99.9% uptime, in production since 2017.
 
-**Mobility and Traffic Management**
-GART: real-time traffic data platform, 6+ national sources (CCISS, DATEX II, ASPI, TMC), 18 microservices on AWS, 10,000+ events/day, 99.9% uptime. Serving HERE, TomTom, Radio24. In production since 2017.
+**Taming Legacy Complexity**
+Led a retail backend modernization across 2,600+ stores and 9,500+ terminals. The decision to separate read and write paths, instead of replacing the data layer, reduced query time 216x and exceeded throughput targets by 79%.
 
-**Enterprise Content**
-RESTHeart integrated as core persistence and API layer for Crownpeak Content-as-a-Service, deployed on Kubernetes to thousands of enterprise clients globally across Europe and North America.
+**Building for Longevity**
+RESTHeart was designed to be simple on purpose: one component, fewer things that can go wrong. 10+ years in production, 2M+ downloads. Adopted by Unisys, Northrop Grumman, and Crownpeak.
 
-**Public Sector**
-Architectural discovery and operational roadmap for a public-sector compliance platform: 400K+ entities, 9M+ API calls/hour at peak. Bottleneck identification across caching, database separation, and scalability.
+**Scaling Without Over-Engineering**
+Architectural discovery for a public-sector platform handling 400K+ entities and 9M+ API calls/hour. The bottleneck turned out to be in the caching strategy, which meant we could avoid a costly re-platforming.
 
-**Retail Backend Modernization**
-Backend modernization for a high-volume retail platform: 2,600+ stores, 9,500+ terminals, 141M+ documents, 1TB+ data. Throughput exceeded by 79%, query time reduced 216x.
+**Coordinating Across Constraints**
+Led architecture for a luxury brand's e-commerce platform across teams in Berlin, Geneva, and Shanghai. Getting three teams in three countries to agree on how the system should be structured was mostly an alignment problem, with technology coming second.
 
-**Open Source Platform**
-RESTHeart: an agent-ready backend for MongoDB, used in production for 10+ years. Adopted by Fortune 500 companies including Unisys, Northrop Grumman, and Crownpeak.
+**AI as an Architecture Decision**
+Good architecture becomes more valuable when AI enters the picture, because the quality of the underlying structure determines how much value AI can deliver. Every engagement combines this with direct experience in production.
 
 ---
 
 ## Experience
 
-### Co-Founder | Head of Delivery
+### Co-Founder | Technical Advisor
 **SoftInstigate** · Italy
 09/2014 – present
 
-Co-founded SoftInstigate in 2014. Led engineering delivery, DevOps automation, infrastructure, and software quality across all client projects and internal products. Responsible for client relationships, business development, and commercial partnerships, while contributing to the technical architecture of the company's open-source and commercial SaaS platforms.
+Responsible for engineering delivery, DevOps automation, infrastructure, and software quality across all client projects and internal products. Client relationships, business development, and commercial partnerships, while contributing to the technical architecture of the company's open-source and commercial SaaS platforms.
 
-**Key achievements**
-- Co-created RESTHeart, an open-source backend for MongoDB with 2M+ downloads, 10+ years in production, adopted by Fortune 500 companies including Unisys, Northrop Grumman, and Crownpeak
-- Designed and delivered GART (Gateway Agenzia Radio Traffic), a real-time traffic data platform integrating 6+ national sources (CCISS, DATEX II, ASPI, TMC), 18 microservices on AWS, 10,000+ events/day, in production since 2017 with 99.9% uptime
-- Led backend modernization for a retail platform serving 2,600+ stores and 9,500+ terminals (141M+ documents, 1TB+ data); throughput target exceeded by 79%, query time reduced 216x
-- Architectural discovery and operational roadmap for a public-sector compliance platform: 400K+ entities, 9M+ API calls/hour at peak
-
-*Technology stack: Java, GraalVM, Node.js, Angular, MongoDB, AWS (ECS, API Gateway, Lambda, CloudFront), Docker, REST APIs, CI/CD, AI-assisted development*
+**How I work**
+- I own the full decision chain, from design to delivery to operations. Shortcuts taken during design come back to me during maintenance
+- Simplicity is a deliberate choice. RESTHeart was designed to have fewer things that can go wrong. 10+ years and 2M+ downloads later, that decision still holds
+- When modernizing legacy systems, I look for the minimum architectural change that gets the required result. The most impressive solution is rarely the right one
+- Infrastructure and tooling decisions are evaluated against a simple question: does this reduce the risk of the next deployment going wrong?
 
 ---
 
@@ -222,15 +219,12 @@ Co-founded SoftInstigate in 2014. Led engineering delivery, DevOps automation, i
 **AKQA** · Berlin, Germany
 10/2013 – 08/2014
 
-Technical architect for enterprise digital transformation at a global digital agency. Delivered a luxury brand's e-commerce platform in China (Adobe Experience Manager), coordinating distributed engineering teams across Berlin, Geneva, and Shanghai.
+Three engineering teams across three countries, three regulatory contexts, and one shared platform. Making architectural decisions that each team could own independently while keeping the system coherent. Choosing where coupling was acceptable and where it would become a problem.
 
-**Key responsibilities**
-- Solution architecture for large-scale digital platforms and enterprise content management systems
-- Pre-sales: technical proposals, architecture documentation, and cost estimation for RFPs
-- Technology evaluation and recommendation for enterprise content management and digital platforms
-- Risk assessment and technical feasibility analysis for complex transformation programs
-
-*Technology stack: Java, Adobe Experience Manager, Docker, enterprise integration patterns*
+**Key decisions**
+- Defined integration boundaries that let distributed teams deploy independently without breaking shared contracts
+- Translated technical proposals into risk-structured decision frameworks for non-technical stakeholders during pre-sales
+- Evaluated technology options by their long-term cost of ownership, not by feature lists
 
 ---
 
@@ -238,11 +232,10 @@ Technical architect for enterprise digital transformation at a global digital ag
 **Sourcesense** · Milan, Italy
 12/2011 – 05/2013
 
-Led a consulting team delivering open-source enterprise solutions across finance, telecom, and public sector. Combined technical leadership with commercial responsibilities and business development.
+Helping clients evaluate open-source technologies for enterprise-critical systems. The wrong choice compounds over years. I led both the technical assessment and the commercial relationship, because the person recommending the architecture should be the one accountable for whether it works.
 
-- Team management, technical mentoring, and recruiting for consulting practice
-- Business development and pre-sales: solution design, proposals, client presentations
-- Delivery oversight for enterprise projects with open-source technologies
+- Guided clients through technology adoption decisions where the wrong choice would compound over years. Recommendations were always grounded in operational reality, not vendor positioning
+- Built and mentored a consulting team that could scope and deliver complex enterprise projects
 
 ---
 
@@ -250,11 +243,10 @@ Led a consulting team delivering open-source enterprise solutions across finance
 **Alfresco** · Italy
 01/2010 – 12/2011
 
-Supported the launch of Alfresco's Italian market operations. Delivered pre-sales consulting and technical engagements for enterprise content management across enterprise clients and system integrators.
+Helping enterprise clients decide whether to adopt open-source content management in place of established proprietary platforms. That kind of decision requires understanding both the technical architecture and how ready the organization is for change.
 
-- Pre-sales consulting and solution design for enterprise content management
-- Technical consulting engagements with enterprise clients and system integrators
-- Partner enablement and technical training on the Alfresco platform
+- Designed migration and integration paths that reduced the risk of open-source adoption for enterprise clients
+- Built partner confidence through technical enablement grounded in real-world production scenarios
 
 ---
 
@@ -262,13 +254,10 @@ Supported the launch of Alfresco's Italian market operations. Delivered pre-sale
 **Self Employed** · EMEA
 07/2007 – 01/2010
 
-Independent consultant specializing in enterprise architecture, Service-Oriented Architecture (SOA), and Enterprise Application Integration (EAI) across Europe and the Middle East. Official consulting and training partner for Sun Microsystems, delivering Java CAPS and Open ESB (Enterprise Service Bus) projects.
+Enterprise integration is a decision problem: which systems should talk to each other, how tightly should they be coupled, and where does shared state become a liability. I helped organizations across EMEA answer these questions before writing any integration code. The architecture of integration determines the operational cost for years.
 
-- Enterprise architecture consulting for complex system integration projects across EMEA
-- SOA/EAI solution design and implementation using Java CAPS and Open ESB platforms
-- Technical training delivery for enterprise clients and Sun Microsystems partners
-
-*Technology stack: Java CAPS, Open ESB, SOA/EAI patterns, enterprise middleware*
+- Designed integration architectures focused on where to place the boundaries of shared state, rather than which middleware to use
+- Delivered training that taught teams to reason about integration trade-offs
 
 ---
 
@@ -276,13 +265,10 @@ Independent consultant specializing in enterprise architecture, Service-Oriented
 **Sun Microsystems** · Italy / EMEA
 08/2006 – 06/2007
 
-Lead architect for Service-Oriented Architecture (SOA) and enterprise integration in the Italian market. Member of Sun's EMEA SOA/BI Consulting Practice, working with Fortune 500 clients on large-scale integration programs.
+Working with Fortune 500 clients on large-scale integration programs. The primary challenge was organizational alignment. Each integration point was a decision about ownership, contracts, and who would be responsible when something broke at 3am. The technology was the easy part.
 
-- Lead architecture role for SOA/EAI solution delivery across Italian and EMEA enterprise clients
-- Enterprise integration architecture design on ICAN (Integration Composite Application Network) and Java CAPS
-- Pre-sales technical consulting and solution positioning
-
-*Technology stack: Java CAPS, ICAN, Open ESB, SOA/EAI patterns*
+- Architected integration programs where the critical decision was defining ownership boundaries between systems maintained by different teams
+- Helped clients understand that SOA is an organizational commitment to interface contracts and operational discipline, more than a technology choice
 
 ---
 
@@ -290,13 +276,10 @@ Lead architect for Service-Oriented Architecture (SOA) and enterprise integratio
 **SeeBeyond** · EMEA
 09/2004 – 08/2006
 
-Delivered enterprise integration consulting for SeeBeyond's major European customers across EMEA. Implemented ICAN and Java CAPS integration solutions for complex system integration projects.
+Enterprise integration in large organizations is a risk management exercise. Each connection between systems creates a dependency that someone will have to maintain. I helped clients make informed decisions about which integrations were worth the long-term operational cost.
 
-- SOA/EAI solution implementation for enterprise customers across Europe
-- Technical consulting for ICAN and Java CAPS integration platforms
-- Partner enablement and technical support across EMEA
-
-*Technology stack: ICAN, Java CAPS, enterprise application integration, middleware platforms*
+- Guided enterprise clients through integration decisions where the cost of reversing a bad choice would multiply over years
+- Built integration architectures that prioritized operational simplicity over feature completeness
 
 ---
 
@@ -306,9 +289,7 @@ Delivered enterprise integration consulting for SeeBeyond's major European custo
 **Iriscube Reply** · Milan, Italy
 02/2004 – 08/2004
 
-Developed a scalable distributed messaging system for Vodafone built on Java Jini technology, integrated with a multi-device content delivery platform serving mobile and web channels.
-
-*Technology stack: Java, Java Jini, distributed systems, asynchronous message processing*
+Built a distributed messaging system for Vodafone. One of my first lessons in how architectural decisions at the protocol level determine system behavior years later. We chose asynchronous message processing because the systems on each side had to evolve independently.
 
 ---
 
@@ -316,9 +297,7 @@ Developed a scalable distributed messaging system for Vodafone built on Java Jin
 **I-Side** · Italy
 08/2001 – 01/2004
 
-Software architect for web and instant messaging applications. Core development team member for Tiscali Messenger, one of the first large-scale consumer instant messaging platforms in Italy.
-
-*Technology stack: Java, C++, instant messaging protocols, distributed systems*
+Core development team member for Tiscali Messenger, one of Italy's first large-scale consumer instant messaging platforms. Early exposure to the tension between real-time responsiveness and system stability, a problem I would encounter in different forms throughout my career.
 
 ---
 
@@ -326,9 +305,7 @@ Software architect for web and instant messaging applications. Core development 
 **Artificial Intelligence Software** · Italy
 04/1998 – 08/2001
 
-Developed 3D graphics and real-time visualization algorithms for GIS (Geographic Information System) terrain models and industrial applications in the automotive and aerospace sectors.
-
-*Technology stack: OpenGL, Java, Python, C++, Linux, Windows, SGI IRIX*
+Developed real-time 3D visualization algorithms for GIS terrain models and industrial applications. Working across heterogeneous platforms taught me that the hardest architectural decisions are often about constraints you cannot control: hardware, data formats, and performance budgets.
 
 ---
 
@@ -336,9 +313,7 @@ Developed 3D graphics and real-time visualization algorithms for GIS (Geographic
 **Università degli Studi di Milano** · Milan, Italy
 04/1997 – 11/1997
 
-Research assistant in computational geometry and machine learning. Developed a probabilistic learning system in C++ based on Adaptive Boosting of Neural Networks (AdaBoost) for pattern recognition, and contributed to research on Probably Approximately Correct (PAC) learning algorithms.
-
-*Technology stack: C++, neural networks, computational geometry, 3D GIS visualization*
+Research in computational geometry and machine learning, building probabilistic learning systems long before AI became mainstream. That early experience with uncertainty and approximation shaped how I think about architectural decisions: they are choices between different trade-offs.
 
 ---
 
@@ -356,15 +331,15 @@ Università degli Studi di Milano · 1993–1999
 
 ---
 
-## Technical Training Delivery
+## Teaching & Knowledge Transfer
 
-Created and delivered technical courses and workshops for enterprise clients and partner networks across Italy and EMEA, covering Java, Git, Maven, MongoDB, and Docker.
+Created and delivered technical courses and workshops for enterprise clients and partner networks across Italy and EMEA. Teaching forced me to articulate why certain decisions are made, which in turn sharpened my own judgment.
 
 ---
 
 ## Writing
 
-Practical notes from the architecture trenches: thoughts on architecture, systems, and engineering.
+Thinking out loud about architectural decisions, complexity, and what actually works in production.
 
 - [The system is working. That is the problem.](https://maurizioturatti.com/writing/the-system-is-working) (Jun 2026)
 - [Facet: A Different Approach to Web Development](https://medium.com/softinstigate-team/facet-a-different-approach-to-web-development-af884abe0b69) (Jan 2026)
