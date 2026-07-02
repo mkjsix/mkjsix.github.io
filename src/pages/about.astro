@@ -9,12 +9,12 @@ const aboutJsonLd = {
   url: "https://maurizioturatti.com/about/",
   name: "About Maurizio Turatti",
   description:
-    "Software architect, product engineer, and company co-founder. A career that bridges hands-on development with business leadership. From writing proposals and scoping architecture to shipping code and running production systems.",
+    "Twenty-five years of making technical decisions and living with the results. Architecture advisory grounded in direct experience building and operating software.",
   mainEntity: {
     "@type": "Person",
     name: "Maurizio Turatti",
     url: "https://maurizioturatti.com/",
-    jobTitle: "Software Architect, Product Engineer, and Company Co-Founder",
+    jobTitle: "Architecture Advisor and Company Co-Founder",
     worksFor: {
       "@type": "Organization",
       name: "SoftInstigate",
@@ -30,29 +30,29 @@ const aboutJsonLd = {
 
 <Base
   title="About - Maurizio Turatti"
-  description="Software architect, product engineer, and company co-founder. A career that bridges hands-on development with business leadership. From writing proposals and scoping architecture to shipping code and running production systems."
+  description="Twenty-five years of making technical decisions and living with the results. Architecture advisory grounded in direct experience building and operating software."
   ogImage="/images/og-image.png"
   jsonLd={aboutJsonLd}
 >
   <Fragment slot="head">
     <link rel="alternate" type="text/markdown" href="/Maurizio_Turatti_CV.md" title="Maurizio Turatti CV (Markdown)" />
-    <meta name="keywords" content="Maurizio Turatti CV, software architect CV, technical advisor CV, architecture consultant CV" />
+    <meta name="keywords" content="Maurizio Turatti, architecture advisor, technical due diligence, CTO advisory, architectural decisions, software architecture" />
   </Fragment>
   <div class="hero hero--first">
     <p class="hero-eyebrow">About</p>
-    <h1 class="hero-headline">Building the business and the systems.</h1>
+    <h1 class="hero-headline">The decisions behind the systems.</h1>
   </div>
 
   <div class="page-content section-stack">
     <div class="section-block">
       <div class="section-body section-body--lead section-body--spacious">
         <p>
-          I have always owned both sides of a client engagement: the technical solution and the commercial relationship. Hands-on architecture combined with business development and product strategy. That mix is what I bring to CTO advisory and technical leadership engagements.
+          I have spent twenty-five years making and living with technical decisions. As a company co-founder, architect, and advisor I understand the problem, evaluate the trade-offs, and make the call that reduces risk without adding unnecessary complexity.
         </p>
         <p>
-          25+ years in the industry. Co-founder of <a href="https://softinstigate.com" target="_blank" rel="noopener"
+          Co-founder of <a href="https://softinstigate.com" target="_blank" rel="noopener"
             >SoftInstigate</a
-          > and creator of <a href="https://restheart.org" target="_blank" rel="noopener">RESTHeart</a>, an open-source platform that turns MongoDB into REST, GraphQL, and WebSocket APIs with built-in security and a native MCP server for AI agents.
+          > and creator of <a href="https://restheart.org" target="_blank" rel="noopener">RESTHeart</a>, an open-source platform that turns MongoDB into REST, GraphQL, and WebSocket APIs with built-in security and a native MCP server for AI agents. What I learn from building and operating real software shapes every decision I bring to an engagement.
         </p>
         <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:16px;">
           <a href="/Maurizio_Turatti_CV.md" download="Maurizio_Turatti_CV.md" class="cta-btn cta-btn--primary">Download CV (Markdown)</a>
@@ -67,42 +67,33 @@ const aboutJsonLd = {
           <div class="surface-card">
             <p class="card-label">Luxury e-commerce</p>
             <p class="card-text">
-              Technical Architect for a global luxury brand's e-commerce platform in
-              China. Coordinated distributed engineering teams across Berlin,
-              Geneva, and Shanghai.
+              Multi-region delivery across Berlin, Geneva, and Shanghai. The challenge was not the technology. It was aligning distributed teams around a single architectural direction for a global luxury brand's e-commerce platform in China.
             </p>
           </div>
           <div class="surface-card">
             <p class="card-label">Retail, backend modernization</p>
             <p class="card-text">
-              Stabilization of a high-volume production backend serving 2,600+ stores and 9,500+
-              terminals: 141M+ documents, 1TB+ data. Throughput target exceeded by 79%, query time reduced 216x.
+              A system serving 2,600+ stores and 9,500+ terminals (141M+ documents, 1TB+ data) that was still working but had outgrown its original design. Throughput target exceeded by 79%, query time reduced 216x.
             </p>
           </div>
           <div class="surface-card">
             <p class="card-label">Mobility &amp; public sector</p>
             <p class="card-text">
-              Traffic data platform (GART) for ACI group, integrating 6+ national
-              sources (CCISS, DATEX II, ASPI, TMC). 18 microservices on AWS,
-              10,000+ events/day. Serving HERE, TomTom, Radio24. In production
-              since 2017 with 99.9% uptime.
+              Traffic data platform (GART) for ACI group. 6+ national sources integrated through 18 microservices on AWS. 10,000+ events/day, 99.9% uptime since 2017. Serving HERE, TomTom, Radio24.
             </p>
           </div>
           <div class="surface-card">
             <p class="card-label">Public sector</p>
             <p class="card-text">
-              Architectural discovery and operational roadmap for a public-sector
-              compliance platform: 400K+ entities, 9M+ API calls/hour at peak.
-              Bottleneck identification across caching, database separation, and
-              scalability.
+              Architectural discovery for a compliance platform at 400K+ entities and 9M+ API calls/hour at peak. The task was to identify where the actual constraints were and build a roadmap that prioritized what would make a measurable difference.
             </p>
           </div>
           <div class="surface-card">
             <p class="card-label">Enterprise content</p>
             <p class="card-text">
-              RESTHeart integrated as core persistence and API layer for Crownpeak
+              RESTHeart adopted as core persistence and API layer for Crownpeak
               Content-as-a-Service, deployed on Kubernetes to thousands of enterprise
-              clients globally across Europe and North America.
+              clients globally. Architecture designed for long-term maintainability across a global client base.
             </p>
           </div>
           <div class="surface-card">
@@ -119,12 +110,24 @@ const aboutJsonLd = {
     </div>
 
     <div class="section-block">
+      <h2 class="section-title">AI and architecture</h2>
+      <div class="section-body">
+        <p>
+          AI amplifies the value of good architectural decisions, and the cost of bad ones. Well-structured systems benefit immediately from AI tooling. Systems with accumulated technical debt feel the pressure faster.
+        </p>
+        <p>
+          I approach AI the same way I approach any technology: as a decision about integration, context, and trade-offs. RESTHeart includes a built-in MCP server for AI agents, because the architecture needed to support that kind of integration from the ground up. The question is always where AI creates value in a specific system, and what the architecture needs to support it.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-block">
       <h2 class="section-title">Career</h2>
       <div class="section-body section-body--spacious">
         <p>
           <strong>SoftInstigate</strong>, Co-Founder &amp; Head of Delivery
           (2014 – present)<br />
-          Co-founded the company in 2014. Led both the engineering delivery and the commercial side: business development, client relationships, pre-sales, proposal writing, and commercial partnerships. Product development and advisory across automotive, retail, mobility, and public sector. Owned the full chain from first client conversation to production operations.
+          Co-founded the company in 2014. Owned both the technical direction and the commercial relationship: business development, client engagement, pre-sales, proposal writing, and delivery. Product development and architecture advisory across automotive, retail, mobility, and public sector. Every engagement started with understanding what decision needed to be made.
         </p>
         <ul>
           <li>Co-created <a href="https://restheart.org" target="_blank" rel="noopener">RESTHeart</a>, growing it from concept to 2M+ downloads and Fortune 500 adoption over 10+ years</li>
@@ -133,17 +136,12 @@ const aboutJsonLd = {
         </ul>
         <p>
           <strong>AKQA</strong>, Technical Architect, Berlin (2013 – 2014)<br />
-          Technical architect for enterprise digital transformation at a global digital
-          agency. Delivered a luxury brand's e-commerce platform in China (Adobe
-          Experience Manager), coordinating distributed engineering teams across
-          Berlin, Geneva, and Shanghai. Pre-sales technical proposals, architecture
-          documentation, and cost estimation for RFPs.
+          Enterprise digital transformation at a global digital agency. Delivered a luxury brand's e-commerce platform in China, coordinating distributed engineering teams across Berlin, Geneva, and Shanghai. The real challenge was making architectural decisions that multiple teams across three continents could align around.
         </p>
         <p>
           <strong>Sourcesense</strong>, Delivery Manager (2011 – 2013)<br />
           Led a consulting team delivering open-source enterprise solutions across
-          finance, telecom, and public sector. Combined technical leadership with
-          commercial responsibilities.
+          finance, telecom, and public sector. Technical decisions made in the context of commercial realities: timelines, budgets, and client expectations.
         </p>
         <p>
           <strong>Alfresco</strong>, Senior Solutions Engineer, Italy (2010 –
@@ -153,13 +151,10 @@ const aboutJsonLd = {
         </p>
         <p>
           <strong>Earlier career (1997 – 2010)</strong><br />
-          Progressive career across enterprise integration, distributed systems, and
-          software research: SOA architect at Sun Microsystems for Italy and
-          the EMEA region, SOA/EAI consulting at SeeBeyond (ICAN and Java CAPS
-          platforms), founding an independent consulting practice as official
-          partner for Sun Microsystems, delivering Java CAPS and Open ESB projects
-          across EMEA, and research in computational geometry and machine
-          learning at the Università degli Studi di Milano.
+          Enterprise integration, distributed systems, and software research: SOA architect at Sun Microsystems for Italy and
+          the EMEA region, SOA/EAI consulting at SeeBeyond, founding an independent consulting practice as official
+          partner for Sun Microsystems, and research in computational geometry and machine
+          learning at the Università degli Studi di Milano. These roles built the foundation for how I evaluate technical trade-offs today.
         </p>
       </div>
     </div>
@@ -172,7 +167,7 @@ const aboutJsonLd = {
             href="https://github.com/SoftInstigate/restheart"
             target="_blank"
             rel="noopener"><strong>RESTHeart</strong></a
-          >: The agent-ready backend for MongoDB (Java, GraalVM)<br />
+          >: Agent-ready backend for MongoDB, built over ten years of architectural decisions aimed at keeping things simple and understandable. 2M+ downloads, Fortune 500 adoption. (Java, GraalVM)<br />
           <a
             href="https://github.com/SoftInstigate/facet"
             target="_blank"
