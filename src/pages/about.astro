@@ -47,7 +47,7 @@ const aboutJsonLd = {
     <div class="section-block">
       <div class="section-body section-body--lead section-body--spacious">
         <p>
-          I have spent twenty-five years making technical decisions and living with the consequences, often with incomplete information. Understand the problem, find the trade-offs that actually matter, make the call that keeps risk manageable. The trade-offs that matter are the ones that show up at 2 AM when something breaks in production.
+          I have spent twenty-five years making technical decisions and living with the consequences, often under incomplete information and unclear constraints. Understand the problem, surface the trade-offs that actually matter, and make the call that keeps risk manageable. The trade-offs that matter are the ones that show up at 2 AM when something breaks in production.
         </p>
         <p>
           Most architecture problems are decision problems that were never made explicit.
@@ -55,7 +55,7 @@ const aboutJsonLd = {
         <p>
           Co-founder of <a href="https://softinstigate.com" target="_blank" rel="noopener"
             >SoftInstigate</a
-          > and creator of <a href="https://restheart.org" target="_blank" rel="noopener">RESTHeart</a>, in production for 10+ years. Building software and living with the architectural decisions that shaped it.
+          > and creator of <a href="https://restheart.org" target="_blank" rel="noopener">RESTHeart</a>, in production for 10+ years.
         </p>
         <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:16px;">
           <a href="/Maurizio_Turatti_CV.md" download="Maurizio_Turatti_CV.md" class="cta-btn cta-btn--primary">Download CV (Markdown)</a>
@@ -63,65 +63,36 @@ const aboutJsonLd = {
       </div>
     </div>
 
+    <!-- How I work -->
     <div class="section-block">
-      <h2 class="section-title">Selected work</h2>
-      <div class="section-body">
-        <div class="card-grid">
-          <div class="surface-card">
-            <p class="card-label">Luxury e-commerce</p>
-            <p class="card-text">
-              Three cities, three teams, one architecture. Distributed
-              teams in Berlin, Geneva, and Shanghai needed to work against a
-              single direction for a global luxury brand's platform in China.
-              A wrong architectural assumption would have broken multiple
-              markets at once.
-            </p>
-          </div>
-          <div class="surface-card">
-            <p class="card-label">Retail, backend modernization</p>
-            <p class="card-text">
-              A system that could not stop. 2,600+ stores and 9,500+ terminals
-              running on the old backend while the new one took over. A wrong
-              data migration would have been visible in every store the next
-              morning. 141M+ documents, 1TB+ data. Throughput target exceeded
-              by 79%, query time reduced 216x.
-            </p>
-          </div>
-          <div class="surface-card">
-            <p class="card-label">Mobility &amp; public sector</p>
-            <p class="card-text">
-              6+ national traffic sources, each with its own schema and no
-              single source of truth. The architecture had to make
-              incompatible data look coherent. 18 microservices on AWS,
-              99.9% uptime since 2017. Serving HERE, TomTom, Radio24.
-            </p>
-          </div>
-          <div class="surface-card">
-            <p class="card-label">Public sector</p>
-            <p class="card-text">
-              400K+ entities, 9M+ API calls/hour at peak. Requirements still
-              forming while the architecture needed to proceed. The first step
-              was finding the real constraints.
-            </p>
-          </div>
-          <div class="surface-card">
-            <p class="card-label">Enterprise content</p>
-            <p class="card-text">
-              Persistence and API layer for Crownpeak, deployed on Kubernetes
-              to thousands of enterprise clients globally. One API contract,
-              thousands of clients depending on it. The hard decision: an
-              architecture that had to hold up over many years of sustained
-              use.
-            </p>
-          </div>
-          <div class="surface-card">
-            <p class="card-label">Open source platform</p>
-            <p class="card-text">
-              RESTHeart: 10+ years in production, 2M+ downloads. Evolving
-              architecture across many major versions without rewrite. Adopted
-              by Unisys, Northrop Grumman, and Crownpeak.
-            </p>
-          </div>
+      <h2 class="section-title">How I work</h2>
+      <div class="card-grid">
+        <div class="surface-card">
+          <p class="card-label">Unclear systems and constraints</p>
+          <p class="card-text">
+            My work usually starts where the problem is not yet fully defined.
+            Requirements are incomplete, constraints are implicit, and the
+            system is already running in production. The first task is
+            understanding what actually matters before proposing anything.
+          </p>
+        </div>
+        <div class="surface-card">
+          <p class="card-label">Decisions under pressure</p>
+          <p class="card-text">
+            Most systems do not fail at design time. They fail when
+            assumptions meet production reality. The decisions that matter
+            are the ones made with incomplete information, where the
+            consequences of being wrong are visible and expensive.
+          </p>
+        </div>
+        <div class="surface-card">
+          <p class="card-label">Long-term consequences</p>
+          <p class="card-text">
+            Architecture decisions are difficult to undo. A choice that
+            saves a month now can cost a year later. Every decision I make
+            considers how the system will need to evolve, and how hard it
+            will be to change course if the original assumptions were wrong.
+          </p>
         </div>
       </div>
     </div>
@@ -134,36 +105,6 @@ const aboutJsonLd = {
           good structure and the cost of accumulated technical debt. The
           decision is where it creates value in this specific system, and
           what the architecture needs to support it.
-        </p>
-      </div>
-    </div>
-
-    <div class="section-block">
-      <h2 class="section-title">Career</h2>
-      <div class="section-body section-body--spacious">
-        <p>
-          <strong>SoftInstigate</strong>, Co-Founder &amp; Head of Delivery
-          (2014 – present)<br />
-          Co-founded the company. Technical direction and commercial side in
-          one role: business development, client work, pre-sales, delivery.
-          Automotive, retail, mobility, public sector.
-        </p>
-        <p>
-          <strong>AKQA</strong>, Technical Architect, Berlin (2013 – 2014)<br />
-          Luxury e-commerce in China across Berlin, Geneva, and Shanghai.
-          Distributed teams, one architecture.
-        </p>
-        <p>
-          <strong>Sourcesense</strong>, Delivery Manager (2011 – 2013)<br />
-          Open-source enterprise solutions across finance, telecom, and
-          public sector.
-        </p>
-        <p>
-          <strong>Earlier career (2003 – 2011)</strong><br />
-          Alfresco, Sun Microsystems, SeeBeyond. Enterprise integration and
-          distributed systems when SOA was still being figured out in
-          production. Research in computational geometry and machine
-          learning at the Università degli Studi di Milano.
         </p>
       </div>
     </div>
