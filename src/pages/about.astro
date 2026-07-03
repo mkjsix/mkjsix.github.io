@@ -47,7 +47,7 @@ const aboutJsonLd = {
     <div class="section-block">
       <div class="section-body section-body--lead section-body--spacious">
         <p>
-          I have spent twenty-five years making and living with technical decisions, often with incomplete information and unclear constraints. Understand the problem, find the trade-offs that actually matter, make the call that keeps risk manageable. The trade-offs that matter are the ones that show up at 2 AM when something breaks in production.
+          I have spent twenty-five years making technical decisions and living with the consequences, often with incomplete information. Understand the problem, find the trade-offs that actually matter, make the call that keeps risk manageable. The trade-offs that matter are the ones that show up at 2 AM when something breaks in production.
         </p>
         <p>
           Most architecture problems are decision problems that were never made explicit.
@@ -73,15 +73,18 @@ const aboutJsonLd = {
               Three cities, three teams, one architecture. Distributed
               teams in Berlin, Geneva, and Shanghai needed to work against a
               single direction for a global luxury brand's platform in China.
+              A wrong architectural assumption would have broken multiple
+              markets at once.
             </p>
           </div>
           <div class="surface-card">
             <p class="card-label">Retail, backend modernization</p>
             <p class="card-text">
               A system that could not stop. 2,600+ stores and 9,500+ terminals
-              running on the old backend while the new one took over. 141M+
-              documents, 1TB+ data. Throughput target exceeded by 79%, query
-              time reduced 216x.
+              running on the old backend while the new one took over. A wrong
+              data migration would have been visible in every store the next
+              morning. 141M+ documents, 1TB+ data. Throughput target exceeded
+              by 79%, query time reduced 216x.
             </p>
           </div>
           <div class="surface-card">
@@ -128,9 +131,9 @@ const aboutJsonLd = {
       <div class="section-body">
         <p>
           AI amplifies architectural decisions. It increases the value of
-          good structure and the cost of accumulated technical debt. Where
-          does it create value in this specific system, and what does the
-          architecture need to support it?
+          good structure and the cost of accumulated technical debt. The
+          decision is where it creates value in this specific system, and
+          what the architecture needs to support it.
         </p>
       </div>
     </div>
