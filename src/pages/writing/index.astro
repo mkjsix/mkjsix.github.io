@@ -9,17 +9,17 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
 const formatDate = (date: Date) =>
   date.toLocaleDateString("en-GB", { month: "short", year: "numeric" });
 
-const postPath = (id: string) => `/writing/${id.replace(/\/index$/, '')}`;
+const postPath = (id: string) => `/writing/${id.replace(/\/index$/, "")}`;
 
 const blogJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Blog',
-  '@id': 'https://maurizioturatti.com/writing/#blog',
-  url: 'https://maurizioturatti.com/writing/',
-  name: 'Writing by Maurizio Turatti',
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": "https://maurizioturatti.com/writing/#blog",
+  url: "https://maurizioturatti.com/writing/",
+  name: "Writing by Maurizio Turatti",
   description:
-    'Notes on architecture, complexity, and the decisions that shape software.',
-  inLanguage: 'en',
+    "Notes on architecture, complexity, and the decisions that shape software.",
+  inLanguage: "en",
 };
 
 const mediumLinks = [
@@ -91,7 +91,7 @@ const mediumLinks = [
     url: "https://medium.com/softinstigate-team/do-most-programmers-hate-agile-274079ddb0d9",
     date: "Jun 2017",
     tag: "Process",
-  }
+  },
 ];
 ---
 
@@ -103,9 +103,7 @@ const mediumLinks = [
 >
   <div class="hero hero--first">
     <p class="hero-eyebrow">Writing</p>
-    <h1 class="hero-headline">
-      Architecture, complexity, and the decisions that shape software.
-    </h1>
+    <h1 class="hero-headline">Notes on the decisions that shape software.</h1>
   </div>
 
   <div class="page-content section-stack">
@@ -140,7 +138,12 @@ const mediumLinks = [
         {
           mediumLinks.map((link, index) => (
             <>
-              <a href={link.url} target="_blank" rel="noopener" class="blog-item">
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener"
+                class="blog-item"
+              >
                 <span class="blog-title">{link.title}</span>
                 <span class="blog-meta">
                   <span class="blog-tag">{link.tag}</span>
