@@ -48,7 +48,7 @@ const consultingJsonLd = {
 ---
 
 <Base
-  title="Technical Decisions that Reduce Risk and Complexity - Maurizio Turatti"
+  title="Home - Maurizio Turatti"
   description="I help companies and teams make technical decisions that reduce complexity, risk, and future costs. Architecture advisory and technical due diligence."
   ogImage="/images/og-image.png"
   jsonLd={consultingJsonLd}
@@ -56,10 +56,12 @@ const consultingJsonLd = {
   <!-- Hero -->
   <div class="hero hero--first">
     <h1 class="hero-headline hero-headline--lg">
-      Software architecture and technical leadership for products that need to move fast.
+      Software architecture and technical leadership for products that need to
+      move fast.
     </h1>
     <p class="hero-sub">
-      Senior technical leadership with a business edge. Embedded in your team or on call.
+      Senior technical leadership with a business edge. Embedded in your team or
+      on call.
     </p>
   </div>
 
@@ -71,21 +73,29 @@ const consultingJsonLd = {
         <div class="surface-card">
           <p class="card-label">Ongoing technical direction</p>
           <p class="card-text">
-            Embedded in your team or on call. Turning business goals into architectural decisions that the whole team can work against. Clear direction, fewer surprises later.
+            Embedded in your team or on call. Turning business goals into
+            architectural decisions that the whole team can work against. Clear
+            direction, fewer surprises later.
           </p>
         </div>
         <div class="surface-card">
           <p class="card-label">Architecture assessment &amp; due diligence</p>
           <p class="card-text">
-            System design reviews, performance, security, and scalability evaluation. Independent technical assessment for production readiness, vendor evaluation, or investment decisions.
+            System design reviews, performance, security, and scalability
+            evaluation. Independent technical assessment for production
+            readiness, vendor evaluation, or investment decisions.
           </p>
         </div>
         <div class="surface-card">
-          <p class="card-label">Technical strategy with commercial perspective</p>
-          <p class="card-text">
-            Pre-sales, proposals, and client engagement with technical depth. Product roadmap and go-to-market for technical products. Owning both delivery and the commercial side.
+          <p class="card-label">
+            Technical strategy with commercial perspective
           </p>
-        </div> 
+          <p class="card-text">
+            Pre-sales, proposals, and client engagement with technical depth.
+            Product roadmap and go-to-market for technical products. Owning both
+            delivery and the commercial side.
+          </p>
+        </div>
       </div>
     </div>
 
@@ -93,7 +103,11 @@ const consultingJsonLd = {
     <div class="section-block">
       <div class="section-body">
         <p>
-          My recommendations come from operating real systems, including how AI integrates into existing architectures. Every engagement combines technical experience with business understanding.<br /><a href="/about">Full background →</a>
+          My recommendations come from operating real systems, including how AI
+          integrates into existing architectures. Every engagement combines
+          technical experience with business understanding.<br /><a
+            href="/about">Full background →</a
+          >
         </p>
       </div>
     </div>
@@ -106,25 +120,25 @@ const consultingJsonLd = {
           <div class="surface-card">
             <p class="card-label">Retail, backend modernization</p>
             <p class="card-text">
-              Modernization of a high-volume production backend:
-              2,600+ stores, 9,500+ terminals, 141M+ documents, 1TB+ data.
-              Throughput target exceeded by 79%, query time reduced 216x.
+              Modernization of a high-volume production backend: 2,600+ stores,
+              9,500+ terminals, 141M+ documents, 1TB+ data. Throughput target
+              exceeded by 79%, query time reduced 216x.
             </p>
           </div>
           <div class="surface-card">
             <p class="card-label">Mobility &amp; traffic management</p>
             <p class="card-text">
-              GART: real-time traffic data platform, 6+ national sources
-              (CCISS, DATEX II, ASPI, TMC), 18 microservices on AWS,
-              10,000+ events/day, 99.9% uptime. Serving HERE, TomTom, Radio24.
-              In production since 2017.
+              GART: real-time traffic data platform, 6+ national sources (CCISS,
+              DATEX II, ASPI, TMC), 18 microservices on AWS, 10,000+ events/day,
+              99.9% uptime. Serving HERE, TomTom, Radio24. In production since
+              2017.
             </p>
           </div>
           <div class="surface-card">
             <p class="card-label">Open source platform</p>
             <p class="card-text">
-              RESTHeart: Agent-ready backend for MongoDB,
-              adopted by Fortune 500 companies including Unisys, Northrop Grumman, and Crownpeak.
+              RESTHeart: Agent-ready backend for MongoDB, adopted by Fortune 500
+              companies including Unisys, Northrop Grumman, and Crownpeak.
             </p>
           </div>
         </div>
@@ -135,32 +149,34 @@ const consultingJsonLd = {
     </div>
 
     <!-- Latest writing -->
-    {posts.length > 0 && (
-      <div class="section-block">
-        <h2 class="section-title">Latest writing</h2>
-        <div class="blog-list">
-          {posts.map((post, index) => (
-            <>
-              <a href={postPath(post.id)} class="blog-item">
-                <span class="blog-title">{post.data.title}</span>
-                <span class="blog-meta">
-                  {post.data.tags[0] && (
-                    <span class="blog-tag">{post.data.tags[0]}</span>
-                  )}
-                  <span class="blog-date">{formatDate(post.data.date)}</span>
-                </span>
-              </a>
-              {index < posts.length - 1 && (
-                <hr class="section-separator blog-separator" />
-              )}
-            </>
-          ))}
+    {
+      posts.length > 0 && (
+        <div class="section-block">
+          <h2 class="section-title">Latest writing</h2>
+          <div class="blog-list">
+            {posts.map((post, index) => (
+              <>
+                <a href={postPath(post.id)} class="blog-item">
+                  <span class="blog-title">{post.data.title}</span>
+                  <span class="blog-meta">
+                    {post.data.tags[0] && (
+                      <span class="blog-tag">{post.data.tags[0]}</span>
+                    )}
+                    <span class="blog-date">{formatDate(post.data.date)}</span>
+                  </span>
+                </a>
+                {index < posts.length - 1 && (
+                  <hr class="section-separator blog-separator" />
+                )}
+              </>
+            ))}
+          </div>
+          <p class="section-body" style="margin-top: 16px;">
+            <a href="/writing">All writing →</a>
+          </p>
         </div>
-        <p class="section-body" style="margin-top: 16px;">
-          <a href="/writing">All writing →</a>
-        </p>
-      </div>
-    )}
+      )
+    }
   </div>
 
   <ContactCta subtext="info@maurizioturatti.com" />
