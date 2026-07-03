@@ -47,12 +47,12 @@ const aboutJsonLd = {
     <div class="section-block">
       <div class="section-body section-body--lead section-body--spacious">
         <p>
-          I have spent twenty-five years making and living with technical decisions. As a company co-founder, architect, and advisor, the work is always the same. Understand the problem. Evaluate the trade-offs. Make the call that keeps risk manageable.
+          I have spent twenty-five years making and living with technical decisions. Understand the problem, find the trade-offs that actually matter, make the call that keeps risk manageable. The trade-offs that matter are the ones that show up at 2 AM when something breaks in production.
         </p>
         <p>
           Co-founder of <a href="https://softinstigate.com" target="_blank" rel="noopener"
             >SoftInstigate</a
-          > and creator of <a href="https://restheart.org" target="_blank" rel="noopener">RESTHeart</a>, an open-source platform that turns MongoDB into REST, GraphQL, and WebSocket APIs with built-in security and a native MCP server for AI agents. What I learn from building and operating real software shapes every decision I bring to a project.
+          > and creator of <a href="https://restheart.org" target="_blank" rel="noopener">RESTHeart</a>, in production for 10+ years. Building software and living with the architectural decisions that shaped it.
         </p>
         <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:16px;">
           <a href="/Maurizio_Turatti_CV.md" download="Maurizio_Turatti_CV.md" class="cta-btn cta-btn--primary">Download CV (Markdown)</a>
@@ -67,41 +67,52 @@ const aboutJsonLd = {
           <div class="surface-card">
             <p class="card-label">Luxury e-commerce</p>
             <p class="card-text">
-              Multi-region delivery across Berlin, Geneva, and Shanghai. Aligning distributed teams around a single architectural direction for a global luxury brand's e-commerce platform in China.
+              Three cities, three teams, one architecture. Distributed
+              teams in Berlin, Geneva, and Shanghai needed to work against a
+              single direction for a global luxury brand's platform in China.
             </p>
           </div>
           <div class="surface-card">
             <p class="card-label">Retail, backend modernization</p>
             <p class="card-text">
-              A system serving 2,600+ stores and 9,500+ terminals (141M+ documents, 1TB+ data) that was still working but had outgrown its original design. Throughput target exceeded by 79%, query time reduced 216x.
+              A system that could not stop. 2,600+ stores and 9,500+ terminals
+              running on the old backend while the new one took over. 141M+
+              documents, 1TB+ data. Throughput target exceeded by 79%, query
+              time reduced 216x.
             </p>
           </div>
           <div class="surface-card">
             <p class="card-label">Mobility &amp; public sector</p>
             <p class="card-text">
-              Traffic data platform (GART) for ACI group. 6+ national sources integrated through 18 microservices on AWS. 10,000+ events/day, 99.9% uptime since 2017. Serving HERE, TomTom, Radio24.
+              6+ national traffic sources, each with its own schema and no
+              single source of truth. The architecture had to make
+              incompatible data look coherent. 18 microservices on AWS,
+              99.9% uptime since 2017. Serving HERE, TomTom, Radio24.
             </p>
           </div>
           <div class="surface-card">
             <p class="card-label">Public sector</p>
             <p class="card-text">
-              Architectural discovery for a compliance platform at 400K+ entities and 9M+ API calls/hour at peak. The task was to find the real constraints and build a roadmap around them.
+              400K+ entities, 9M+ API calls/hour at peak. The first step was
+              finding the real constraints. Architectural discovery and a
+              roadmap built around what the system actually needed.
             </p>
           </div>
           <div class="surface-card">
             <p class="card-label">Enterprise content</p>
             <p class="card-text">
-              Persistence and API layer for Crownpeak Content-as-a-Service, deployed on Kubernetes to thousands of enterprise
-              clients globally. The architecture needed to support that scale over many years.
+              Persistence and API layer for Crownpeak, deployed on Kubernetes
+              to thousands of enterprise clients globally. The hard decision:
+              an architecture that had to hold up over many years of sustained
+              use.
             </p>
           </div>
           <div class="surface-card">
             <p class="card-label">Open source platform</p>
             <p class="card-text">
-              RESTHeart: 2M+ open-source downloads, 10+ years in production.
-              Agent-ready platform exposing MongoDB via REST, GraphQL, and
-              WebSocket APIs with built-in security and MCP server for AI agents.
-              Adopted by Fortune 500 companies.
+              RESTHeart: 10+ years in production, 2M+ downloads. Evolving
+              architecture across many major versions without rewrite. Adopted
+              by Unisys, Northrop Grumman, and Crownpeak.
             </p>
           </div>
         </div>
@@ -112,10 +123,10 @@ const aboutJsonLd = {
       <h2 class="section-title">AI and architecture</h2>
       <div class="section-body">
         <p>
-          AI makes good architecture more valuable. Well-structured systems adopt AI tooling faster. Systems with accumulated technical debt feel the pressure sooner.
-        </p>
-        <p>
-          I approach AI the way I approach any technology. Where does it create value in this specific system? What does the architecture need to support it?
+          AI amplifies architectural decisions. It increases the value of
+          good structure and the cost of accumulated technical debt. Where
+          does it create value in this specific system, and what does the
+          architecture need to support it?
         </p>
       </div>
     </div>
@@ -126,29 +137,25 @@ const aboutJsonLd = {
         <p>
           <strong>SoftInstigate</strong>, Co-Founder &amp; Head of Delivery
           (2014 – present)<br />
-          Co-founded the company in 2014. Owned both the technical direction and the commercial side: business development, client work, pre-sales, proposal writing, and delivery. Advisory and product development across automotive, retail, mobility, and public sector.
+          Co-founded the company. Technical direction and commercial side in
+          one role: business development, client work, pre-sales, delivery.
+          Automotive, retail, mobility, public sector.
         </p>
         <p>
           <strong>AKQA</strong>, Technical Architect, Berlin (2013 – 2014)<br />
-          Enterprise digital transformation at a global digital agency. Delivered a luxury brand's e-commerce platform in China, coordinating distributed teams across Berlin, Geneva, and Shanghai. Making architectural decisions that worked across three continents.
+          Luxury e-commerce in China across Berlin, Geneva, and Shanghai.
+          Distributed teams, one architecture.
         </p>
         <p>
           <strong>Sourcesense</strong>, Delivery Manager (2011 – 2013)<br />
-          Led a consulting team delivering open-source enterprise solutions across
-          finance, telecom, and public sector. Technical decisions shaped by real constraints: timelines, budgets, client expectations.
+          Open-source enterprise solutions across finance, telecom, and
+          public sector.
         </p>
         <p>
-          <strong>Alfresco</strong>, Senior Solutions Engineer, Italy (2010 –
-          2011)<br />
-          Supported the launch of Alfresco's Italian market operations. Pre-sales
-          consulting and technical work for enterprise content management.
-        </p>
-        <p>
-          <strong>Earlier career (1997 – 2010)</strong><br />
-          Enterprise integration, distributed systems, and software research: SOA architect at Sun Microsystems for Italy and
-          the EMEA region, SOA/EAI consulting at SeeBeyond, founding an independent consulting practice as official
-          partner for Sun Microsystems, and research in computational geometry and machine
-          learning at the Università degli Studi di Milano.
+          <strong>Earlier career (2003 – 2011)</strong><br />
+          Alfresco, Sun Microsystems, SeeBeyond. Enterprise integration,
+          distributed systems, SOA. Research in computational geometry
+          and machine learning at the Università degli Studi di Milano.
         </p>
       </div>
     </div>
