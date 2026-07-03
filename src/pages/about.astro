@@ -47,7 +47,10 @@ const aboutJsonLd = {
     <div class="section-block">
       <div class="section-body section-body--lead section-body--spacious">
         <p>
-          I have spent twenty-five years making and living with technical decisions. Understand the problem, find the trade-offs that actually matter, make the call that keeps risk manageable. The trade-offs that matter are the ones that show up at 2 AM when something breaks in production.
+          I have spent twenty-five years making and living with technical decisions, often with incomplete information and unclear constraints. Understand the problem, find the trade-offs that actually matter, make the call that keeps risk manageable. The trade-offs that matter are the ones that show up at 2 AM when something breaks in production.
+        </p>
+        <p>
+          Most architecture problems are decision problems that were never made explicit.
         </p>
         <p>
           Co-founder of <a href="https://softinstigate.com" target="_blank" rel="noopener"
@@ -93,17 +96,18 @@ const aboutJsonLd = {
           <div class="surface-card">
             <p class="card-label">Public sector</p>
             <p class="card-text">
-              400K+ entities, 9M+ API calls/hour at peak. The first step was
-              finding the real constraints. Architectural discovery and a
-              roadmap built around what the system actually needed.
+              400K+ entities, 9M+ API calls/hour at peak. Requirements still
+              forming while the architecture needed to proceed. The first step
+              was finding the real constraints.
             </p>
           </div>
           <div class="surface-card">
             <p class="card-label">Enterprise content</p>
             <p class="card-text">
               Persistence and API layer for Crownpeak, deployed on Kubernetes
-              to thousands of enterprise clients globally. The hard decision:
-              an architecture that had to hold up over many years of sustained
+              to thousands of enterprise clients globally. One API contract,
+              thousands of clients depending on it. The hard decision: an
+              architecture that had to hold up over many years of sustained
               use.
             </p>
           </div>
@@ -153,9 +157,10 @@ const aboutJsonLd = {
         </p>
         <p>
           <strong>Earlier career (2003 – 2011)</strong><br />
-          Alfresco, Sun Microsystems, SeeBeyond. Enterprise integration,
-          distributed systems, SOA. Research in computational geometry
-          and machine learning at the Università degli Studi di Milano.
+          Alfresco, Sun Microsystems, SeeBeyond. Enterprise integration and
+          distributed systems when SOA was still being figured out in
+          production. Research in computational geometry and machine
+          learning at the Università degli Studi di Milano.
         </p>
       </div>
     </div>
