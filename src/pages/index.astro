@@ -65,14 +65,15 @@ const consultingJsonLd = {
   <div class="section-stack">
     <!-- What I do -->
     <div class="section-block">
-      <h2 class="section-title">How I help</h2>
+      <h2 class="section-title">What I do</h2>
       <div class="card-grid">
         <div class="surface-card">
           <p class="card-label">Embedded technical leadership</p>
           <p class="card-text">
             Most of the work is knowing what not to build, and having
-            the team trust that call. Every decision I make has to hold
-            up when the system grows.
+            the team trust that call. Architecture is a set of decisions
+            that are expensive to reverse. The ones that constrain
+            everything that comes after.
           </p>
         </div>
         <div class="surface-card">
@@ -90,9 +91,9 @@ const consultingJsonLd = {
           </p>
           <p class="card-text">
             A wrong assumption in a proposal becomes a problem in delivery.
-            I have been on both sides. Proposals, pre-sales, and product
-            direction shaped by knowing where the promise-to-execution gap
-            usually opens.
+            I have been on both sides. Early assumptions about scope,
+            feasibility, and constraints define where delivery problems
+            will surface months later.
           </p>
         </div>
       </div>
@@ -130,10 +131,11 @@ const consultingJsonLd = {
             <p class="card-label">Luxury e-commerce</p>
             <p class="card-text">
               Three cities, three teams, one architecture. Distributed teams
-              in Berlin, Geneva, and Shanghai working against a single
-              direction for a global luxury brand's platform in China. A
-              wrong architectural assumption would have broken multiple
-              markets at once.
+              in Berlin, Geneva, and Shanghai building a luxury brand's
+              e-commerce platform for China. Localization in Chinese and
+              compliance with Chinese authority security requirements.
+              Coordinating architectural decisions across three time zones
+              where a wrong assumption would have blocked the entire market.
             </p>
           </div>
           <div class="surface-card">
@@ -141,9 +143,10 @@ const consultingJsonLd = {
             <p class="card-text">
               Multiple national traffic sources, each with a different schema
               and update cycle. No single source of truth, and consumers
-              relying on the output daily. 18 microservices on AWS, 10,000+
-              events/day, 99.9% uptime. Serving HERE, TomTom, Radio24. In
-              production since 2017.
+              relying on the output daily. A silent data inconsistency would
+              have propagated through every downstream service. 18
+              microservices on AWS, 10,000+ events/day, 99.9% uptime.
+              Serving HERE, TomTom, Radio24. In production since 2017.
             </p>
           </div>
           <div class="surface-card">
@@ -151,7 +154,9 @@ const consultingJsonLd = {
             <p class="card-text">
               400K+ entities, 9M+ API calls/hour at peak. Requirements still
               forming while the architecture needed to proceed. The first step
-              was finding the real constraints.
+              was finding the real constraints: optimizing Redis to relieve
+              database pressure and building a roadmap from monolith toward
+              modular architecture.
             </p>
           </div>
           <div class="surface-card">
@@ -159,9 +164,10 @@ const consultingJsonLd = {
             <p class="card-text">
               Persistence and API layer for Crownpeak, deployed on Kubernetes
               to thousands of enterprise clients globally. One API contract,
-              thousands of clients depending on it. The hard decision: an
-              architecture that had to hold up over many years of sustained
-              use.
+              thousands of clients depending on it. A breaking change would
+              have required coordinated migration across every client. The
+              hard decision: an architecture that had to hold up over many
+              years of sustained use.
             </p>
           </div>
           <div class="surface-card">
