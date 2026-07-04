@@ -594,6 +594,72 @@ footer {
     padding: 56px 0 0;
   }
 
+  .hero-headline {
+    font-size: 28px;
+  }
+
+  .hero-eyebrow {
+    font-size: 14px;
+  }
+
+  .hero-sub {
+    font-size: 17px;
+  }
+
+  .section-body {
+    font-size: 17px;
+  }
+
+  .section-title {
+    font-size: 18px;
+  }
+
+  .post-content p {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+
+  .post-content li {
+    font-size: 16px;
+  }
+
+  .blog-title {
+    font-size: 17px;
+  }
+
+  .blog-tag {
+    font-size: 13px;
+  }
+
+  .blog-date {
+    font-size: 14px;
+  }
+
+  .card-label {
+    font-size: 13px;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .card-text {
+    font-size: 15px;
+  }
+
+  .cta-text {
+    font-size: 17px;
+  }
+
+  .cta-sub {
+    font-size: 15px;
+  }
+
+  .cta-btn {
+    font-size: 15px;
+    padding: 12px 24px;
+  }
+
   .section-separator { margin: 16px 0; }
   .section-separator-nav { margin: 4px 0 10px; }
 
