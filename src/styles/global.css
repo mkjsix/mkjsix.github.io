@@ -603,20 +603,24 @@ footer {
   }
 
   .section-body {
-    font-size: 17px;
-  }
-
-  .section-title {
     font-size: 18px;
   }
 
+  .section-body li {
+    font-size: 18px;
+  }
+
+  .section-title {
+    font-size: 19px;
+  }
+
   .post-content p {
-    font-size: 17px;
+    font-size: 18px;
     line-height: 1.8;
   }
 
   .post-content li {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .blog-title {
