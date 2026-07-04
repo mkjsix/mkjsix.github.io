@@ -599,7 +599,7 @@ footer {
   }
 
   .hero-sub {
-    font-size: 17px;
+    font-size: 18px;
   }
 
   .section-body {
@@ -611,7 +611,7 @@ footer {
   }
 
   .section-title {
-    font-size: 19px;
+    font-size: 20px;
   }
 
   .post-content p {
@@ -620,39 +620,39 @@ footer {
   }
 
   .post-content li {
-    font-size: 17px;
+    font-size: 18px;
   }
 
   .blog-title {
-    font-size: 17px;
+    font-size: 18px;
   }
 
   .blog-tag {
-    font-size: 13px;
-  }
-
-  .blog-date {
     font-size: 14px;
   }
 
+  .blog-date {
+    font-size: 15px;
+  }
+
   .card-label {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .card-title {
-    font-size: 16px;
-  }
-
-  .card-text {
-    font-size: 15px;
-  }
-
-  .cta-text {
     font-size: 17px;
   }
 
+  .card-text {
+    font-size: 16px;
+  }
+
+  .cta-text {
+    font-size: 18px;
+  }
+
   .cta-sub {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .cta-btn {
@@ -758,7 +758,7 @@ footer {
   .nav-drawer-links a {
     display: block;
     padding: 14px 0;
-    font-size: 16px;
+    font-size: 17px;
     color: var(--color-text-muted);
     text-decoration: none;
     transition: color 0.15s;
@@ -785,6 +785,6 @@ footer {
 
   .footer-name,
   .footer-links a {
-    font-size: 13px;
+    font-size: 14px;
   }
 }
