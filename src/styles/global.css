@@ -195,7 +195,7 @@ nav {
   margin-bottom: 20px;
 }
 .hero-headline {
-  font-size: 35px;
+  font-size: 30px;
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: -0.6px;
@@ -204,11 +204,11 @@ nav {
     0 2px 6px rgba(0, 0, 0, 0.18);
 }
 .hero-headline--lg {
-  font-size: 40px;
+  font-size: 34px;
 }
 @media (min-width: 768px) {
   .hero-headline--lg {
-    font-size: 44px;
+    font-size: 38px;
   }
 }
 .hero-sub {
@@ -592,10 +592,6 @@ footer {
 
   .hero {
     padding: 56px 0 0;
-  }
-
-  .hero-headline {
-    font-size: 28px;
   }
 
   .hero-eyebrow {
