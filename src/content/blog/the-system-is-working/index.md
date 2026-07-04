@@ -1,6 +1,6 @@
 ---
 title: "The system is working. That is the problem."
-description: "Clean code, optimized queries, a strong team. And still, something was wrong. What that kind of situation requires is not a fix, but a different kind of conversation."
+description: "Clean code, optimized queries, a strong team. And still, something was wrong. What that kind of situation requires is a different kind of conversation."
 date: 2026-06-15
 tags: ["Engineering", "Consulting"]
 draft: false
@@ -20,6 +20,6 @@ That kind of work takes time and focus. It is the kind of work that a good team 
 
 Something else is worth saying about how this kind of advisory work should begin. The first job is not to propose solutions. It is to remove obstacles to understanding, and to do that without disrupting what is already working. The situation rarely comes from wrong decisions. More often it comes from a long sequence of tactically correct decisions made by people who were doing their best under real constraints. Arriving from outside and immediately suggesting that things should have been done differently is both inaccurate and counterproductive.
 
-The more important work at the beginning is building trust, and not only with the management that brought you in. The whole team needs to feel that you are there to help, not to judge. It is entirely understandable, and in fact healthy, that there is some initial skepticism. Who are these people coming from outside, thinking they know better than us? And in large part, that skepticism is correct. Someone arriving from outside cannot know more than the people who have been living with a system for months or years. Moving with genuine respect for that work is not just good manners but the only way to actually be useful.
+The more important work at the beginning is building trust, and not only with the management that brought you in. The whole team needs to feel that you are there to help, not to judge. It is entirely understandable, and in fact healthy, that there is some initial skepticism. Who are these people coming from outside, thinking they know better than us? That skepticism is largely correct. Someone arriving from outside cannot know more than the people who have been living with a system for months or years. Moving with genuine respect for that work is the only way to actually be useful.
 
 Once that trust exists, the other things become possible: the architectural conversation, the performance testing, reopening the channels of communication between the DBAs and the application team, surfacing the knowledge that exists inside the team but has stopped circulating. None of that happens without the foundation.
