@@ -1,5 +1,6 @@
 ---
 import Base from "../../layouts/Base.astro";
+import ContactCta from "../../components/ContactCta.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
@@ -158,5 +159,7 @@ const mediumLinks = [
         }
       </div>
     </div>
+
+    <ContactCta />
   </div>
 </Base>
