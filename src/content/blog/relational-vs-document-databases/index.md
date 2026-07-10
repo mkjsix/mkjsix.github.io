@@ -1,7 +1,7 @@
 ---
 title: "Relational vs Document Databases: a Domain-Driven Perspective"
 description: "The debate between relational and document databases is often treated as a technology choice. Underneath, it is a modeling choice. What is the natural shape of the domain?"
-date: 2026-06-22
+date: 2026-07-10
 tags: ["Databases"]
 draft: false
 image: "./relational_document.png"
