@@ -301,23 +301,29 @@ nav {
   gap: 12px;
   margin-top: 20px;
 }
-.card-grid--spaced {
-  margin: 36px 0;
-}
-.card-grid--how-i-help .surface-card {
+.card-grid--featured .surface-card {
   padding: 20px;
 }
 
-.card-grid--how-i-help .card-number {
+.card-grid--featured .card-number {
   margin-bottom: 10px;
 }
 
-.card-grid--how-i-help .card-title {
+.card-grid--featured .card-title {
   font-size: 20px;
   line-height: 1.2;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin-bottom: 12px;
+}
+
+.card-grid--featured .card-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 10px;
 }
 
 .card-grid--how-i-help .card-label {
@@ -330,9 +336,14 @@ nav {
   color: var(--color-text-muted);
   margin-bottom: 0;
 }
+
+.card-grid--selected-work .card-text {
+  font-size: 15px;
+  line-height: 1.6;
+}
 @media (max-width: 600px) {
   .card-grid { grid-template-columns: 1fr; }
-  .card-grid--how-i-help .card-title { font-size: 18px; }
+  .card-grid--featured .card-title { font-size: 18px; }
   .card-grid--how-i-help .card-label { font-size: 14px; }
 }
 
