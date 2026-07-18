@@ -304,8 +304,36 @@ nav {
 .card-grid--spaced {
   margin: 36px 0;
 }
+.card-grid--how-i-help .surface-card {
+  padding: 20px;
+}
+
+.card-grid--how-i-help .card-number {
+  margin-bottom: 10px;
+}
+
+.card-grid--how-i-help .card-title {
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+
+.card-grid--how-i-help .card-label {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 450;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--color-text-muted);
+  margin-bottom: 0;
+}
 @media (max-width: 600px) {
   .card-grid { grid-template-columns: 1fr; }
+  .card-grid--how-i-help .card-title { font-size: 18px; }
+  .card-grid--how-i-help .card-label { font-size: 14px; }
 }
 
 .surface-card {
