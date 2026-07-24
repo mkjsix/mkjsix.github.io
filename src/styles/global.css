@@ -212,7 +212,7 @@ nav {
   }
 }
 .hero-sub {
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.65;
   color: var(--color-text-muted);
   margin-top: 20px;
@@ -634,7 +634,7 @@ footer {
   }
 
   .hero-sub {
-    font-size: 18px;
+    font-size: 19px;
   }
 
   .section-body {
