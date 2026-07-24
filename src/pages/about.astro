@@ -1,6 +1,16 @@
 ---
 import Base from "../layouts/Base.astro";
 import ContactCta from "../components/ContactCta.astro";
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog", ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const formatDate = (date: Date) =>
+  date.toLocaleDateString("en-GB", { month: "short", year: "numeric" });
+
+const postPath = (id: string) => `/writing/${id.replace(/\.md$/, "")}`;
 
 const aboutJsonLd = {
   "@context": "https://schema.org",
@@ -156,32 +166,34 @@ const aboutJsonLd = {
       </div>
     </div>
 
-    <div class="section-block">
-      <h2 class="section-title">Writing</h2>
-      <div class="section-body">
-        <p>
-          <a href="/writing/the-system-is-working"
-            ><strong>The system is working. That is the problem.</strong></a
-          >
-          (Jun 2026)<br />
-          <a
-            href="https://medium.com/softinstigate-team/facet-a-different-approach-to-web-development-af884abe0b69"
-            target="_blank"
-            rel="noopener"
-            ><strong>Facet: A Different Approach to Web Development</strong></a
-          >
-          (Jan 2026)<br />
-          <a
-            href="https://medium.com/softinstigate-team/mongodb-deprecates-data-api-and-https-endpoints-how-restheart-can-help-58ea0c44660d"
-            target="_blank"
-            rel="noopener"
-            ><strong>MongoDB Deprecates Data API: How RESTHeart Can Help</strong
-            ></a
-          >
-          (Feb 2025)
-        </p>
-      </div>
-    </div>
+    {
+      posts.length > 0 && (
+        <div class="section-block">
+          <h2 class="section-title">Latest writing</h2>
+          <div class="blog-list">
+            {posts.map((post, index) => (
+              <>
+                <a href={postPath(post.id)} class="blog-item">
+                  <span class="blog-title">{post.data.title}</span>
+                  <span class="blog-meta">
+                    {post.data.tags[0] && (
+                      <span class="blog-tag">{post.data.tags[0]}</span>
+                    )}
+                    <span class="blog-date">{formatDate(post.data.date)}</span>
+                  </span>
+                </a>
+                {index < posts.length - 1 && (
+                  <hr class="section-separator blog-separator" />
+                )}
+              </>
+            ))}
+          </div>
+          <p class="section-body" style="margin-top: 16px;">
+            <a href="/writing">All writing →</a>
+          </p>
+        </div>
+      )
+    }
   </div>
 
   <ContactCta />
