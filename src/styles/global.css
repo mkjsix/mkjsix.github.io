@@ -39,6 +39,10 @@
   --social-github-border: #d7d7d2;
   --social-github-text: #24292f;
   --social-github-bg-hover: #e5e5e1;
+  --social-stackoverflow-bg: #fdf1e8;
+  --social-stackoverflow-border: #f1c8a6;
+  --social-stackoverflow-text: #c15a00;
+  --social-stackoverflow-bg-hover: #fbe2d1;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -60,6 +64,10 @@
     --social-github-border: #3c3c39;
     --social-github-text: #e8e8e6;
     --social-github-bg-hover: #31312f;
+    --social-stackoverflow-bg: #3a2618;
+    --social-stackoverflow-border: #6b4224;
+    --social-stackoverflow-text: #ffb37a;
+    --social-stackoverflow-bg-hover: #4a2f1d;
   }
   .hero-headline {
     text-shadow:
@@ -587,6 +595,15 @@ footer {
 }
 .footer-link--github:hover {
   background: var(--social-github-bg-hover);
+  transform: translateY(-1px);
+}
+.footer-link--stackoverflow {
+  background: var(--social-stackoverflow-bg);
+  border-color: var(--social-stackoverflow-border);
+  color: var(--social-stackoverflow-text);
+}
+.footer-link--stackoverflow:hover {
+  background: var(--social-stackoverflow-bg-hover);
   transform: translateY(-1px);
 }
 
