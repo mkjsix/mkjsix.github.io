@@ -560,12 +560,27 @@ nav {
 /* Footer */
 footer {
   padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "name links"
+    "legal legal";
+  column-gap: 16px;
+  row-gap: 12px;
   align-items: center;
 }
-.footer-name { font-size: 14px; color: var(--color-text-muted); }
-.footer-links { display: flex; gap: 16px; flex-wrap: wrap; }
+.footer-name {
+  grid-area: name;
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+.footer-links {
+  grid-area: links;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-self: end;
+}
 .footer-link {
   font-size: 14px;
   font-weight: 500;
@@ -610,10 +625,13 @@ footer {
 
 @media (max-width: 900px) {
   footer {
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 10px 14px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "name"
+      "links"
+      "legal";
+    justify-items: start;
+    column-gap: 0;
   }
 
   .footer-name {
@@ -621,11 +639,11 @@ footer {
   }
 
   .footer-links {
-    order: 2;
+    justify-self: start;
   }
 
   .footer-legal {
-    order: 3;
+    grid-area: legal;
     width: 100%;
     gap: 10px 14px;
     font-size: 13px;
