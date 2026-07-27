@@ -151,11 +151,6 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
     {structuredData.map((schema) => (
       <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     ))}
-    <!-- Calendly popup widget (CSS deferred to avoid render-blocking) -->
-    <link href="https://assets.calendly.com/assets/external/widget.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-    <noscript><link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" /></noscript>
-    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-
   </head>
   <body>
     <div class="container">
@@ -172,7 +167,7 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
             <li><a href="/about" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a></li>
             <li><a href="/writing" aria-current={Astro.url.pathname.startsWith('/writing') ? 'page' : undefined}>Writing</a></li>
           </ul>
-          <a href="https://calendly.com/maurizioturatti-info/30min" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/maurizioturatti-info/30min'}); return false;">Book a call</a>
+          <a href="https://calendly.com/maurizioturatti-info/30min" class="nav-cta" data-calendly>Book a call</a>
           <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
             <span class="nav-hamburger"></span>
           </button>
@@ -181,7 +176,7 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
               <li><a href="/about" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a></li>
               <li><a href="/writing" aria-current={Astro.url.pathname.startsWith('/writing') ? 'page' : undefined}>Writing</a></li>
             </ul>
-            <a href="https://calendly.com/maurizioturatti-info/30min" class="nav-cta" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/maurizioturatti-info/30min'}); return false;">Book a call</a>
+            <a href="https://calendly.com/maurizioturatti-info/30min" class="nav-cta" data-calendly>Book a call</a>
           </div>
         </div>
       </nav>
@@ -247,6 +242,40 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
         </div>
       </footer>
     </div>
+
+    <!-- Calendly popup: lazy-loaded on hover, opened on click -->
+    <script is:inline>
+      (function() {
+        var ready = false, loading = false;
+        function ensureLoaded(callback) {
+          if (ready) { callback(); return; }
+          if (loading) { window._calendlyQueue.push(callback); return; }
+          loading = true; window._calendlyQueue = [callback];
+          var link = document.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = 'https://assets.calendly.com/assets/external/widget.css';
+          document.head.appendChild(link);
+          var s = document.createElement('script');
+          s.src = 'https://assets.calendly.com/assets/external/widget.js';
+          s.onload = function() {
+            ready = true;
+            window._calendlyQueue.forEach(function(fn) { fn(); });
+          };
+          s.onerror = function() { loading = false; };
+          document.head.appendChild(s);
+        }
+        function preload() { ensureLoaded(function() {}); }
+        document.querySelectorAll('[data-calendly]').forEach(function(el) {
+          el.addEventListener('mouseenter', preload);
+          el.addEventListener('focus', preload);
+          el.addEventListener('click', function(e) {
+            e.preventDefault();
+            var url = e.currentTarget.href;
+            ensureLoaded(function() { Calendly.initPopupWidget({url: url}); });
+          });
+        });
+      })();
+    </script>
 
     <!-- GoatCounter analytics: async, after all content -->
     <script data-goatcounter="https://mturatti.goatcounter.com/count"
