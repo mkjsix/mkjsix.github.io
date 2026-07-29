@@ -68,3 +68,7 @@ One single caching change eliminated the dominant query on the application datab
 ## Why this work matters
 
 The value in this kind of work lies in doing two things together: carrying out the tactical interventions that give immediate breathing room, like extending the cache, and demonstrating with measured data when that approach on its own will stop being enough, shifting decision makers' attention to the architectural choices that need to go on the plan before growth makes them urgent.
+
+---
+
+_Details in this case history have been generalized to protect client confidentiality._
