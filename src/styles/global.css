@@ -547,6 +547,35 @@ nav {
   line-height: 1.7;
 }
 
+/* Table styles */
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0 1.75rem;
+  font-size: 15px;
+}
+.post-content thead th {
+  text-align: left;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--color-border-strong);
+  background: var(--color-card-bg);
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+.post-content tbody td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+.post-content tbody tr:last-child td {
+  border-bottom: none;
+}
+.post-content tbody tr:hover {
+  background: var(--color-card-bg);
+}
+
 .post-footer {
   padding-bottom: 48px;
 }
