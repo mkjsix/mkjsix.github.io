@@ -1,6 +1,6 @@
 # maurizioturatti.com
 
-Personal website for Maurizio Turatti, focused on software architecture, backend systems, AI integration, and technical leadership.
+Personal website for Maurizio Turatti, focused on software architecture, backend systems, AI integration, and technical strategy.
 
 Built with [Astro](https://astro.build) as a static site.
 
