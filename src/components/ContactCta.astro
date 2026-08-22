@@ -8,7 +8,7 @@ interface Props {
 
 const {
   title = 'A 30-minute call to understand your situation, surface the key technical decisions, and determine if I can help.',
-  subtext,
+  subtext = 'After the call, we decide whether the problem is a fit and what the next step should be.',
   email = 'info@maurizioturatti.com',
   buttonLabel = 'Book a call',
 } = Astro.props;
@@ -17,7 +17,15 @@ const {
 <div class="cta-block">
   <div>
     <p class="cta-text">{title}</p>
-    {subtext && <p class="cta-sub"><a href={`mailto:${subtext}`}>{subtext}</a></p>}
+    {subtext && (
+      <p class="cta-sub">
+        {subtext.includes('@') ? (
+          <a href={`mailto:${subtext}`}>{subtext}</a>
+        ) : (
+          subtext
+        )}
+      </p>
+    )}
   </div>
   <a href="https://calendly.com/maurizioturatti-info/30min" class="cta-btn" data-calendly>{buttonLabel}</a>
 </div>
