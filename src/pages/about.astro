@@ -1,6 +1,5 @@
 ---
 import Base from "../layouts/Base.astro";
-import ContactCta from "../components/ContactCta.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog", ({ data }) => !data.draft))
@@ -32,7 +31,7 @@ const aboutJsonLd = {
     },
     alumniOf: {
       "@type": "EducationalOrganization",
-      name: "Università degli Studi di Milano",
+      name: "Universita degli Studi di Milano",
     },
   },
 };
@@ -50,176 +49,143 @@ const aboutJsonLd = {
       content="Maurizio Turatti, technical strategy, system design, software architecture, architectural decisions, technical strategy, CTO advisory, technical due diligence, distributed systems, API design, AI integration, product architecture, delivery guidance"
     />
   </Fragment>
-  <div class="hero hero--first">
-    <p class="hero-eyebrow">About</p>
-    <h1 class="hero-headline">Decisions made before certainty.</h1>
-  </div>
 
-  <div class="page-content section-stack">
-    <div class="section-block">
-      <div class="section-body section-body--lead section-body--spacious">
-        <p>
-          I have been working with software since 1998, building distributed
-          systems, integrations, and content platforms for organizations that
-          needed the architecture to hold under operational pressure. Technical
-          choices shape business outcomes long after the first release.
-        </p>
-        <p>
-          I help teams decide what is feasible, where to commit, and which risks
-          become visible after delivery. That means working on architecture
-          under uncertainty, system boundaries between organizations, and
-          technical choices that have commercial consequences.
-        </p>
-      </div>
+  <header class="hero hero--about grid-bg">
+    <div class="wrap">
+      <div class="eyebrow mono">About</div>
+      <h1>Decisions made before certainty.</h1>
+      <p>I have been working with software since 1998, building distributed systems, integrations, and content platforms for organizations that needed the architecture to hold under operational pressure. Technical choices shape business outcomes long after the first release.</p>
+      <p>I help teams decide what is feasible, where to commit, and which risks become visible after delivery.</p>
     </div>
+  </header>
 
-    <div class="section-block">
-      <h2 class="section-title">Background</h2>
-      <div class="section-body">
-        <p>
-          My early work was in real-time distributed systems and GIS
-          visualization at AI Software. I then moved into SOA and EAI at Sun
-          Microsystems and SeeBeyond, followed by enterprise content platforms
-          at AKQA and Alfresco. I co-founded <a href="https://softinstigate.com"
-            >SoftInstigate</a
-          > in 2014 and spent the next years building and operating RESTHeart and
-          related systems in production.
-        </p>
+  <section class="tight">
+    <div class="wrap prose">
+      <div class="section-label">
+        <span class="tag">SEC. A</span>
+        <div class="rule"></div>
+        <h2>Background</h2>
       </div>
+      <p>My early work was in real-time distributed systems and GIS visualization at AI Software. I then moved into SOA and EAI at Sun Microsystems and SeeBeyond, followed by enterprise content platforms at AKQA and Alfresco. I co-founded <a href="https://softinstigate.com">SoftInstigate</a> in 2014 and spent the next years building and operating RESTHeart and related systems in production.</p>
     </div>
+  </section>
 
-    <div class="section-block">
-      <h2 class="section-title">How I work</h2>
-      <div class="card-grid card-grid--featured">
-        <div class="surface-card">
-          <p class="card-label">Commercial and technical together</p>
-          <p class="card-title">The important decisions are made together</p>
-          <p class="card-text">
-            Commercial and technical choices are linked. A pricing decision that
-            ignores platform complexity creates delivery pressure. A technical
-            decision made without commercial constraints creates delivery risk,
-            and it usually appears at the worst moment.
-          </p>
+  <section>
+    <div class="wrap">
+      <div class="section-label">
+        <span class="tag">SEC. B</span>
+        <div class="rule"></div>
+        <h2>How I work</h2>
+      </div>
+      <div class="work-grid">
+        <div class="work-item">
+          <span class="category">Commercial and technical together</span>
+          <h3>The important decisions are made together</h3>
+          <p>Commercial and technical choices are linked. A pricing decision that ignores platform complexity creates delivery pressure. A technical decision made without commercial constraints creates delivery risk, and it usually appears at the worst moment.</p>
         </div>
-        <div class="surface-card">
-          <p class="card-label">Integration across organizations</p>
-          <p class="card-title">The system boundary is part of the design</p>
-          <p class="card-text">
-            When two organizations have to work together, the architecture is
-            not only the code. The boundary defines what each side owns, what is
-            shared, and what breaks when the assumptions change.
-          </p>
+        <div class="work-item">
+          <span class="category">Integration across organizations</span>
+          <h3>The system boundary is part of the design</h3>
+          <p>When two organizations have to work together, the architecture is not only the code. The boundary defines what each side owns, what is shared, and what breaks when the assumptions change.</p>
         </div>
-        <div class="surface-card">
-          <p class="card-label">Decisions under uncertainty</p>
-          <p class="card-title">
-            Most important choices are made before the facts are complete
-          </p>
-          <p class="card-text">
-            Important decisions are often made with incomplete information. When
-            the cost of a wrong call shows up in the contract, the roadmap, or
-            the system design, judgment matters more than analysis volume.
-          </p>
+        <div class="work-item">
+          <span class="category">Decisions under uncertainty</span>
+          <h3>Most important choices are made before the facts are complete</h3>
+          <p>Important decisions are often made with incomplete information. When the cost of a wrong call shows up in the contract, the roadmap, or the system design, judgment matters more than analysis volume.</p>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="section-block">
-      <h2 class="section-title">AI adoption and architecture</h2>
-      <div class="section-body">
-        <p>
-          AI changes the speed of execution more than the shape of the decision.
-          A pilot can look promising for a month. Production reveals model
-          drift, ownership of output quality, and the cost of fallback paths.
-        </p>
-        <p>
-          The hard part is usually not the model itself. It is the process
-          around it: the data flow, the ownership, the operational controls, and
-          the decision to keep a human path when the system is wrong.
-        </p>
+  <section class="tight">
+    <div class="wrap prose">
+      <div class="section-label">
+        <span class="tag">SEC. C</span>
+        <div class="rule"></div>
+        <h2>AI adoption and architecture</h2>
       </div>
+      <p>AI changes the speed of execution more than the shape of the decision. A pilot can look promising for a month. Production reveals model drift, ownership of output quality, and the cost of fallback paths.</p>
+      <p>The hard part is usually not the model itself. It is the process around it: the data flow, the ownership, the operational controls, and the decision to keep a human path when the system is wrong.</p>
     </div>
+  </section>
 
-    <div class="section-block">
-      <h2 class="section-title">Products</h2>
-      <div class="section-body">
-        <p>
-          <a href="https://restheart.org/" target="_blank" rel="noopener"
-            ><strong>RESTHeart</strong></a
-          >: The Open Source Backend for MongoDB<br />
-          <a href="https://cloud.restheart.com" target="_blank" rel="noopener"
-            ><strong>RESTHeart Cloud Platform</strong></a
-          >: Managed RESTHeart services with built in MCP server<br />
-        </p>
+  <section class="tight">
+    <div class="wrap">
+      <div class="section-label">
+        <span class="tag">SEC. D</span>
+        <div class="rule"></div>
+        <h2>Products</h2>
       </div>
-    </div>
-
-    <div class="section-block">
-      <h2 class="section-title">Open source</h2>
-      <div class="section-body">
-        <p>
-          <a
-            href="https://github.com/SoftInstigate/facet"
-            target="_blank"
-            rel="noopener"><strong>Facet</strong></a
-          >: Data-driven web framework: turn APIs into HTML, zero code<br />
-          <a
-            href="https://github.com/SoftInstigate/ermes-mail"
-            target="_blank"
-            rel="noopener"><strong>Ermes Mail</strong></a
-          >: Async e-mail library and CLI for Java<br />
-          <a
-            href="https://github.com/SoftInstigate/restheart-cli"
-            target="_blank"
-            rel="noopener"><strong>RESTHeart CLI</strong></a
-          >: Command-line interface for RESTHeart<br />
-          <a href="https://github.com/mkjsix" target="_blank" rel="noopener"
-            >All projects on GitHub →</a
-          >
-        </p>
-      </div>
-    </div>
-
-    <div class="section-block">
-      <h2 class="section-title">Teaching</h2>
-      <div class="section-body">
-        <p>
-          I created and delivered technical courses and workshops for enterprise
-          clients and partner networks across Italy and EMEA. Teaching forces me
-          to explain why decisions are made, and that sharpens judgment in the
-          work itself.
-        </p>
-      </div>
-    </div>
-
-    {
-      posts.length > 0 && (
-        <div class="section-block">
-          <h2 class="section-title">Latest writing</h2>
-          <div class="blog-list">
-            {posts.map((post, index) => (
-              <>
-                <a href={postPath(post.id)} class="blog-item">
-                  <span class="blog-title">{post.data.title}</span>
-                  <span class="blog-meta">
-                    {post.data.tags[0] && (
-                      <span class="blog-tag">{post.data.tags[0]}</span>
-                    )}
-                    <span class="blog-date">{formatDate(post.data.date)}</span>
-                  </span>
-                </a>
-                {index < posts.length - 1 && (
-                  <hr class="section-separator blog-separator" />
-                )}
-              </>
-            ))}
-          </div>
-          <p class="section-body" style="margin-top: 16px;">
-            <a href="/writing">All writing →</a>
-          </p>
+      <div class="link-list">
+        <div class="link-row">
+          <div class="name"><a href="https://restheart.org/">RESTHeart</a></div>
+          <div class="desc">The open source backend for MongoDB</div>
         </div>
-      )
-    }
-  </div>
-  <ContactCta />
+        <div class="link-row">
+          <div class="name"><a href="https://cloud.restheart.com">RESTHeart Cloud Platform</a></div>
+          <div class="desc">Managed RESTHeart services with built-in MCP server</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="section-label">
+        <span class="tag">SEC. E</span>
+        <div class="rule"></div>
+        <h2>Open source</h2>
+      </div>
+      <div class="link-list">
+        <div class="link-row">
+          <div class="name"><a href="https://github.com/SoftInstigate/facet">Facet</a></div>
+          <div class="desc">Data-driven web framework: turn APIs into HTML, zero code</div>
+        </div>
+        <div class="link-row">
+          <div class="name"><a href="https://github.com/SoftInstigate/ermes-mail">Ermes Mail</a></div>
+          <div class="desc">Async e-mail library and CLI for Java</div>
+        </div>
+        <div class="link-row">
+          <div class="name"><a href="https://github.com/SoftInstigate/restheart-cli">RESTHeart CLI</a></div>
+          <div class="desc">Command-line interface for RESTHeart</div>
+        </div>
+        <div class="link-row">
+          <div class="name"><a href="https://github.com/mkjsix">All projects on GitHub &rarr;</a></div>
+          <div class="desc"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap prose">
+      <div class="section-label">
+        <span class="tag">SEC. F</span>
+        <div class="rule"></div>
+        <h2>Teaching</h2>
+      </div>
+      <p>I created and delivered technical courses and workshops for enterprise clients and partner networks across Italy and EMEA. Teaching forces me to explain why decisions are made, and that sharpens judgment in the work itself.</p>
+    </div>
+  </section>
+
+  {posts.length > 0 && (
+    <section>
+      <div class="wrap">
+        <div class="section-label">
+          <span class="tag">SEC. G</span>
+          <div class="rule"></div>
+          <h2>Latest writing</h2>
+        </div>
+        <div class="article-list">
+          {posts.map((post) => (
+            <div class="article-row">
+              <span class="cat">{post.data.tags[0] ?? 'Article'}</span>
+              <a href={postPath(post.id)}>{post.data.title}</a>
+              <span class="date">{formatDate(post.data.date)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 </Base>

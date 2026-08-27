@@ -1,6 +1,5 @@
 ---
 import Base from "../../layouts/Base.astro";
-import ContactCta from "../../components/ContactCta.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog", ({ data }) => !data.draft)).sort(
@@ -102,64 +101,58 @@ const mediumLinks = [
   ogImage="/images/og-image.png"
   jsonLd={blogJsonLd}
 >
-  <div class="hero hero--first">
-    <p class="hero-eyebrow">Writing</p>
-    <h1 class="hero-headline">Notes on the decisions that shape software.</h1>
-  </div>
+  <style>
+    :root { --max-width: 820px; }
+    .section-label h2 { font-size: 1.6rem; }
+    section { padding: 50px 0; }
+    .section-label { margin-bottom: 32px; }
+  </style>
 
-  <div class="page-content section-stack">
-    {
-      posts.length > 0 && (
-        <div class="section-block">
-          <div class="blog-list">
-            {posts.map((post, index) => (
-              <>
-                <a href={postPath(post.id)} class="blog-item">
-                  <span class="blog-title">{post.data.title}</span>
-                  <span class="blog-meta">
-                    {post.data.tags[0] && (
-                      <span class="blog-tag">{post.data.tags[0]}</span>
-                    )}
-                    <span class="blog-date">{formatDate(post.data.date)}</span>
-                  </span>
-                </a>
-                {index < posts.length - 1 && (
-                  <hr class="section-separator blog-separator" />
-                )}
-              </>
-            ))}
-          </div>
+  <header class="hero hero--writing grid-bg">
+    <div class="wrap">
+      <div class="eyebrow mono">Writing</div>
+      <h1>Practical notes from the architecture trenches.</h1>
+      <p>Thoughts on architecture, systems and engineering.</p>
+    </div>
+  </header>
+
+  {posts.length > 0 && (
+    <section>
+      <div class="wrap">
+        <div class="section-label">
+          <span class="tag">SEC. A</span>
+          <div class="rule"></div>
+          <h2>On this site</h2>
         </div>
-      )
-    }
+        <div class="article-list">
+          {posts.map((post) => (
+            <div class="article-row">
+              <span class="cat">{post.data.tags[0] ?? 'Article'}</span>
+              <a href={postPath(post.id)}>{post.data.title}</a>
+              <span class="date">{formatDate(post.data.date)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
-    <div class="section-block">
-      <div class="blog-list">
-        <p class="card-label">On Medium</p>
-        {
-          mediumLinks.map((link, index) => (
-            <>
-              <a
-                href={link.url}
-                target="_blank"
-                rel="noopener"
-                class="blog-item"
-              >
-                <span class="blog-title">{link.title}</span>
-                <span class="blog-meta">
-                  <span class="blog-tag">{link.tag}</span>
-                  <span class="blog-date">{link.date}</span>
-                </span>
-              </a>
-              {index < mediumLinks.length - 1 && (
-                <hr class="section-separator blog-separator" />
-              )}
-            </>
-          ))
-        }
+  <section>
+    <div class="wrap">
+      <div class="section-label">
+        <span class="tag">SEC. B</span>
+        <div class="rule"></div>
+        <h2>On Medium</h2>
+      </div>
+      <div class="article-list">
+        {mediumLinks.map((link) => (
+          <div class="article-row external">
+            <span class="cat">{link.tag}</span>
+            <a href={link.url} target="_blank" rel="noopener">{link.title}</a>
+            <span class="date">{link.date}</span>
+          </div>
+        ))}
       </div>
     </div>
-
-    <ContactCta />
-  </div>
+  </section>
 </Base>

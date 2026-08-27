@@ -1,6 +1,5 @@
 ---
 import Base from "../layouts/Base.astro";
-import ContactCta from "../components/ContactCta.astro";
 import { getCollection } from "astro:content";
 
 const posts = (await getCollection("blog", ({ data }) => !data.draft))
@@ -63,146 +62,131 @@ const consultingJsonLd = {
   ogImage="/images/og-image.png"
   jsonLd={consultingJsonLd}
 >
-  <!-- Hero -->
-  <div class="hero hero--first">
-    <h1 class="hero-headline hero-headline--lg">
-      Technical strategy with a business edge
-    </h1>
-    <p class="hero-sub">Software architecture and system design for products that need to move fast.</p>
-  </div>
+  <header class="hero grid-bg">
+    <div class="wrap">
+      <div class="eyebrow mono">Software architecture &middot; System design</div>
+      <h1>Technical strategy<br>with a <em>business edge</em>.</h1>
+      <p>Software architecture and system design for products that need to move fast, for teams that need to trust the decision.</p>
+      <div class="actions">
+        <a href="https://calendly.com/maurizioturatti-info/30min" class="btn" data-calendly>Book a call</a>
+        <a href="/writing" class="link">Read selected work &rarr;</a>
+      </div>
+    </div>
+  </header>
 
-  <div class="section-stack">
-    <!-- How I help -->
-    <div class="section-block">
-      <h2 class="section-title">How I help</h2>
-      <div class="card-grid card-grid--featured card-grid--how-i-help">
-        <div class="surface-card">
-          <p class="card-title">MVP and technical direction</p>
-          <p class="card-label">
-            &ldquo;I need a senior technical guide to design and deliver an MVP,
-            including AI from pilot to production.&rdquo;
-          </p>
+  <section>
+    <div class="wrap">
+      <div class="section-label">
+        <span class="tag">SEC. A</span>
+        <div class="rule"></div>
+        <h2>How I help</h2>
+      </div>
+
+      <div class="help-grid">
+        <div class="help-item">
+          <span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="var(--accent)" stroke-width="1.4"><circle cx="16" cy="16" r="13"/><path d="M21 11l-4 8-8 4 4-8 8-4z"/><circle cx="16" cy="16" r="1.4" fill="var(--accent)" stroke="none"/></svg></span>
+          <span class="category">MVP and technical direction</span>
+          <blockquote>I need a senior technical guide to design and deliver an MVP, including AI from pilot to production.</blockquote>
         </div>
-        <div class="surface-card">
-          <p class="card-title">Scale a system in production</p>
-          <p class="card-label">
-            &ldquo;I need to know whether the system will hold under real load
-            and what has to change before it breaks.&rdquo;
-          </p>
+        <div class="help-item">
+          <span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="var(--accent)" stroke-width="1.4"><path d="M4 27h24" stroke-linecap="round"/><rect x="7" y="18" width="4.5" height="9"/><rect x="14" y="12" width="4.5" height="15"/><rect x="21" y="6" width="4.5" height="21"/></svg></span>
+          <span class="category">Scale a system in production</span>
+          <blockquote>I need to know whether the system will hold under real load and what has to change before it breaks.</blockquote>
         </div>
-        <div class="surface-card">
-          <p class="card-title">Integration across different organizations</p>
-          <p class="card-label">
-            &ldquo;I need a clear boundary between our systems, without creating a
-            dependency we cannot get out of later.&rdquo;
-          </p>
+        <div class="help-item">
+          <span class="icon"><svg viewBox="0 0 32 32" fill="none" stroke="var(--accent)" stroke-width="1.4"><circle cx="7" cy="9" r="4"/><circle cx="25" cy="23" r="4"/><path d="M10.5 11.5L21.5 20.5" stroke-dasharray="2 3"/></svg></span>
+          <span class="category">Integration across organizations</span>
+          <blockquote>I need a clear boundary between our systems, without creating a dependency we cannot get out of later.</blockquote>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Selected results -->
-    <div class="section-block">
-      <h2 class="section-title">Selected work</h2>
-      <div class="section-body">
-        <div class="card-grid card-grid--featured card-grid--selected-work">
-          <div class="surface-card">
-            <p class="card-label">Retail, backend modernization</p>
-            <p class="card-title">
-              Replacing a backend without stopping 2,600 stores
-            </p>
-            <p class="card-text">
-              The constraint was to replace the backend in place while keeping
-              2,600 stores and 9,500 terminals running. The migration handled
-              150 million documents and 1 TB of data, delivering a 79%
-              throughput gain and a 216x query-time reduction.
-            </p>
+  <section>
+    <div class="wrap">
+      <div class="section-label">
+        <span class="tag">SEC. B</span>
+        <div class="rule"></div>
+        <h2>Selected work</h2>
+      </div>
+
+      <div class="case-grid">
+        <div class="case">
+          <div class="stat">2,600<span class="stat-label">stores, zero downtime</span></div>
+          <div class="content">
+            <span class="category">Retail &middot; Backend modernization</span>
+            <h3>Replacing a backend without stopping 2,600 stores</h3>
+            <p>150 million documents and 1 TB of data migrated in place, across 9,500 terminals. Result: 79% throughput gain and a 216&times; reduction in query time.</p>
           </div>
-          <div class="surface-card">
-            <p class="card-label">Luxury e-commerce</p>
-            <p class="card-title">One architecture across three cities</p>
-            <p class="card-text">
-              The choice was one shared architecture for a luxury brand across
-              Berlin, Geneva, and Shanghai, with local compliance and
-              localization constraints built into the design. It kept teams
-              aligned across time zones and preserved delivery momentum.
-            </p>
+        </div>
+
+        <div class="case">
+          <div class="stat">18<span class="stat-label">microservices, AWS</span></div>
+          <div class="content">
+            <span class="category">Mobility &amp; traffic management</span>
+            <h3>Absorbing three national traffic feeds without a single-source model</h3>
+            <p>HERE, TomTom and Radio24, each on a different schema and update cycle, unified into one platform. In production since 2017, more than 99.9% uptime.</p>
           </div>
-          <div class="surface-card">
-            <p class="card-label">Mobility &amp; traffic management</p>
-            <p class="card-title">18 microservices on AWS</p>
-            <p class="card-text">
-              The constraint was multiple national traffic feeds, each with a
-              different schema and update cycle. The platform absorbed HERE,
-              TomTom, and Radio24 without imposing a single-source model, and
-              has run in production since 2017 with more than 99.9% uptime.
-            </p>
+        </div>
+
+        <div class="case">
+          <div class="stat">9M<span class="stat-label">calls / hour, peak</span></div>
+          <div class="content">
+            <span class="category">Public sector</span>
+            <h3>Architecture designed while requirements were still moving</h3>
+            <p>The system grew to 400,000 entities and absorbed peak loads of 9 million calls per hour before a wider modular redesign.</p>
           </div>
-          <div class="surface-card">
-            <p class="card-label">Public sector</p>
-            <p class="card-title">
-              Architecture while requirements were still moving
-            </p>
-            <p class="card-text">
-              Requirements were still forming, so the architecture had to move
-              while the main bottlenecks were being identified. The system grew
-              to 400,000 entities and handled peaks of 9 million calls per hour
-              before a wider modular redesign.
-            </p>
+        </div>
+
+        <div class="case">
+          <div class="stat">3<span class="stat-label">cities, one architecture</span></div>
+          <div class="content">
+            <span class="category">Luxury e-commerce</span>
+            <h3>One architecture across three cities</h3>
+            <p>A single shared architecture for a luxury brand across Berlin, Geneva and Shanghai, with local compliance and localization built into the design. It kept teams aligned across time zones.</p>
           </div>
-          <div class="surface-card">
-            <p class="card-label">Enterprise content</p>
-            <p class="card-title">Headless CMS for Content as a Service</p>
-            <p class="card-text">
-              The choice was a single API contract for Crownpeak while hundreds
-              of clients depended on the same content layer. The separation
-              made the system reusable without forcing each client into bespoke
-              integration.
-            </p>
+        </div>
+
+        <div class="case">
+          <div class="stat">1<span class="stat-label">API contract, hundreds of clients</span></div>
+          <div class="content">
+            <span class="category">Enterprise content</span>
+            <h3>Headless CMS for Content as a Service</h3>
+            <p>A single API contract for Crownpeak while hundreds of clients depended on the same content layer, reusable without forcing each client into bespoke integration.</p>
           </div>
-          <div class="surface-card">
-            <p class="card-label">Open source platform</p>
-            <p class="card-title">Ten years of evolution without rewrite</p>
-            <p class="card-text">
-              RESTHeart evolved through major upstream changes while preserving
-              a stable product and API. Unisys and Northrop Grumman were among
-              the organizations using the open source platform as it grew into a
-              hosted SaaS offering.
-            </p>
+        </div>
+
+        <div class="case">
+          <div class="stat">10<span class="stat-label">years, no rewrite</span></div>
+          <div class="content">
+            <span class="category">Open source platform</span>
+            <h3>Ten years of evolution without rewrite</h3>
+            <p>RESTHeart evolved through major upstream changes while preserving a stable product and API. Unisys and Northrop Grumman used it as it grew into a hosted SaaS offering.</p>
           </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Latest writing -->
-    {
-      posts.length > 0 && (
-        <div class="section-block">
-          <h2 class="section-title">Latest writing</h2>
-          <div class="blog-list">
-            {posts.map((post, index) => (
-              <>
-                <a href={postPath(post.id)} class="blog-item">
-                  <span class="blog-title">{post.data.title}</span>
-                  <span class="blog-meta">
-                    {post.data.tags[0] && (
-                      <span class="blog-tag">{post.data.tags[0]}</span>
-                    )}
-                    <span class="blog-date">{formatDate(post.data.date)}</span>
-                  </span>
-                </a>
-                {index < posts.length - 1 && (
-                  <hr class="section-separator blog-separator" />
-                )}
-              </>
-            ))}
-          </div>
-          <p class="section-body" style="margin-top: 16px;">
-            <a href="/writing">All writing →</a>
-          </p>
+  {posts.length > 0 && (
+    <section>
+      <div class="wrap">
+        <div class="section-label">
+          <span class="tag">SEC. C</span>
+          <div class="rule"></div>
+          <h2>Latest writing</h2>
         </div>
-      )
-    }
-  </div>
 
-  <ContactCta />
+        <div class="article-list">
+          {posts.map((post) => (
+            <div class="article-row">
+              <span class="cat">{post.data.tags[0] ?? 'Article'}</span>
+              <a href={postPath(post.id)}>{post.data.title}</a>
+              <span class="date">{formatDate(post.data.date)}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 </Base>
