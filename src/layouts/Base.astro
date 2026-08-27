@@ -1,7 +1,14 @@
 ---
-import '@fontsource/dm-sans/400.css';
-import '@fontsource/dm-sans/500.css';
-import '@fontsource/dm-serif-display/400.css';
+import '@fontsource/space-grotesk/400.css';
+import '@fontsource/space-grotesk/500.css';
+import '@fontsource/space-grotesk/600.css';
+import '@fontsource/space-grotesk/700.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/500.css';
+import '@fontsource/ibm-plex-mono/600.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource-variable/fraunces';
 import '../styles/global.css';
 
 interface Props {
@@ -16,6 +23,7 @@ interface Props {
   modifiedTime?: string;
   articleTags?: string[];
   jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
+  maxWidth?: string;
 }
 
 const {
@@ -30,6 +38,7 @@ const {
   modifiedTime,
   articleTags = [],
   jsonLd,
+  maxWidth,
 } = Astro.props;
 
 const siteOrigin = Astro.site ? new URL('/', Astro.site).toString() : `${Astro.url.origin}/`;
@@ -96,6 +105,9 @@ const pageJsonLd = jsonLd
   : [];
 
 const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
+
+const isAbout = Astro.url.pathname === '/about/';
+const isWriting = Astro.url.pathname.startsWith('/writing');
 ---
 
 <!doctype html>
@@ -103,13 +115,13 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Preconnect to third-party origins for faster DNS/TCP/TLS -->
     <link rel="preconnect" href="https://m.maurizioturatti.com" crossorigin />
     <link rel="preconnect" href="https://assets.calendly.com" crossorigin />
 
@@ -117,11 +129,10 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
     <meta name="description" content={description} />
     <meta name="robots" content={robotsContent} />
     <meta name="author" content="Maurizio Turatti" />
-    <meta name="theme-color" content="#f6f5f0" />
+    <meta name="theme-color" content="#1a1410" />
     <link rel="canonical" href={canonicalURL} />
     <slot name="head" />
 
-    <!-- Open Graph -->
     <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
@@ -131,7 +142,6 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
     <meta property="og:locale" content="en_US" />
     <meta property="og:image:alt" content={ogImageAlt} />
 
-    <!-- Twitter -->
     <meta name="twitter:site" content="@mkj6" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
@@ -153,97 +163,79 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
     ))}
   </head>
   <body>
-    <div class="container">
-      <nav>
-        <div class="nav-inner">
-          <a href="/" class="nav-logo">
-            <picture>
-              <source srcset="/images/maurizio.webp" type="image/webp" />
-              <img src="/images/maurizio.jpeg" alt="Avatar Maurizio Turatti" class="avatar" width="44" height="44" loading="eager" />
-            </picture>
-            <span>Maurizio Turatti</span>
-          </a>
-          <ul class="nav-links">
-            <li><a href="/about" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a></li>
-            <li><a href="/writing" aria-current={Astro.url.pathname.startsWith('/writing') ? 'page' : undefined}>Writing</a></li>
-          </ul>
-          <a href="https://calendly.com/maurizioturatti-info/30min" class="nav-cta" data-calendly>Book a call</a>
-          <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
-            <span class="nav-hamburger"></span>
-          </button>
-          <div class="nav-drawer" hidden>
-            <ul class="nav-drawer-links">
-              <li><a href="/about" aria-current={Astro.url.pathname === '/about/' ? 'page' : undefined}>About</a></li>
-              <li><a href="/writing" aria-current={Astro.url.pathname.startsWith('/writing') ? 'page' : undefined}>Writing</a></li>
-            </ul>
-            <a href="https://calendly.com/maurizioturatti-info/30min" class="nav-cta" data-calendly>Book a call</a>
-          </div>
-        </div>
-      </nav>
-      <script>
-        (function() {
-          const toggle = document.querySelector('.nav-toggle');
-          const drawer = document.querySelector('.nav-drawer');
-          if (!toggle || !drawer) return;
-
-          function openMenu() {
-            drawer.removeAttribute('hidden');
-            toggle.setAttribute('aria-expanded', 'true');
-            toggle.classList.add('nav-toggle--open');
-          }
-          function closeMenu() {
-            drawer.setAttribute('hidden', '');
-            toggle.setAttribute('aria-expanded', 'false');
-            toggle.classList.remove('nav-toggle--open');
-          }
-
-          toggle.addEventListener('click', function() {
-            if (drawer.hasAttribute('hidden')) { openMenu(); } else { closeMenu(); }
-          });
-
-          drawer.querySelectorAll('a').forEach(function(a) {
-            a.addEventListener('click', closeMenu);
-          });
-
-          document.addEventListener('click', function(e) {
-            if (!drawer.hasAttribute('hidden') && !drawer.contains(e.target) && !toggle.contains(e.target)) {
-              closeMenu();
-            }
-          });
-        })();
-      </script>
-      <hr class="section-separator section-separator-nav" />
-
-      <div class="page-body">
-        <main>
-          <slot />
-        </main>
+    <nav class="site-nav grid-bg" style="position:relative;">
+      <a href="/" class="brand">MAURIZIO <span>TURATTI</span></a>
+      <ul class="site-nav-links">
+        <li><a href="/about" aria-current={isAbout ? 'page' : undefined}>About</a></li>
+        <li><a href="/writing" aria-current={isWriting ? 'page' : undefined}>Writing</a></li>
+      </ul>
+      <a href="https://calendly.com/maurizioturatti-info/30min" class="btn" data-calendly>Book a call</a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+        <span class="nav-hamburger"></span>
+      </button>
+      <div class="nav-drawer" hidden>
+        <ul class="nav-drawer-links">
+          <li><a href="/about" aria-current={isAbout ? 'page' : undefined}>About</a></li>
+          <li><a href="/writing" aria-current={isWriting ? 'page' : undefined}>Writing</a></li>
+        </ul>
+        <a href="https://calendly.com/maurizioturatti-info/30min" class="btn" data-calendly>Book a call</a>
       </div>
+    </nav>
+    <script>
+      (function() {
+        const toggle = document.querySelector('.nav-toggle');
+        const drawer = document.querySelector('.nav-drawer');
+        if (!toggle || !drawer) return;
 
-      <hr class="section-separator" />
+        function openMenu() {
+          drawer.removeAttribute('hidden');
+          toggle.setAttribute('aria-expanded', 'true');
+          toggle.classList.add('nav-toggle--open');
+        }
+        function closeMenu() {
+          drawer.setAttribute('hidden', '');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.classList.remove('nav-toggle--open');
+        }
 
-      <footer>
-        <span class="footer-name"><a href="mailto:info@maurizioturatti.com">info@maurizioturatti.com</a></span>
-        <div class="footer-links">
-          <a href="https://www.linkedin.com/in/maurizioturatti" target="_blank" rel="noopener" class="footer-link footer-link--linkedin">
-            LinkedIn
-          </a>
-          <a href="https://github.com/mkjsix" target="_blank" rel="noopener" class="footer-link footer-link--github">
-            GitHub
-          </a>
-          <a href="https://stackoverflow.com/users/615095/mturatti" target="_blank" rel="noopener" class="footer-link footer-link--stackoverflow">
-            Stack Overflow
-          </a>
+        toggle.addEventListener('click', function() {
+          if (drawer.hasAttribute('hidden')) { openMenu(); } else { closeMenu(); }
+        });
+
+        drawer.querySelectorAll('a').forEach(function(a) {
+          a.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('click', function(e) {
+          if (!drawer.hasAttribute('hidden') && !drawer.contains(e.target) && !toggle.contains(e.target)) {
+            closeMenu();
+          }
+        });
+      })();
+    </script>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span class="mono"><a href="mailto:info@maurizioturatti.com">info@maurizioturatti.com</a></span>
+        <div class="mono footer-social">
+          <a href="https://www.linkedin.com/in/maurizioturatti" target="_blank" rel="noopener">LinkedIn</a>
+          &middot;
+          <a href="https://github.com/mkjsix" target="_blank" rel="noopener">GitHub</a>
+          &middot;
+          <a href="https://stackoverflow.com/users/615095/mturatti" target="_blank" rel="noopener">Stack Overflow</a>
         </div>
         <div class="footer-legal">
           <span>PEC: <a href="mailto:maurizio.turatti@legalmail.it">maurizio.turatti@legalmail.it</a></span>
           <span>P.IVA 02452460039</span>
           <span>SDI: M5UXCR1</span>
         </div>
-      </footer>
-    </div>
+      </div>
+    </footer>
 
-    <!-- Calendly popup: lazy-loaded on hover, opened on click -->
     <script is:inline>
       (function() {
         var ready = false, loading = false;
@@ -277,7 +269,6 @@ const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
       })();
     </script>
 
-    <!-- GoatCounter analytics: async, after all content -->
     <script data-goatcounter="https://mturatti.goatcounter.com/count"
             async src="//gc.zgo.at/count.js"></script>
   </body>

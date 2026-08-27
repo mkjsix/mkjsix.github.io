@@ -58,30 +58,45 @@ const blogPostingJsonLd = {
   articleTags={post.data.tags}
   jsonLd={blogPostingJsonLd}
 >
+  <style>
+    :root { --max-width: 820px; }
+  </style>
 
-  <div class="hero hero--first">
-    <p class="hero-eyebrow">
-      {formatDate(post.data.date)}
-      {post.data.tags.length > 0 && <> &middot; {post.data.tags.join(', ')}</>}
-    </p>
-    <h1 class="hero-headline">{post.data.title}</h1>
-  </div>
-  <hr class="section-separator" />
+  <header class="hero hero--writing grid-bg">
+    <div class="wrap">
+      <div class="eyebrow mono">
+        {formatDate(post.data.date)}
+        {post.data.tags.length > 0 && <> &middot; {post.data.tags.join(', ')}</>}
+      </div>
+      <h1>{post.data.title}</h1>
+    </div>
+  </header>
+
+  <hr style="border:0; border-top:1px solid var(--line); max-width:var(--max-width); margin:0 auto; padding:0 32px; box-sizing:border-box;" />
+
   {post.data.image && (
-    <figure class="post-cover">
-      <Image src={post.data.image} alt={post.data.image_alt ?? post.data.title} loading="eager" />
-    </figure>
+    <div style="max-width:var(--max-width); margin:0 auto; padding:0 32px;">
+      <figure class="post-cover">
+        <Image src={post.data.image} alt={post.data.image_alt ?? post.data.title} loading="eager" />
+      </figure>
+    </div>
   )}
 
-  <div class="page-content post-content">
-    <Content />
+  <div class="wrap">
+    <div class="post-content">
+      <Content />
+    </div>
   </div>
 
-  <ContactCta />
+  <div class="wrap">
+    <ContactCta />
+  </div>
 
-  <div class="post-footer">
-    <a href="/writing" class="post-back-link">
-      &larr; All posts
-    </a>
+  <div class="wrap">
+    <div class="post-footer">
+      <a href="/writing" class="post-back-link">
+        &larr; All posts
+      </a>
+    </div>
   </div>
 </Base>
