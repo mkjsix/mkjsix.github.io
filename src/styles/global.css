@@ -113,7 +113,7 @@ img { max-width: 100%; display: block; }
    Hero
    ============================================ */
 .hero {
-  padding: 60px 0 50px;
+  padding: 40px 0 4px;
   position: relative;
 }
 .hero .eyebrow {
