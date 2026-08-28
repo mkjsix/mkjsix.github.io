@@ -54,8 +54,26 @@ const aboutJsonLd = {
     <div class="wrap">
       <div class="eyebrow mono">About</div>
       <h1>Decisions made before certainty.</h1>
-      <p>I have been working with software since 1998, building distributed systems, integrations, and content platforms for organizations that needed the architecture to hold under operational pressure. Technical choices shape business outcomes long after the first release.</p>
-      <p>I help teams decide what is feasible, where to commit, and which risks become visible after delivery.</p>
+      <div class="hero-about-flex">
+        <div class="hero-about-photo">
+          <img
+            src="/images/maurizio.webp"
+            alt="Maurizio Turatti"
+            width="200"
+            height="200"
+            loading="eager"
+          />
+        </div>
+        <div class="hero-about-text">
+          <p>
+            I have been working with software since 1998, building distributed
+            systems, integrations, and content platforms for organizations that
+            needed the architecture to hold under operational pressure.
+            Technical choices shape business outcomes long after the first
+            release.
+          </p>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -66,7 +84,13 @@ const aboutJsonLd = {
         <div class="rule"></div>
         <h2>Background</h2>
       </div>
-      <p>My early work was in real-time distributed systems and GIS visualization at AI Software. I then moved into SOA and EAI at Sun Microsystems and SeeBeyond, followed by enterprise content platforms at AKQA and Alfresco. I co-founded <a href="https://softinstigate.com">SoftInstigate</a> in 2014 and spent the next years building and operating RESTHeart and related systems in production.</p>
+      <p>
+        My early work was in real-time distributed systems and GIS visualization
+        at AI Software. I then moved into SOA and EAI at Sun Microsystems and
+        SeeBeyond, followed by enterprise content platforms at AKQA and
+        Alfresco. I co-founded SoftInstigate in 2014 and spent the next years
+        building and operating RESTHeart and related systems in production.
+      </p>
     </div>
   </section>
 
@@ -77,21 +101,41 @@ const aboutJsonLd = {
         <div class="rule"></div>
         <h2>How I work</h2>
       </div>
+      <div class="prose">
+        <p>
+          Most problems I have seen come from unmanaged complexity and a lack of
+          architectural decisions. I keep the design simple, and I push back
+          when it is not.
+        </p>
+      </div>
       <div class="work-grid">
         <div class="work-item">
           <span class="category">Commercial and technical together</span>
           <h3>The important decisions are made together</h3>
-          <p>Commercial and technical choices are linked. A pricing decision that ignores platform complexity creates delivery pressure. A technical decision made without commercial constraints creates delivery risk, and it usually appears at the worst moment.</p>
+          <p>
+            Commercial and technical choices are linked. A pricing decision that
+            ignores platform complexity creates delivery pressure. A technical
+            decision made without commercial constraints creates delivery risk,
+            and it usually appears at the worst moment.
+          </p>
         </div>
         <div class="work-item">
           <span class="category">Integration across organizations</span>
           <h3>The system boundary is part of the design</h3>
-          <p>When two organizations have to work together, the architecture is not only the code. The boundary defines what each side owns, what is shared, and what breaks when the assumptions change.</p>
+          <p>
+            When two organizations have to work together, the architecture is
+            not only the code. The boundary defines what each side owns, what is
+            shared, and what breaks when the assumptions change.
+          </p>
         </div>
         <div class="work-item">
           <span class="category">Decisions under uncertainty</span>
           <h3>Most important choices are made before the facts are complete</h3>
-          <p>Important decisions are often made with incomplete information. When the cost of a wrong call shows up in the contract, the roadmap, or the system design, judgment matters more than analysis volume.</p>
+          <p>
+            Important decisions are often made with incomplete information. When
+            the cost of a wrong call shows up in the contract, the roadmap, or
+            the system design, judgment matters more than analysis volume.
+          </p>
         </div>
       </div>
     </div>
@@ -104,8 +148,16 @@ const aboutJsonLd = {
         <div class="rule"></div>
         <h2>AI adoption and architecture</h2>
       </div>
-      <p>AI changes the speed of execution more than the shape of the decision. A pilot can look promising for a month. Production reveals model drift, ownership of output quality, and the cost of fallback paths.</p>
-      <p>The hard part is usually not the model itself. It is the process around it: the data flow, the ownership, the operational controls, and the decision to keep a human path when the system is wrong.</p>
+      <p>
+        AI changes the speed of execution more than the shape of the decision. A
+        pilot can look promising for a month. Production reveals model drift,
+        ownership of output quality, and the cost of fallback paths.
+      </p>
+      <p>
+        The hard part is usually not the model itself. It is the process around
+        it: the data flow, the ownership, the operational controls, and the
+        decision to keep a human path when the system is wrong.
+      </p>
     </div>
   </section>
 
@@ -122,8 +174,12 @@ const aboutJsonLd = {
           <div class="desc">The open source backend for MongoDB</div>
         </div>
         <div class="link-row">
-          <div class="name"><a href="https://cloud.restheart.com">RESTHeart Cloud Platform</a></div>
-          <div class="desc">Managed RESTHeart services with built-in MCP server</div>
+          <div class="name">
+            <a href="https://cloud.restheart.com">RESTHeart Cloud Platform</a>
+          </div>
+          <div class="desc">
+            Managed RESTHeart services with built-in MCP server
+          </div>
         </div>
       </div>
     </div>
@@ -138,19 +194,32 @@ const aboutJsonLd = {
       </div>
       <div class="link-list">
         <div class="link-row">
-          <div class="name"><a href="https://github.com/SoftInstigate/facet">Facet</a></div>
-          <div class="desc">Data-driven web framework: turn APIs into HTML, zero code</div>
+          <div class="name">
+            <a href="https://github.com/SoftInstigate/facet">Facet</a>
+          </div>
+          <div class="desc">
+            Data-driven web framework: turn APIs into HTML, zero code
+          </div>
         </div>
         <div class="link-row">
-          <div class="name"><a href="https://github.com/SoftInstigate/ermes-mail">Ermes Mail</a></div>
+          <div class="name">
+            <a href="https://github.com/SoftInstigate/ermes-mail">Ermes Mail</a>
+          </div>
           <div class="desc">Async e-mail library and CLI for Java</div>
         </div>
         <div class="link-row">
-          <div class="name"><a href="https://github.com/SoftInstigate/restheart-cli">RESTHeart CLI</a></div>
+          <div class="name">
+            <a href="https://github.com/SoftInstigate/restheart-cli"
+              >RESTHeart CLI</a
+            >
+          </div>
           <div class="desc">Command-line interface for RESTHeart</div>
         </div>
         <div class="link-row">
-          <div class="name"><a href="https://github.com/mkjsix">All projects on GitHub &rarr;</a></div>
+          <div class="name">
+            <a href="https://github.com/mkjsix">All projects on GitHub &rarr;</a
+            >
+          </div>
           <div class="desc"></div>
         </div>
       </div>
@@ -164,28 +233,35 @@ const aboutJsonLd = {
         <div class="rule"></div>
         <h2>Teaching</h2>
       </div>
-      <p>I created and delivered technical courses and workshops for enterprise clients and partner networks across Italy and EMEA. Teaching forces me to explain why decisions are made, and that sharpens judgment in the work itself.</p>
+      <p>
+        I created and delivered technical courses and workshops for enterprise
+        clients and partner networks across Italy and EMEA. Teaching forces me
+        to explain why decisions are made, and that sharpens judgment in the
+        work itself.
+      </p>
     </div>
   </section>
 
-  {posts.length > 0 && (
-    <section>
-      <div class="wrap">
-        <div class="section-label">
-          <span class="tag">SEC. G</span>
-          <div class="rule"></div>
-          <h2>Latest writing</h2>
+  {
+    posts.length > 0 && (
+      <section>
+        <div class="wrap">
+          <div class="section-label">
+            <span class="tag">SEC. G</span>
+            <div class="rule" />
+            <h2>Latest writing</h2>
+          </div>
+          <div class="article-list">
+            {posts.map((post) => (
+              <div class="article-row">
+                <span class="cat">{post.data.tags[0] ?? "Article"}</span>
+                <a href={postPath(post.id)}>{post.data.title}</a>
+                <span class="date">{formatDate(post.data.date)}</span>
+              </div>
+            ))}
+          </div>
         </div>
-        <div class="article-list">
-          {posts.map((post) => (
-            <div class="article-row">
-              <span class="cat">{post.data.tags[0] ?? 'Article'}</span>
-              <a href={postPath(post.id)}>{post.data.title}</a>
-              <span class="date">{formatDate(post.data.date)}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
+      </section>
+    )
+  }
 </Base>

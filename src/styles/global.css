@@ -161,6 +161,34 @@ img { max-width: 100%; display: block; }
 /* Hero variants */
 .hero--about { padding: 50px 0 40px; }
 .hero--about h1 { max-width: 760px; font-size: clamp(2.2rem, 4.5vw, 3.4rem); line-height: 1.12; }
+.hero--about .hero-about-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  margin-top: 28px;
+}
+.hero--about .hero-about-photo {
+  flex-shrink: 0;
+}
+.hero--about .hero-about-photo img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+.hero--about .hero-about-text {
+  flex: 1;
+  min-width: 0;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+.hero--about .hero-about-text p:first-child {
+  margin-top: 0;
+}
+.hero--about .hero-about-text p + p {
+  margin-top: 16px;
+}
 .hero--writing { padding: 50px 0 36px; }
 .hero--writing h1 { font-size: clamp(2rem, 4.2vw, 3rem); line-height: 1.15; }
 .hero--writing p { margin-top: 22px; font-size: 1rem; }
@@ -318,6 +346,7 @@ section.tight { padding: 24px 0; }
    Prose (text sections)
    ============================================ */
 .prose p { color: var(--text-muted); font-size: 1rem; max-width: 680px; margin-bottom: 18px; }
+.prose + .work-grid { margin-top: 12px; }
 .prose a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-dim); }
 
 /* ============================================
@@ -627,6 +656,8 @@ section.tight { padding: 24px 0; }
 
   .hero { padding: 32px 0 20px; }
   .hero--about, .hero--writing { padding: 32px 0 18px; }
+  .hero--about .hero-about-flex { flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+  .hero--about .hero-about-photo img { width: 150px; height: 150px; }
   section { padding: 24px 0; }
   section.tight { padding: 16px 0; }
   .section-label { margin-bottom: 20px; }
