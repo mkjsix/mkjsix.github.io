@@ -1,22 +1,22 @@
 ---
-import '@fontsource/space-grotesk/400.css';
-import '@fontsource/space-grotesk/500.css';
-import '@fontsource/space-grotesk/600.css';
-import '@fontsource/space-grotesk/700.css';
-import '@fontsource/ibm-plex-mono/400.css';
-import '@fontsource/ibm-plex-mono/500.css';
-import '@fontsource/ibm-plex-mono/600.css';
-import '@fontsource/inter/400.css';
-import '@fontsource/inter/500.css';
-import '@fontsource-variable/fraunces';
-import '../styles/global.css';
+import "@fontsource/space-grotesk/400.css";
+import "@fontsource/space-grotesk/500.css";
+import "@fontsource/space-grotesk/600.css";
+import "@fontsource/space-grotesk/700.css";
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/500.css";
+import "@fontsource/ibm-plex-mono/600.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource-variable/fraunces";
+import "../styles/global.css";
 
 interface Props {
   title?: string;
   description?: string;
   canonical?: string;
   noindex?: boolean;
-  ogType?: 'website' | 'article';
+  ogType?: "website" | "article";
   ogImage?: string;
   ogImageAlt?: string;
   publishedTime?: string;
@@ -27,13 +27,13 @@ interface Props {
 }
 
 const {
-  title = 'Maurizio Turatti',
-  description = 'Technical strategy with a business edge. Software architecture and system design for products that need to move fast.',
+  title = "Maurizio Turatti",
+  description = "Technical strategy with a business edge. Software architecture and system design for products that need to move fast.",
   canonical,
   noindex = false,
-  ogType = 'website',
-  ogImage = '/images/og-image.png',
-  ogImageAlt = 'Portrait of Maurizio Turatti',
+  ogType = "website",
+  ogImage = "/images/og-image.png",
+  ogImageAlt = "Portrait of Maurizio Turatti",
   publishedTime,
   modifiedTime,
   articleTags = [],
@@ -41,73 +41,76 @@ const {
   maxWidth,
 } = Astro.props;
 
-const siteOrigin = Astro.site ? new URL('/', Astro.site).toString() : `${Astro.url.origin}/`;
+const siteOrigin = Astro.site
+  ? new URL("/", Astro.site).toString()
+  : `${Astro.url.origin}/`;
 const canonicalURL = canonical
   ? new URL(canonical, siteOrigin).toString()
   : new URL(Astro.url.pathname, siteOrigin).toString();
 const ogImageURL = new URL(ogImage, siteOrigin).toString();
 const robotsContent = noindex
-  ? 'noindex, nofollow'
-  : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+  ? "noindex, nofollow"
+  : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
 
 const websiteJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  '@id': `${siteOrigin}#website`,
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": `${siteOrigin}#website`,
   url: siteOrigin,
-  name: 'Maurizio Turatti',
+  name: "Maurizio Turatti",
   description,
-  inLanguage: 'en',
+  inLanguage: "en",
 };
 
 const personJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  '@id': `${siteOrigin}#person`,
-  name: 'Maurizio Turatti',
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${siteOrigin}#person`,
+  name: "Maurizio Turatti",
   url: siteOrigin,
   image: ogImageURL,
-  jobTitle: 'Technical and Commercial Advisor',
+  jobTitle: "Technical and Commercial Advisor",
   knowsAbout: [
-    'Software Architecture',
-    'Architectural Decision-Making',
-    'Technical Risk Assessment',
-    'Technical strategy',
-    'CTO Advisory',
-    'Architecture Review',
-    'Technical Due Diligence',
-    'Technical Strategy',
-    'Business Development',
-    'Lead Evaluation',
-    'Public Sector Tender Assessment',
-    'Private Sector Tender Assessment',
-    'Partnership Structuring',
-    'Partner Management',
-    'Vendor Management',
-    'Contract Negotiation',
-    'Pre-Sales Technical Framing',
-    'RFP Response Management',
-    'Client-Facing Delivery',
-    'Distributed Systems',
-    'API Design',
-    'Data Modeling',
-    'HTTP, REST, WebSocket, SSE',
-    'Stakeholder Management',
-    'AI Integration',
+    "Software Architecture",
+    "Architectural Decision-Making",
+    "Technical Risk Assessment",
+    "Technical strategy",
+    "CTO Advisory",
+    "Architecture Review",
+    "Technical Due Diligence",
+    "Technical Strategy",
+    "Business Development",
+    "Lead Evaluation",
+    "Public Sector Tender Assessment",
+    "Private Sector Tender Assessment",
+    "Partnership Structuring",
+    "Partner Management",
+    "Vendor Management",
+    "Contract Negotiation",
+    "Pre-Sales Technical Framing",
+    "RFP Response Management",
+    "Client-Facing Delivery",
+    "Distributed Systems",
+    "API Design",
+    "Data Modeling",
+    "HTTP, REST, WebSocket, SSE",
+    "Stakeholder Management",
+    "AI Integration",
   ],
-  sameAs: ['https://www.linkedin.com/in/maurizioturatti', 'https://github.com/mkjsix', 'https://stackoverflow.com/users/615095/mturatti', 'https://x.com/mkj6'],
+  sameAs: [
+    "https://www.linkedin.com/in/maurizioturatti",
+    "https://github.com/mkjsix",
+    "https://stackoverflow.com/users/615095/mturatti",
+    "https://x.com/mkj6",
+  ],
 };
 
-const pageJsonLd = jsonLd
-  ? Array.isArray(jsonLd)
-    ? jsonLd
-    : [jsonLd]
-  : [];
+const pageJsonLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
 const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
 
-const isAbout = Astro.url.pathname === '/about/';
-const isWriting = Astro.url.pathname.startsWith('/writing');
+const isAbout = Astro.url.pathname === "/about/";
+const isWriting = Astro.url.pathname.startsWith("/writing");
 ---
 
 <!doctype html>
@@ -148,66 +151,111 @@ const isWriting = Astro.url.pathname.startsWith('/writing');
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
 
-    {ogType === 'article' && publishedTime && (
-      <meta property="article:published_time" content={publishedTime} />
-    )}
-    {ogType === 'article' && modifiedTime && (
-      <meta property="article:modified_time" content={modifiedTime} />
-    )}
-    {ogType === 'article' && articleTags.map((tag) => (
-      <meta property="article:tag" content={tag} />
-    ))}
+    {
+      ogType === "article" && publishedTime && (
+        <meta property="article:published_time" content={publishedTime} />
+      )
+    }
+    {
+      ogType === "article" && modifiedTime && (
+        <meta property="article:modified_time" content={modifiedTime} />
+      )
+    }
+    {
+      ogType === "article" &&
+        articleTags.map((tag) => <meta property="article:tag" content={tag} />)
+    }
 
-    {structuredData.map((schema) => (
-      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-    ))}
+    {
+      structuredData.map((schema) => (
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+      ))
+    }
   </head>
   <body>
     <nav class="site-nav grid-bg" style="position:relative;">
       <a href="/" class="brand">Maurizio Turatti</a>
       <ul class="site-nav-links">
-        <li><a href="/about" aria-current={isAbout ? 'page' : undefined}>About</a></li>
-        <li><a href="/writing" aria-current={isWriting ? 'page' : undefined}>Writing</a></li>
+        <li>
+          <a href="/about" aria-current={isAbout ? "page" : undefined}>About</a>
+        </li>
+        <li>
+          <a href="/writing" aria-current={isWriting ? "page" : undefined}
+            >Writing</a
+          >
+        </li>
       </ul>
-      <a href="https://calendly.com/maurizioturatti-info/30min" class="btn" data-calendly>Book a call</a>
+      <a
+        href="https://calendly.com/maurizioturatti-info/30min"
+        class="btn"
+        data-calendly>Book a call</a
+      >
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
         <span class="nav-hamburger"></span>
       </button>
       <div class="nav-drawer" hidden>
         <ul class="nav-drawer-links">
-          <li><a href="/about" aria-current={isAbout ? 'page' : undefined}>About</a></li>
-          <li><a href="/writing" aria-current={isWriting ? 'page' : undefined}>Writing</a></li>
+          <li>
+            <a href="/about" aria-current={isAbout ? "page" : undefined}
+              >About</a
+            >
+          </li>
+          <li>
+            <a href="/writing" aria-current={isWriting ? "page" : undefined}
+              >Writing</a
+            >
+          </li>
         </ul>
-        <a href="https://calendly.com/maurizioturatti-info/30min" class="btn" data-calendly>Book a call</a>
+        <a
+          href="https://calendly.com/maurizioturatti-info/30min"
+          class="btn"
+          data-calendly>Book a call</a
+        >
       </div>
     </nav>
     <script>
-      (function() {
-        const toggle = document.querySelector('.nav-toggle');
-        const drawer = document.querySelector('.nav-drawer');
+      (function () {
+        const toggle = document.querySelector(".nav-toggle");
+        const drawer = document.querySelector(".nav-drawer");
         if (!toggle || !drawer) return;
 
         function openMenu() {
-          drawer.removeAttribute('hidden');
-          toggle.setAttribute('aria-expanded', 'true');
-          toggle.classList.add('nav-toggle--open');
+          if (drawer !== null) {
+            drawer.removeAttribute("hidden");
+          }
+          if (toggle !== null) {
+            toggle.setAttribute("aria-expanded", "true");
+            toggle.classList.add("nav-toggle--open");
+          }
         }
         function closeMenu() {
-          drawer.setAttribute('hidden', '');
-          toggle.setAttribute('aria-expanded', 'false');
-          toggle.classList.remove('nav-toggle--open');
+          if (drawer !== null) {
+            drawer.setAttribute("hidden", "");
+          }
+          if (toggle !== null) {
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.classList.remove("nav-toggle--open");
+          }
         }
 
-        toggle.addEventListener('click', function() {
-          if (drawer.hasAttribute('hidden')) { openMenu(); } else { closeMenu(); }
+        toggle.addEventListener("click", function () {
+          if (drawer.hasAttribute("hidden")) {
+            openMenu();
+          } else {
+            closeMenu();
+          }
         });
 
-        drawer.querySelectorAll('a').forEach(function(a) {
-          a.addEventListener('click', closeMenu);
+        drawer.querySelectorAll("a").forEach(function (a) {
+          a.addEventListener("click", closeMenu);
         });
 
-        document.addEventListener('click', function(e) {
-          if (!drawer.hasAttribute('hidden') && !drawer.contains(e.target) && !toggle.contains(e.target)) {
+        document.addEventListener("click", function (e) {
+          if (
+            !drawer.hasAttribute("hidden") &&
+            !drawer.contains(e.target) &&
+            !toggle.contains(e.target)
+          ) {
             closeMenu();
           }
         });
@@ -220,16 +268,33 @@ const isWriting = Astro.url.pathname.startsWith('/writing');
 
     <footer class="site-footer">
       <div class="wrap">
-        <span class="mono"><a href="mailto:info@maurizioturatti.com">info@maurizioturatti.com</a></span>
+        <span class="mono"
+          ><a href="mailto:info@maurizioturatti.com">info@maurizioturatti.com</a
+          ></span
+        >
         <div class="mono footer-social">
-          <a href="https://www.linkedin.com/in/maurizioturatti" target="_blank" rel="noopener">LinkedIn</a>
+          <a
+            href="https://www.linkedin.com/in/maurizioturatti"
+            target="_blank"
+            rel="noopener">LinkedIn</a
+          >
           &middot;
-          <a href="https://github.com/mkjsix" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://github.com/mkjsix" target="_blank" rel="noopener"
+            >GitHub</a
+          >
           &middot;
-          <a href="https://stackoverflow.com/users/615095/mturatti" target="_blank" rel="noopener">Stack Overflow</a>
+          <a
+            href="https://stackoverflow.com/users/615095/mturatti"
+            target="_blank"
+            rel="noopener">Stack Overflow</a
+          >
         </div>
         <div class="footer-legal">
-          <span>PEC: <a href="mailto:maurizio.turatti@legalmail.it">maurizio.turatti@legalmail.it</a></span>
+          <span
+            >PEC: <a href="mailto:maurizio.turatti@legalmail.it"
+              >maurizio.turatti@legalmail.it</a
+            ></span
+          >
           <span>P.IVA 02452460039</span>
           <span>SDI: M5UXCR1</span>
         </div>
@@ -237,39 +302,57 @@ const isWriting = Astro.url.pathname.startsWith('/writing');
     </footer>
 
     <script is:inline>
-      (function() {
-        var ready = false, loading = false;
+      (function () {
+        var ready = false,
+          loading = false;
         function ensureLoaded(callback) {
-          if (ready) { callback(); return; }
-          if (loading) { window._calendlyQueue.push(callback); return; }
-          loading = true; window._calendlyQueue = [callback];
-          var link = document.createElement('link');
-          link.rel = 'stylesheet';
-          link.href = 'https://assets.calendly.com/assets/external/widget.css';
+          if (ready) {
+            callback();
+            return;
+          }
+          if (loading) {
+            window._calendlyQueue.push(callback);
+            return;
+          }
+          loading = true;
+          window._calendlyQueue = [callback];
+          var link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href = "https://assets.calendly.com/assets/external/widget.css";
           document.head.appendChild(link);
-          var s = document.createElement('script');
-          s.src = 'https://assets.calendly.com/assets/external/widget.js';
-          s.onload = function() {
+          var s = document.createElement("script");
+          s.src = "https://assets.calendly.com/assets/external/widget.js";
+          s.onload = function () {
             ready = true;
-            window._calendlyQueue.forEach(function(fn) { fn(); });
+            window._calendlyQueue.forEach(function (fn) {
+              fn();
+            });
           };
-          s.onerror = function() { loading = false; };
+          s.onerror = function () {
+            loading = false;
+          };
           document.head.appendChild(s);
         }
-        function preload() { ensureLoaded(function() {}); }
-        document.querySelectorAll('[data-calendly]').forEach(function(el) {
-          el.addEventListener('mouseenter', preload);
-          el.addEventListener('focus', preload);
-          el.addEventListener('click', function(e) {
+        function preload() {
+          ensureLoaded(function () {});
+        }
+        document.querySelectorAll("[data-calendly]").forEach(function (el) {
+          el.addEventListener("mouseenter", preload);
+          el.addEventListener("focus", preload);
+          el.addEventListener("click", function (e) {
             e.preventDefault();
             var url = e.currentTarget.href;
-            ensureLoaded(function() { Calendly.initPopupWidget({url: url}); });
+            ensureLoaded(function () {
+              Calendly.initPopupWidget({ url: url });
+            });
           });
         });
       })();
     </script>
 
-    <script data-goatcounter="https://mturatti.goatcounter.com/count"
-            async src="//gc.zgo.at/count.js"></script>
+    <script
+      data-goatcounter="https://mturatti.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"></script>
   </body>
 </html>
