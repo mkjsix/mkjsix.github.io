@@ -190,7 +190,6 @@ img { max-width: 100%; display: block; }
   margin-top: 16px;
 }
 .hero--writing { padding: 50px 0 36px; }
-.hero--writing h1 { font-size: clamp(2rem, 4.2vw, 3rem); line-height: 1.15; }
 .hero--writing p { margin-top: 22px; font-size: 1rem; }
 
 /* ============================================
