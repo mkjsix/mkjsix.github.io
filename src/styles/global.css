@@ -205,8 +205,6 @@ section.tight { padding: 24px 0; }
   gap: 16px;
   margin-bottom: 28px;
 }
-.section-label .section-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); }
-.section-label .section-icon svg { width: 100%; height: 100%; }
 .section-label .tag {
   font-family: var(--font-mono);
   font-size: .72rem;
