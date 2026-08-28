@@ -113,7 +113,7 @@ img { max-width: 100%; display: block; }
    Hero
    ============================================ */
 .hero {
-  padding: 40px 0 4px;
+  padding: 50px 0 36px;
   position: relative;
 }
 .hero .eyebrow {
@@ -189,8 +189,6 @@ img { max-width: 100%; display: block; }
 .hero--about .hero-about-text p + p {
   margin-top: 16px;
 }
-.hero--writing { padding: 50px 0 36px; }
-.hero--writing p { margin-top: 22px; font-size: 1rem; }
 
 /* ============================================
    Section label
@@ -654,7 +652,7 @@ section.tight { padding: 24px 0; }
   .nav-drawer-links a[aria-current="page"] { color: var(--accent); }
 
   .hero { padding: 32px 0 20px; }
-  .hero--about, .hero--writing { padding: 32px 0 18px; }
+  .hero--about { padding: 32px 0 18px; }
   .hero--about .hero-about-flex { flex-direction: column; align-items: center; text-align: center; gap: 24px; }
   .hero--about .hero-about-photo img { width: 150px; height: 150px; }
   section { padding: 24px 0; }
