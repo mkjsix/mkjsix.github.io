@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import { getCollection } from "astro:content";
+import ContactCta from "../components/ContactCta.astro";
 
 const posts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -226,4 +227,17 @@ const aboutJsonLd = {
       </section>
     )
   }
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="section-label">
+        <div class="rule"></div>
+        <h2>Get in touch</h2>
+      </div>
+      <ContactCta
+        title="Thirty minutes to describe the situation and work out whether I am the right person for it."
+        subtext="After the call, we decide whether the problem is a fit and what the next step should be."
+      />
+    </div>
+  </section>
 </Base>

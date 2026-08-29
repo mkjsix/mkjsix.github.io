@@ -1,6 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
 import { getCollection } from "astro:content";
+import ContactCta from "../components/ContactCta.astro";
 
 const posts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -69,13 +70,6 @@ const consultingJsonLd = {
       </div>
       <h1>Technical strategy<br />with a <em>business edge</em></h1>
       <p>For products and teams that need to scale.</p>
-      <div class="actions">
-        <a
-          href="https://calendly.com/maurizioturatti-info/30min"
-          class="btn"
-          data-calendly>Book a call</a
-        >
-      </div>
     </div>
   </header>
 
@@ -332,5 +326,18 @@ const consultingJsonLd = {
         </section>
       )
     }
+
+    <section class="tight">
+      <div class="wrap">
+        <div class="section-label">
+          <div class="rule"></div>
+          <h2>Get in touch</h2>
+        </div>
+        <ContactCta
+          title="Thirty minutes to describe the situation and work out whether I am the right person for it."
+          subtext="After the call, we decide whether the problem is a fit and what the next step should be."
+        />
+      </div>
+    </section>
   </section>
 </Base>
