@@ -338,6 +338,7 @@ section.tight { padding: 24px 0; }
 .link-row .name a { color: var(--text); text-decoration: none; }
 .link-row .name a:hover { color: var(--accent); }
 .link-row .desc { color: var(--text-muted); font-size: .9rem; text-align: right; max-width: 400px; }
+.skills-list .desc { text-align: left; max-width: none; }
 
 /* ============================================
    Article row (writing lists)
