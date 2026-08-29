@@ -309,40 +309,50 @@ section.tight { padding: 24px 0; }
 .case .content p { color: var(--text-muted); font-size: .9rem; }
 
 /* ============================================
-   Work grid (3-col, category + title + text)
+   Lean principles list
    ============================================ */
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
+.lean-principles {
+  list-style: none;
+  counter-reset: lean;
+  margin-top: 12px;
+  max-width: 680px;
 }
-.work-item { background: var(--bg); padding: 28px 24px; }
-.work-item .category {
-  font-family: var(--font-mono);
-  font-size: .7rem;
+.lean-principles li {
+  counter-increment: lean;
+  position: relative;
+  padding: 20px 0 20px 48px;
+  border-bottom: 1px solid var(--line);
   color: var(--text-muted);
-  text-transform: uppercase;
-  letter-spacing: .08em;
-  display: block;
-  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.6;
 }
-.work-item h3 {
-  font-family: var(--font-heading);
+.lean-principles li:last-child { border-bottom: none; }
+.lean-principles li::before {
+  content: counter(lean);
+  position: absolute;
+  left: 0;
+  top: 20px;
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  color: var(--text-muted);
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lean-principles li strong {
+  color: var(--text);
   font-weight: 700;
-  font-size: 1.15rem;
-  line-height: 1.3;
-  color: var(--accent);
-  margin-bottom: 12px;
 }
-.work-item p { color: var(--text-muted); font-size: .92rem; }
 
 /* ============================================
    Prose (text sections)
    ============================================ */
 .prose p { color: var(--text-muted); font-size: 1rem; max-width: 680px; margin-bottom: 18px; }
-.prose + .work-grid { margin-top: 12px; }
+.prose + .lean-principles { margin-top: 12px; }
 .prose a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-dim); }
 
 /* ============================================
@@ -563,7 +573,7 @@ section.tight { padding: 24px 0; }
    ============================================ */
 @media (max-width: 900px) {
   .case-grid { grid-template-columns: repeat(2, 1fr); }
-  .work-grid { grid-template-columns: 1fr; }
+
 }
 
 @media (max-width: 760px) {
