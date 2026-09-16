@@ -75,7 +75,7 @@ const blogPostingJsonLd = {
   <hr style="border:0; border-top:1px solid var(--line); max-width:var(--max-width); margin:0 auto; padding:0 32px; box-sizing:border-box;" />
 
   {post.data.image && (
-    <div style="max-width:var(--max-width); margin:0 auto; padding:0 32px;">
+    <div class="post-cover-wrap">
       <figure class="post-cover">
         <Image src={post.data.image} alt={post.data.image_alt ?? post.data.title} loading="eager" />
       </figure>
