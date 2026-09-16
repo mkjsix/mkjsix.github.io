@@ -1,6 +1,6 @@
 ---
 title: "MQTT and MongoDB"
-description: "A new RESTHeart beta module connects MQTT messages to MongoDB, REST services, Server-Sent Events and custom plugins."
+description: "An experimental RESTHeart module that subscribes to an MQTT broker and sends each message to MongoDB, REST, Server-Sent Events and custom plugins, with a delivery policy chosen per consumer."
 date: 2026-09-15
 tags: ["Engineering", "MQTT", "MongoDB"]
 draft: false
@@ -8,78 +8,66 @@ image: "./MQTT_arch.png"
 image_alt: "Architecture diagram showing MQTT messages flowing through RESTHeart to MongoDB, REST services, Server-Sent Events and custom plugins"
 ---
 
-Most MQTT integrations end at the broker connection. The message arrives, a service consumes it, and another component takes care of storage. When the application also needs a REST API, live updates or custom processing, the architecture grows around the original subscription.
+A client project needed data from an MQTT broker in three places. A dashboard showed sensor values as they arrived, other clients asked for the latest value over HTTP, and every message had to be stored in MongoDB.
 
-I faced this problem in a real project.
+The usual answer is a small service that subscribes to the broker, writes to the database and exposes an endpoint. When someone later asks for a live stream, a second service connects to the same broker, with its own authentication and its own way of decoding payloads.
 
-The requirement was specific: receive messages from an MQTT broker, store them in MongoDB and make the same data available to application clients. Some consumers needed a live stream. Others needed the latest known value through HTTP. The integration also had to leave room for custom logic.
+RESTHeart already provides authentication, ACLs, the MongoDB API, SSE and a plugin model. The missing piece was the broker connection, so I added it as a RESTHeart module. It is now available as an experimental beta.
 
-I could have built a service dedicated to that project. Instead, I decided to bring the capability into RESTHeart.
+## Two kinds of consumer
 
-The result is a new MQTT module, currently available as a beta.
+The design question that came back most often was how each consumer should behave when something goes wrong.
 
-The module connects an MQTT broker directly to RESTHeart's existing application model. Messages can flow through the same router to MongoDB, REST services, Server-Sent Events and custom plugins.
+A browser connected over SSE wants the current value. If it falls behind, sending it the backlog is useless. On the live paths the module drops messages and counts every drop: a global rate limit on live listeners, a bounded queue per SSE connection, and an optional throttle stage.
 
-That combination is unusual. I have rarely seen MQTT and MongoDB integrated natively in the same product, with the broker message flowing directly into the database and the surrounding application interfaces.
+The MongoDB writer needs the opposite. A lost message is a hole in the stored data, and it usually surfaces only when someone queries that period. This path needs backpressure, retries and a dead-letter file.
 
-## One message, different responsibilities
+Both read from the same broker connection through a router that assigns the delivery policy per listener. A plugin registers a live listener with `subscribe` or a durable one with `subscribeDurable`. The rate limit applies to live listeners only, so a value chosen to protect a dashboard has no effect on what reaches MongoDB.
 
-The module gives each consumer its own path.
+## The first version lost messages
 
-An SSE client can receive live messages from a topic. A REST client can request the latest cached value. The MongoDB writer can persist the stream in batches. A custom RESTHeart plugin can subscribe through the router and apply application-specific logic.
+In the first design the client acknowledged each message to the broker as soon as it received it. That discarded the broker's redelivery guarantee before anything had been stored, and a crash between receipt and write lost the message whatever QoS was configured. The module was at-most-once.
 
-These consumers do not have the same requirements.
+The current version acknowledges a message only after the writer has stored it in MongoDB or written it to the dead-letter file. With QoS 1 or 2, `clean-session: false` and a stable client ID, a message that was never stored is still owed by the broker and is redelivered to the next connection that resumes the session. The client ID defaults to a value derived from the RESTHeart instance name, which stays the same across restarts.
 
-A live dashboard usually needs current data. Holding an old backlog for a disconnected browser has little value. Persistence has a different responsibility. It needs retry behaviour, durable storage and a clear policy for messages that cannot be written.
+Startup order mattered as well. A broker redelivers what a resumed session owes as soon as it accepts the connection, and a consumer registered a moment later misses those messages. A dedicated `mqtt-connector` component opens the broker connection only after every consumer, the MongoDB writer included, is registered.
 
-The MQTT module keeps these decisions separate while allowing the consumers to share the same connection and routing layer.
+## Duplicates and identity
 
-## MongoDB is part of the message path
+At-least-once delivery trades lost messages for duplicates. After a crash or a reconnection the same reading can reach the writer twice.
 
-MongoDB persistence is built into the module through `mqtt-mongo-writer`.
+The default `auto` strategy stores each delivery as a new document. The `payload-field` strategy reads an identifier from the payload and uses it for an upsert, so a redelivery updates the document written the first time. The same applies when several RESTHeart nodes receive the same message, which on MQTT 3.1.1 happens to every node.
 
-The writer stores messages in configurable databases and collections. A bounded buffer absorbs traffic peaks and short database interruptions. Messages are drained in batches, with configurable retries and a dead-letter file for batches that still fail.
+An earlier version offered a third strategy that hashed the topic together with the reception timestamp. The timestamp changes at every delivery, the hash changed with it, and the strategy could never recognise a redelivery. I removed it: an option that looks like deduplication and does not deduplicate is worse than no option. A stable identity has to come from the publisher.
 
-The broker acknowledgement follows the storage result. With QoS 1 or 2, a persistent MQTT session and a stable client ID, the broker keeps responsibility for a message until the durable consumer has taken it.
+## A slow database must not stop the stream
 
-This gives the MongoDB path at-least-once delivery.
+The writer's buffer applies backpressure by default: when it is full, the incoming message waits for space. The first implementation had no limit on that wait, and that created a coupling that was hard to see.
 
-That guarantee also requires a clear approach to duplicates. A redelivered message may reach the writer again after a restart or reconnect. The default strategy keeps every delivery with a generated identifier. When the publisher includes a stable identifier in the payload, the `payload-field` strategy can use it for an upsert and make redeliveries converge on the same document.
+A waiting message has not been acknowledged. When enough of them accumulate, the broker's in-flight window fills and the broker stops delivering to this client, including the messages meant for SSE clients that never touch MongoDB. A database problem became a dashboard outage.
 
-The identity has to come with the message. A timestamp assigned when RESTHeart receives the message changes on every delivery and cannot identify a redelivery reliably.
+The wait is now bounded by `buffer.max-wait-ms`, 30 seconds by default. Past that, the message is dropped, counted in `mqtt_buffer_dropped` and acknowledged. The buffer absorbs a MongoDB restart of a few seconds. A longer outage needs a correctly sized replica set, and a bigger queue in memory would only postpone the loss. Setting the value to 0 restores the unbounded wait for anyone who accepts the coupling.
 
-## REST and live streaming use the same data
+## Details that appear with real payloads
 
-The module exposes MQTT data through two HTTP-oriented services.
+MQTT payloads are bytes. Both HTTP services report whether a payload is text or base64, and MongoDB stores it as a string or as binary data. On MQTT 5 the publish properties are kept, with user properties as an ordered list, since MQTT 5 allows repeated names.
 
-The **SSE service** keeps a connection open and sends messages as they arrive. It supports topic filters, payload envelopes, MQTT 5 properties and optional processing stages for filtering, mapping, throttling and window aggregation.
+A few fields showed their real meaning only during tests against Mosquitto. The `retain` flag on a delivered message means the broker sent it because the subscription was new, so a retained value published days earlier arrives with the current reception time. The message expiry interval arrives already decremented by the broker: 120 seconds at publish time came back as 99 after a 20-second wait. The writer stores the value as received and adds an `expiresAt` date computed from it.
 
-The **REST service** reads the last value held in the router cache. This is useful for applications that need the current state of a device or sensor and do not need a continuous stream.
+Broker subscriptions needed the same kind of check. Mosquitto delivers one copy per matching subscription, so a router subscription on `sensors/#` plus an SSE client on `sensors/temp` produced two copies of every message and two MongoDB documents. The router now subscribes on the broker only to filters that no other registered filter already covers.
 
-MQTT payloads are bytes. They may contain JSON, protobuf, compressed data or an image. The module preserves this distinction when it exposes data through REST and SSE by identifying whether the payload is text or base64. MQTT 5 publish properties are preserved when the client uses MQTT 5.
+## Topic permissions
 
-These details become important as soon as the message is something more than a UTF-8 string.
+A user authenticated in RESTHeart may still have no right to read a given topic. The topic authorizer checks the requested filter against the account's ACL before the request reaches the MQTT services, and denies it when no rule matches.
 
-## Authorization happens before subscription
+The check is based on filter containment. A permission on `sensors/+` covers `sensors/room1` and leaves out `sensors/#`, which also matches `sensors/room1/temperature`.
 
-Topic authorization is applied at the HTTP boundary.
+The authorizer is enabled by default, while the HTTP endpoints stay off until configured. The first endpoint an operator turns on is already protected.
 
-A client may have permission to use RESTHeart and still have no permission to subscribe to a particular MQTT filter. The topic authorizer checks whether the requested filter is covered by the account's ACL before the request reaches the MQTT service.
+## Trying it
 
-The check understands MQTT wildcards and filter containment. A permission for `sensors/+` does not grant access to `sensors/#`, because the latter includes deeper topic levels.
-
-The authorizer fails closed when no matching rule exists. An endpoint without an explicit topic permission remains inaccessible.
-
-## From one project to a product capability
-
-This beta began with one project's requirements. The implementation exposed a broader need: applications increasingly receive operational data through MQTT and need to connect that data to storage, APIs and application logic.
-
-RESTHeart already provides the pieces around those responsibilities. The MQTT module connects them to the broker.
-
-The result is a single product path from MQTT ingestion to MongoDB persistence, REST access, live delivery and custom processing. Each consumer can follow its own delivery policy, while the module keeps the integration visible and configurable.
-
-The MQTT module is available in beta in the RESTHeart repository:
+The module is installed separately from RESTHeart. It depends on the HiveMQ MQTT client, which brings RxJava and several Netty modules with it, and I preferred to keep those libraries out of installations that never use MQTT. It requires a RESTHeart build from `master`, because per-topic authorization on the SSE endpoint depends on a core change that no release includes yet. Configuration keys and the stored document format may still change, so it is not meant for production use.
 
 [https://github.com/SoftInstigate/restheart/tree/master/mqtt](https://github.com/SoftInstigate/restheart/tree/master/mqtt)
 
-The repository includes a Docker demo, configuration examples and a tutorial covering live SSE messages, REST polling, MongoDB persistence and custom plugins.
+The README documents every configuration key and the traps we found while testing. The tutorial walks through a Docker environment in four parts: a live SSE stream, REST polling, MongoDB persistence with the database stopped on purpose, and a custom plugin. Feedback at this stage can still change the design, so issues on GitHub are welcome.
