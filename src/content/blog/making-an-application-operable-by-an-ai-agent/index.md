@@ -47,5 +47,3 @@ Issue [#616](https://github.com/SoftInstigate/restheart/issues/616) applies this
 `$var` references inside an aggregation pipeline are extracted automatically. The operator only declares parameter types. Which actions, query, create, update, delete and show up in the catalog reflects the principal's actual permissions on that collection.
 
 The mechanism has been verified end to end on a real case, `/ping` via MCP. Issue #616 is still needed to extend that verification to a real application domain with actual MongoDB collections, but the architecture, schema-driven with pre-flight validation, is already written and tested in the base framework.
-
-[Read the original article on Medium](https://medium.com/softinstigate-team/making-an-application-operable-by-an-ai-agent-3ade12f8bd19)
