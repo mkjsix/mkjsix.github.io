@@ -1,16 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
-import { getCollection } from "astro:content";
 import ContactCta from "../components/ContactCta.astro";
-
-const posts = (await getCollection("blog", ({ data }) => !data.draft))
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, 3);
-
-const formatDate = (date: Date) =>
-  date.toLocaleDateString("en-GB", { month: "short", year: "numeric" });
-
-const postPath = (id: string) => `/writing/${id.replace(/\.md$/, "")}`;
 
 const aboutJsonLd = {
   "@context": "https://schema.org",
@@ -226,27 +216,6 @@ const aboutJsonLd = {
     </div>
   </section>
 
-  {
-    posts.length > 0 && (
-      <section>
-        <div class="wrap">
-          <div class="section-label">
-            <div class="rule" />
-            <h2>Latest writing</h2>
-          </div>
-          <div class="article-list">
-            {posts.map((post) => (
-              <div class="article-row">
-                <span class="cat">{post.data.tags[0] ?? "Article"}</span>
-                <a href={postPath(post.id)}>{post.data.title}</a>
-                <span class="date">{formatDate(post.data.date)}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    )
-  }
 
   <section class="tight">
     <div class="wrap">
