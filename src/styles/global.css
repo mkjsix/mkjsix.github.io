@@ -347,8 +347,7 @@ section.tight { padding: 24px 0; }
 }
 .step p { color: var(--text-muted); font-size: .9rem; }
 .skills-grid ul { list-style: none; }
-.skills-grid li { color: var(--text-muted); font-size: .95rem; padding: 6px 0; border-bottom: 1px solid var(--line); }
-.skills-grid li:last-child { border-bottom: none; }
+.skills-grid li { color: var(--text-muted); font-size: .95rem; padding: 4px 0; }
 
 
 
@@ -362,14 +361,12 @@ section.tight { padding: 24px 0; }
 /* ============================================
    Link list (products, open source)
    ============================================ */
-.link-list { border-top: 1px solid var(--line); }
 .link-row {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
   gap: 20px;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
 }
 .link-row .name {
   font-family: var(--font-heading);
@@ -408,8 +405,7 @@ section.tight { padding: 24px 0; }
   display: flex;
   align-items: baseline;
   gap: 16px;
-  padding: 20px 0;
-  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
 }
 .article-row .cat {
   font-family: var(--font-mono);
