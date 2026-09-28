@@ -38,6 +38,7 @@ When changing post fields, update both markdown content and `src/content.config.
 - Shared page shell is `src/layouts/Base.astro`.
 - Global stylesheet is `src/styles/global.css`, imported by `src/layouts/Base.astro` (Vite-hashed on build).
 - Keep existing visual language and typography unless a change request explicitly asks for a redesign.
+- Minimize stylistic differences between pages: use shared classes from `src/styles/global.css`. No page-level `<style>` blocks, `:root` overrides or inline `style=""` attributes, except for a component that exists on one page only.
 
 ## Editing guidance
 
