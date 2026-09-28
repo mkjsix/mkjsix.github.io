@@ -305,6 +305,32 @@ section.tight { padding: 24px 0; }
   color: var(--text);
 }
 .case .content p { color: var(--text-muted); font-size: .9rem; }
+.case .content p a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-dim); }
+
+/* ============================================
+   Steps (engagement phases)
+   ============================================ */
+.steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.step {
+  background: var(--bg);
+  padding: 28px 24px;
+}
+.step .step-num { display: block; margin-bottom: 14px; }
+.step h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+.step p { color: var(--text-muted); font-size: .9rem; }
 
 
 
@@ -553,6 +579,7 @@ section.tight { padding: 24px 0; }
    ============================================ */
 @media (max-width: 900px) {
   .case-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); }
 
 }
 
@@ -564,6 +591,8 @@ section.tight { padding: 24px 0; }
   html { font-size: 17px; }
   .wrap { padding: 0 20px; }
   .case-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; }
+  .hero .actions { flex-wrap: wrap; }
   .site-nav { padding: 20px; }
   .site-nav-links { display: none; }
   .site-nav .btn { display: none; }

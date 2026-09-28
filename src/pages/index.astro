@@ -20,15 +20,22 @@ const consultingJsonLd = {
   image: "https://maurizioturatti.com/images/og-image.png",
   url: "https://maurizioturatti.com/",
   description:
-    "Technical strategy with a business edge. Software architecture and system design across Java, AWS, and MongoDB for products that need to move fast.",
+    "I work with founders, CIOs, CTOs and boards focused on architecture, system design, and technical due diligence.",
   areaServed: "Europe and North America",
-  knowsAbout: ["Java", "AWS", "Docker", "MongoDB", "Software Architecture", "System Design"],
+  knowsAbout: [
+    "Software Architecture",
+    "Technical Assessment",
+    "Legacy System Modernization",
+    "Java",
+    "AWS",
+    "MongoDB",
+  ],
 };
 ---
 
 <Base
-  title="Maurizio Turatti — Technical Strategy & Software Architecture"
-  description="Technical strategy with a business edge. Software architecture and system design across Java, AWS, and MongoDB for products that need to move fast."
+  title="Maurizio Turatti | Architectural discipline for AI-assisted development"
+  description="I work with founders, CIOs, CTOs and boards focused on architecture, system design, and technical due diligence."
   ogImage="/images/og-image.png"
   jsonLd={consultingJsonLd}
 >
@@ -37,13 +44,19 @@ const consultingJsonLd = {
       <div class="eyebrow mono">
         Software architecture &middot; System design
       </div>
-      <h1>Technical strategy<br />with a <em>business edge</em></h1>
+      <h1>Architectural discipline<br />for <em>AI-assisted development</em></h1>
       <p>
         I work with founders, CIOs, CTOs &amp; boards focused on architecture,
-        production systems, and technical due diligence. Bringing architectural
-        discipline to AI-assisted development and turning fast prototypes into
-        resilient software.
+        system design, and technical due diligence.
       </p>
+      <div class="actions">
+        <a
+          href="https://calendly.com/maurizioturatti-info/30min"
+          class="btn"
+          data-calendly>Book a call</a
+        >
+        <a href="#work" class="link">Selected work</a>
+      </div>
     </div>
   </header>
 
@@ -51,7 +64,7 @@ const consultingJsonLd = {
     <div class="wrap">
       <div class="section-label">
         <div class="rule"></div>
-        <h2>Typical engagements</h2>
+        <h2>When I get called</h2>
       </div>
 
       <div class="help-list">
@@ -72,10 +85,10 @@ const consultingJsonLd = {
             ></span
           >
           <div>
-            <span class="category">Build from architecture to production</span>
+            <span class="category">A prototype going to production</span>
             <p>
-              A founder needs senior technical leadership to design and deliver
-              an MVP, from architecture to production.
+              The prototype was written in a few weeks, often with AI agents,
+              and the first customers are about to use it.
             </p>
           </div>
         </div>
@@ -95,11 +108,29 @@ const consultingJsonLd = {
             ></span
           >
           <div>
-            <span class="category">Scale a system in production</span>
+            <span class="category">A system slowing down with growth</span>
             <p>
-              A production system starts to break under growth. Performance,
-              security, scalability or infrastructure costs are becoming a
-              problem.
+              Response times rise with the volume of data, and adding servers
+              has stopped bringing them down.
+            </p>
+          </div>
+        </div>
+        <div class="help-item">
+          <span class="icon"
+            ><svg
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="var(--accent)"
+              stroke-width="1.4"
+              ><rect x="5" y="5" width="22" height="22" rx="2"></rect><path
+                d="M11 16h10M16 11v10"></path></svg
+            ></span
+          >
+          <div>
+            <span class="category">An inherited system</span>
+            <p>
+              The team or supplier that built it has left. The code has no
+              documentation and no automated tests.
             </p>
           </div>
         </div>
@@ -119,32 +150,10 @@ const consultingJsonLd = {
             ></span
           >
           <div>
-            <span class="category">Integrate different systems</span>
+            <span class="category">Data from several organizations</span>
             <p>
-              Systems built by different organizations or with different
-              technologies need to be integrated and work together.
-            </p>
-          </div>
-        </div>
-        <div class="help-item">
-          <span class="icon"
-            ><svg
-              viewBox="0 0 32 32"
-              fill="none"
-              stroke="var(--accent)"
-              stroke-width="1.4"
-              ><rect x="5" y="5" width="22" height="22" rx="2"></rect><path
-                d="M11 16h10M16 11v10"></path></svg
-            ></span
-          >
-          <div>
-            <span class="category"
-              >Establish or evolve the technical organization</span
-            >
-            <p>
-              A company needs to establish or evolve its technical organization,
-              from architecture and engineering practices to pre-sales and
-              professional services.
+              Each source has its own format and update schedule, and the
+              product needs them in a single model.
             </p>
           </div>
         </div>
@@ -160,11 +169,10 @@ const consultingJsonLd = {
             ></span
           >
           <div>
-            <span class="category">Independent assessment</span>
+            <span class="category">An independent assessment</span>
             <p>
-              A board, founder or investor needs an independent assessment of
-              technical readiness before making a significant investment or
-              strategic decision.
+              A board or an investor wants a technical opinion before a funding
+              round or an acquisition.
             </p>
           </div>
         </div>
@@ -176,186 +184,205 @@ const consultingJsonLd = {
     <div class="wrap">
       <div class="section-label">
         <div class="rule"></div>
-        <h2>How I work</h2>
+        <h2>How an engagement works</h2>
       </div>
-      <div class="prose">
-        <p>
-          I often end up talking to the business. What I produce is a detailed
-          specification: what gets built, in which order.
-        </p>
-        <p>
-          The technology I pick is the one that lets the smallest possible team
-          do the most. Fewer technologies means fewer things to keep alive.
-        </p>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step-num mono">01</span>
+          <h3>Assess</h3>
+          <p>
+            I read the code, the data model, the infrastructure and the
+            incident history. The output is a written list of risks, ordered
+            by impact.
+          </p>
+        </li>
+        <li class="step">
+          <span class="step-num mono">02</span>
+          <h3>Decide</h3>
+          <p>
+            Each risk comes with options, effort and consequences. The client
+            owns the document and can hand it to any supplier.
+          </p>
+        </li>
+        <li class="step">
+          <span class="step-num mono">03</span>
+          <h3>Rebuild</h3>
+          <p>
+            I work in the code with a small team. Each change reaches
+            production on its own while the old system keeps serving users.
+          </p>
+        </li>
+        <li class="step">
+          <span class="step-num mono">04</span>
+          <h3>Run</h3>
+          <p>
+            Monitoring and support after release. The oldest system I still
+            support went live in 2017.
+          </p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-label">
+        <div class="rule"></div>
+        <h2>Selected work</h2>
+      </div>
+
+      <div class="case-grid">
+        <div class="case">
+          <div class="stat">
+            18<span class="stat-label">services replacing one monolith</span>
+          </div>
+          <div class="content">
+            <span class="category">Mobility &middot; National traffic information</span>
+            <h3>Replacing an inherited traffic information system</h3>
+            <p>
+              The previous system ran on PHP and Oracle, with no documentation,
+              no automated tests and its database port open to the internet.
+              The replacement has run on AWS since 2017. It polls six traffic
+              sources every 3 to 5 minutes and publishes about 10,000 events a
+              day in three languages.
+            </p>
+          </div>
+        </div>
+
+        <div class="case">
+          <div class="stat">
+            9%<span class="stat-label">average database CPU at 9M API calls per hour</span>
+          </div>
+          <div class="content">
+            <span class="category">Public sector &middot; National compliance register</span>
+            <h3>Locating the load on a register of 400,000 business sites</h3>
+            <p>
+              54% of database waits came from writing a log row for every API
+              request: 2 billion rows, 13 TB. Caching token validation cut
+              total SQL time by 77% and database CPU by 89% in load tests. I led
+              the architecture review.
+            </p>
+          </div>
+        </div>
+
+        <div class="case">
+          <div class="stat">
+            216&times;<span class="stat-label">query time, from 325 s to 1.5 s</span>
+          </div>
+          <div class="content">
+            <span class="category">Retail &middot; Fiscal documents</span>
+            <h3>Moving 150 million documents off a relational database</h3>
+            <p>
+              Invoices, orders and EDI documents arrive from more than 200
+              channels, with a target of 100,000 files per hour against 6,000
+              at the start. The MongoDB architecture sustained 537 writes per
+              second, where 300 were required, at 14 ms average latency.
+            </p>
+          </div>
+        </div>
+
+        <div class="case">
+          <div class="stat">
+            7,500<span class="stat-label">historical responses used as test cases</span>
+          </div>
+          <div class="content">
+            <span class="category">HR tech &middot; Founder-led product</span>
+            <h3>Moving a scoring method out of Excel</h3>
+            <p>
+              The method lived in a workbook with its algorithms and past
+              responses. I rewrote the scoring engine in Java and checked every
+              result against the spreadsheet. The web application reached
+              production less than three months after the first commit.
+            </p>
+          </div>
+        </div>
+
+        <div class="case">
+          <div class="stat">
+            1<span class="stat-label">API contract for hundreds of enterprise clients</span>
+          </div>
+          <div class="content">
+            <span class="category">Enterprise content &middot; SaaS</span>
+            <h3>Content API for a headless CMS vendor</h3>
+            <p>
+              Persistence and API layer of a Content-as-a-Service product on
+              Kubernetes. New features shipped on the same contract, and client
+              integrations kept working across releases.
+            </p>
+          </div>
+        </div>
+
+        <div class="case">
+          <div class="stat">
+            2M+<span class="stat-label">Docker pulls of RESTHeart</span>
+          </div>
+          <div class="content">
+            <span class="category">Own products &middot; Open source</span>
+            <h3>Products I build and operate</h3>
+            <p>
+              I co-created <a href="https://restheart.org/">RESTHeart</a>, the
+              open source backend for MongoDB, in 2014.
+              <a href="https://cloud.restheart.com/">RESTHeart Cloud</a> and
+              <a href="https://bysophia.ai/">Sophia</a>, a RAG platform, run on
+              it.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <section class="tight">
-      <div class="wrap prose">
-        <div class="section-label">
-          <div class="rule"></div>
-          <h2>AI adoption and architecture</h2>
-        </div>
-        <p>
-          AI is changing how software gets built. I approach agentic development
-          through the discipline of Lean engineering: clear value streams,
-          bounded roles, and continuous refactoring.
-        </p>
-        <p>
-          Instead of relying on open-ended prompts, agents need explicit job
-          descriptions and hard guardrails. The workflow operates as a pull
-          system: well-specified tasks wait on a board, where dedicated agents
-          pull work within their scope, implement changes, and validate them
-          against tests.
-        </p>
-        <p>
-          A team with clear specifications and pull-driven execution moves fast
-          without losing control. Without that structure, agents simply generate
-          more code than anyone can review.
-        </p>
+  <section class="tight">
+    <div class="wrap prose">
+      <div class="section-label">
+        <div class="rule"></div>
+        <h2>AI-assisted development</h2>
       </div>
-    </section>
+      <p>
+        I use coding agents every day. Each agent gets a written specification
+        and a limited scope, and the tests decide what gets merged. I describe
+        the method in
+        <a href="/writing/ai-adoption-in-software-development-has-a-skills-problem"
+          >AI adoption in software development has a skills problem</a
+        >.
+      </p>
+    </div>
+  </section>
 
-    <section>
-      <div class="wrap">
-        <div class="section-label">
-          <div class="rule"></div>
-          <h2>Selected work</h2>
-        </div>
-
-        <div class="case-grid">
-          <div class="case">
-            <div class="stat">
-              2,600<span class="stat-label">stores, zero downtime</span>
-            </div>
-            <div class="content">
-              <span class="category">Retail &middot; Backend modernization</span
-              >
-              <h3>Replacing a backend without stopping 2,600 stores</h3>
-              <p>
-                150 million documents and 1 TB of data migrated in place, across
-                9,500 terminals. Result: 79% throughput gain and a 216&times;
-                reduction in query time.
-              </p>
-            </div>
+  {
+    posts.length > 0 && (
+      <section>
+        <div class="wrap">
+          <div class="section-label">
+            <div class="rule" />
+            <h2>Latest writing</h2>
           </div>
 
-          <div class="case">
-            <div class="stat">
-              18<span class="stat-label">microservices, AWS</span>
-            </div>
-            <div class="content">
-              <span class="category">Mobility &amp; traffic management</span>
-              <h3>
-                Absorbing three national traffic feeds without a single-source
-                model
-              </h3>
-              <p>
-                HERE, TomTom and Radio24, each on a different schema and update
-                cycle, unified into one platform. In production since 2017, more
-                than 99.9% uptime.
-              </p>
-            </div>
-          </div>
-
-          <div class="case">
-            <div class="stat">
-              9M<span class="stat-label">calls / hour, peak</span>
-            </div>
-            <div class="content">
-              <span class="category">Public sector</span>
-              <h3>
-                Architecture designed while requirements were still moving
-              </h3>
-              <p>
-                The system grew to 400,000 entities and absorbed peak loads of 9
-                million calls per hour before a wider modular redesign.
-              </p>
-            </div>
-          </div>
-
-          <div class="case">
-            <div class="stat">
-              3<span class="stat-label">cities, one architecture</span>
-            </div>
-            <div class="content">
-              <span class="category">Luxury e-commerce</span>
-              <h3>One architecture across three cities</h3>
-              <p>
-                A single shared architecture for a luxury brand across Berlin,
-                Geneva and Shanghai, with local compliance and localization
-                built into the design. It kept teams aligned across time zones.
-              </p>
-            </div>
-          </div>
-
-          <div class="case">
-            <div class="stat">
-              1<span class="stat-label">API contract, hundreds of clients</span>
-            </div>
-            <div class="content">
-              <span class="category">Enterprise content</span>
-              <h3>Headless CMS for Content as a Service</h3>
-              <p>
-                A single API contract for Crownpeak while hundreds of clients
-                depended on the same content layer, reusable without forcing
-                each client into bespoke integration.
-              </p>
-            </div>
-          </div>
-
-          <div class="case">
-            <div class="stat">
-              10<span class="stat-label">years, no rewrite</span>
-            </div>
-            <div class="content">
-              <span class="category">Open source platform</span>
-              <h3>Ten years of evolution without rewrite</h3>
-              <p>
-                RESTHeart evolved through major upstream changes while
-                preserving a stable product and API. Unisys and Northrop Grumman
-                used it as it grew into a hosted SaaS offering.
-              </p>
-            </div>
+          <div class="article-list">
+            {posts.map((post) => (
+              <div class="article-row">
+                <span class="cat">{post.data.tags[0] ?? "Article"}</span>
+                <a href={postPath(post.id)}>{post.data.title}</a>
+                <span class="date">{formatDate(post.data.date)}</span>
+              </div>
+            ))}
           </div>
         </div>
+      </section>
+    )
+  }
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="section-label">
+        <div class="rule"></div>
+        <h2>Get in touch</h2>
       </div>
-    </section>
-
-    {
-      posts.length > 0 && (
-        <section>
-          <div class="wrap">
-            <div class="section-label">
-              <div class="rule" />
-              <h2>Latest writing</h2>
-            </div>
-
-            <div class="article-list">
-              {posts.map((post) => (
-                <div class="article-row">
-                  <span class="cat">{post.data.tags[0] ?? "Article"}</span>
-                  <a href={postPath(post.id)}>{post.data.title}</a>
-                  <span class="date">{formatDate(post.data.date)}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-      )
-    }
-
-    <section class="tight">
-      <div class="wrap">
-        <div class="section-label">
-          <div class="rule"></div>
-          <h2>Get in touch</h2>
-        </div>
-        <ContactCta
-          title="Thirty minutes to describe the situation and work out whether I am the right person for it."
-          subtext="After the call, we decide whether the problem is a fit and what the next step should be."
-        />
-      </div>
-    </section>
+      <ContactCta
+        title="Thirty minutes to describe the situation and work out whether I am the right person for it."
+        subtext="If you need an NDA before the call, send it with the invitation."
+      />
+    </div>
   </section>
 </Base>
