@@ -61,10 +61,34 @@ const consultingJsonLd = {
   </header>
 
   <section>
+    <div class="wrap prose">
+      <div class="section-label">
+        <div class="rule"></div>
+        <h2>AI-assisted development</h2>
+      </div>
+      <p>
+        I approach agentic development through the discipline of Lean
+        engineering: clear value streams, bounded roles, and continuous
+        refactoring.
+      </p>
+      <p>
+        Agents need explicit job descriptions and hard guardrails. The workflow
+        operates as a pull system: well-specified tasks wait on a board, where
+        dedicated agents pull work within their scope, implement changes, and
+        validate them against tests.
+      </p>
+      <p>
+        Without that structure, agents simply generate more code than anyone
+        can review.
+      </p>
+    </div>
+  </section>
+
+  <section>
     <div class="wrap">
       <div class="section-label">
         <div class="rule"></div>
-        <h2>When I get called</h2>
+        <h2>Typical engagements</h2>
       </div>
 
       <div class="help-list">
@@ -85,10 +109,10 @@ const consultingJsonLd = {
             ></span
           >
           <div>
-            <span class="category">A prototype going to production</span>
+            <span class="category">Build from architecture to production</span>
             <p>
-              The prototype was written in a few weeks, often with AI agents,
-              and the first customers are about to use it.
+              A founder needs senior technical leadership to design and deliver
+              an MVP.
             </p>
           </div>
         </div>
@@ -108,29 +132,11 @@ const consultingJsonLd = {
             ></span
           >
           <div>
-            <span class="category">A system slowing down with growth</span>
+            <span class="category">Scale a system in production</span>
             <p>
-              Response times rise with the volume of data, and adding servers
-              has stopped bringing them down.
-            </p>
-          </div>
-        </div>
-        <div class="help-item">
-          <span class="icon"
-            ><svg
-              viewBox="0 0 32 32"
-              fill="none"
-              stroke="var(--accent)"
-              stroke-width="1.4"
-              ><rect x="5" y="5" width="22" height="22" rx="2"></rect><path
-                d="M11 16h10M16 11v10"></path></svg
-            ></span
-          >
-          <div>
-            <span class="category">An inherited system</span>
-            <p>
-              The team or supplier that built it has left. The code has no
-              documentation and no automated tests.
+              A production system starts to break under growth. Performance,
+              security, scalability or infrastructure costs are becoming a
+              problem.
             </p>
           </div>
         </div>
@@ -150,10 +156,32 @@ const consultingJsonLd = {
             ></span
           >
           <div>
-            <span class="category">Data from several organizations</span>
+            <span class="category">Integrate different systems</span>
             <p>
-              Each source has its own format and update schedule, and the
-              product needs them in a single model.
+              Systems built by different organizations or with different
+              technologies need to be integrated and work together.
+            </p>
+          </div>
+        </div>
+        <div class="help-item">
+          <span class="icon"
+            ><svg
+              viewBox="0 0 32 32"
+              fill="none"
+              stroke="var(--accent)"
+              stroke-width="1.4"
+              ><rect x="5" y="5" width="22" height="22" rx="2"></rect><path
+                d="M11 16h10M16 11v10"></path></svg
+            ></span
+          >
+          <div>
+            <span class="category"
+              >Establish or evolve the technical organization</span
+            >
+            <p>
+              A company needs to establish or evolve its technical organization,
+              from architecture and engineering practices to pre-sales and
+              professional services.
             </p>
           </div>
         </div>
@@ -169,10 +197,11 @@ const consultingJsonLd = {
             ></span
           >
           <div>
-            <span class="category">An independent assessment</span>
+            <span class="category">Independent assessment</span>
             <p>
-              A board or an investor wants a technical opinion before a funding
-              round or an acquisition.
+              A board, founder or investor needs an independent assessment of
+              technical readiness before making a significant investment or
+              strategic decision.
             </p>
           </div>
         </div>
@@ -333,22 +362,6 @@ const consultingJsonLd = {
     </div>
   </section>
 
-  <section class="tight">
-    <div class="wrap prose">
-      <div class="section-label">
-        <div class="rule"></div>
-        <h2>AI-assisted development</h2>
-      </div>
-      <p>
-        I use coding agents every day. Each agent gets a written specification
-        and a limited scope, and the tests decide what gets merged. I describe
-        the method in
-        <a href="/writing/ai-adoption-in-software-development-has-a-skills-problem"
-          >AI adoption in software development has a skills problem</a
-        >.
-      </p>
-    </div>
-  </section>
 
   {
     posts.length > 0 && (
