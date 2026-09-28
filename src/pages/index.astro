@@ -213,44 +213,38 @@ const consultingJsonLd = {
     <div class="wrap">
       <div class="section-label">
         <div class="rule"></div>
-        <h2>How an engagement works</h2>
+        <h2>Three levels of design</h2>
       </div>
 
-      <ol class="steps">
-        <li class="step">
-          <span class="step-num mono">01</span>
-          <h3>Assess</h3>
+      <div class="steps steps--3">
+        <div class="step">
+          <h3>Architecture</h3>
           <p>
-            I read the code, the data model, the infrastructure and the
-            incident history. The output is a written list of risks, ordered
-            by impact.
+            Architecture sets the boundaries between components and the
+            patterns that connect them, such as microservices or event-driven
+            integration. Once the system is in production, it is the hardest
+            part of the design to change.
           </p>
-        </li>
-        <li class="step">
-          <span class="step-num mono">02</span>
-          <h3>Decide</h3>
+        </div>
+        <div class="step">
+          <h3>System design</h3>
           <p>
-            Each risk comes with options, effort and consequences. The client
-            owns the document and can hand it to any supplier.
+            System design maps the logical architecture onto a cloud or
+            on-premises system, where it meets the constraints of physical
+            reality. It decides how the system handles traffic peaks and server
+            failures.
           </p>
-        </li>
-        <li class="step">
-          <span class="step-num mono">03</span>
-          <h3>Rebuild</h3>
+        </div>
+        <div class="step">
+          <h3>Software design</h3>
           <p>
-            I work in the code with a small team. Each change reaches
-            production on its own while the old system keeps serving users.
+            Software design is the structure of the code inside each component.
+            I write it test-first and refactor it continuously, and every change
+            goes through continuous integration. Code written by AI agents goes
+            through the same tests before it is merged.
           </p>
-        </li>
-        <li class="step">
-          <span class="step-num mono">04</span>
-          <h3>Run</h3>
-          <p>
-            Monitoring and support after release. The oldest system I still
-            support went live in 2017.
-          </p>
-        </li>
-      </ol>
+        </div>
+      </div>
     </div>
   </section>
 
