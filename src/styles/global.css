@@ -308,6 +308,18 @@ section.tight { padding: 24px 0; }
 .case .content p a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-dim); }
 
 /* ============================================
+   AI section (text + diagram)
+   ============================================ */
+.ai-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+.ai-grid .prose p:last-child { margin-bottom: 0; }
+.ai-visual { display: block; width: 100%; max-width: 300px; height: auto; justify-self: center; }
+
+/* ============================================
    Steps (engagement phases)
    ============================================ */
 .steps {
@@ -324,6 +336,7 @@ section.tight { padding: 24px 0; }
   padding: 28px 24px;
 }
 .step .step-num { display: block; margin-bottom: 14px; }
+.step-visual { display: block; width: 100%; max-width: 240px; height: auto; margin-bottom: 22px; }
 .step h3 {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -582,6 +595,8 @@ section.tight { padding: 24px 0; }
   .case-grid { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .steps--3 { grid-template-columns: 1fr; }
+  .ai-grid { grid-template-columns: 1fr; gap: 28px; }
+  .ai-visual { max-width: 260px; }
 
 }
 
