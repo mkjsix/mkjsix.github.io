@@ -188,6 +188,7 @@ img { max-width: 100%; display: block; }
 .hero--about .hero-about-text p + p {
   margin-top: 16px;
 }
+.hero--about .hero-about-text p.mono { font-size: .72rem; }
 
 /* ============================================
    Section label
