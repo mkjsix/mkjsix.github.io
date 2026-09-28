@@ -328,7 +328,7 @@ const consultingJsonLd = {
       <div class="case-grid">
         <div class="case">
           <div class="stat">
-            18<span class="stat-label">services replacing one monolith</span>
+            &lt;4 h<span class="stat-label">downtime since 2017, none in the last three years</span>
           </div>
           <div class="content">
             <span class="category">Mobility &middot; National traffic information</span>
@@ -336,7 +336,7 @@ const consultingJsonLd = {
             <p>
               The previous system ran on PHP and Oracle, with no documentation,
               no automated tests and its database port open to the internet.
-              The replacement has run on AWS since 2017. It polls six traffic
+              The replacement runs as 18 services on AWS. It polls six traffic
               sources every 3 to 5 minutes and publishes about 10,000 events a
               day in three languages.
             </p>
@@ -365,13 +365,14 @@ const consultingJsonLd = {
             216&times;<span class="stat-label">query time, from 325 s to 1.5 s</span>
           </div>
           <div class="content">
-            <span class="category">Retail &middot; Fiscal documents</span>
-            <h3>Moving 150 million documents off a relational database</h3>
+            <span class="category">Retail &middot; Fiscal and EDI documents</span>
+            <h3>Moving 150 million documents off SQL Server</h3>
             <p>
-              Invoices, orders and EDI documents arrive from more than 200
-              channels, with a target of 100,000 files per hour against 6,000
-              at the start. The MongoDB architecture sustained 537 writes per
-              second, where 300 were required, at 14 ms average latency.
+              12 servers processed 6,000 files an hour, but searches took
+              minutes and history was limited to two months. Our MongoDB
+              proposal won a competitive PoC against SQL Server and Oracle. In
+              the design benchmark, the new write path sustained 537 writes per
+              second against the 300 required for ten times the volume.
             </p>
           </div>
         </div>
