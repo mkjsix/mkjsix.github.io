@@ -318,6 +318,7 @@ section.tight { padding: 24px 0; }
   background: var(--line);
   border: 1px solid var(--line);
 }
+.steps--3 { grid-template-columns: repeat(3, 1fr); }
 .step {
   background: var(--bg);
   padding: 28px 24px;
@@ -580,6 +581,7 @@ section.tight { padding: 24px 0; }
 @media (max-width: 900px) {
   .case-grid { grid-template-columns: repeat(2, 1fr); }
   .steps { grid-template-columns: repeat(2, 1fr); }
+  .steps--3 { grid-template-columns: 1fr; }
 
 }
 
