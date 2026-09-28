@@ -63,6 +63,7 @@ img { max-width: 100%; display: block; }
    Navigation
    ============================================ */
 .site-nav {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -469,6 +470,7 @@ section.tight { padding: 24px 0; }
    Post content (blog articles)
    ============================================ */
 .post-content { max-width: 680px; }
+.post-divider { border: 0; border-top: 1px solid var(--line); }
 .post-cover-wrap { max-width: 1040px; margin: 0 auto; padding: 0 32px; }
 .post-cover { margin: 0 0 36px; border-radius: 12px; overflow: hidden; }
 .post-cover img { width: 100%; height: auto; }
