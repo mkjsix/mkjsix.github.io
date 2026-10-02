@@ -20,4 +20,4 @@ A third, very recent case: an API under heavy load was performing badly because 
 
 I call this work "spelunking the call chain". You start from the client and analyze the sequence of events tied to each request, going deeper and deeper, to identify the bottlenecks and the possible points of failure, measuring the data and checking each time the effect on the experience the user perceives. You need to know when to stop: "optimization frenzy" brings negative consequences of its own.
 
-In these cases LLMs have become foundamental tools for me: they let me analyze data and produce hypotheses at a speed that was unthinkable. From my point of view, their use in debugging is even more valuable than in writing code.
+In these cases LLMs have become fundamental tools for me: they let me analyze data and produce hypotheses at a speed that was unthinkable. From my point of view, their use in debugging is even more valuable than in writing code.
