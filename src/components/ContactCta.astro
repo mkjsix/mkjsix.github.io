@@ -7,10 +7,10 @@ interface Props {
 }
 
 const {
-  title = 'A 30-minute call to describe the problem.',
-  subtext = '',
+  title = 'Send me a short brief by email.',
+  subtext = 'A few paragraphs on what you are building or changing and the decision in front of you. I reply in writing with what I would look into first.',
   email = 'info@maurizioturatti.com',
-  buttonLabel = 'Book a call',
+  buttonLabel = 'Send a brief',
 } = Astro.props;
 ---
 
@@ -27,5 +27,5 @@ const {
       </p>
     )}
   </div>
-  <a href="https://calendly.com/maurizioturatti-info/30min" class="btn" data-calendly>{buttonLabel}</a>
+  <a href={`mailto:${email}?subject=Brief%3A%20`} class="btn">{buttonLabel}</a>
 </div>

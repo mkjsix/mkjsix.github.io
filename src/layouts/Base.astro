@@ -117,7 +117,6 @@ const isWriting = Astro.url.pathname.startsWith("/writing");
     <meta name="generator" content={Astro.generator} />
 
     <link rel="preconnect" href="https://m.maurizioturatti.com" crossorigin />
-    <link rel="preconnect" href="https://assets.calendly.com" crossorigin />
 
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -177,9 +176,8 @@ const isWriting = Astro.url.pathname.startsWith("/writing");
         </li>
       </ul>
       <a
-        href="https://calendly.com/maurizioturatti-info/30min"
-        class="btn"
-        data-calendly>Book a call</a
+        href="mailto:info@maurizioturatti.com?subject=Brief%3A%20"
+        class="btn">Send a brief</a
       >
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
         <span class="nav-hamburger"></span>
@@ -198,9 +196,8 @@ const isWriting = Astro.url.pathname.startsWith("/writing");
           </li>
         </ul>
         <a
-          href="https://calendly.com/maurizioturatti-info/30min"
-          class="btn"
-          data-calendly>Book a call</a
+          href="mailto:info@maurizioturatti.com?subject=Brief%3A%20"
+          class="btn">Send a brief</a
         >
       </div>
     </nav>
@@ -291,55 +288,6 @@ const isWriting = Astro.url.pathname.startsWith("/writing");
         </div>
       </div>
     </footer>
-
-    <script is:inline>
-      (function () {
-        var ready = false,
-          loading = false;
-        function ensureLoaded(callback) {
-          if (ready) {
-            callback();
-            return;
-          }
-          if (loading) {
-            window._calendlyQueue.push(callback);
-            return;
-          }
-          loading = true;
-          window._calendlyQueue = [callback];
-          var link = document.createElement("link");
-          link.rel = "stylesheet";
-          link.href = "https://assets.calendly.com/assets/external/widget.css";
-          document.head.appendChild(link);
-          var s = document.createElement("script");
-          s.src = "https://assets.calendly.com/assets/external/widget.js";
-          s.onload = function () {
-            ready = true;
-            window._calendlyQueue.forEach(function (fn) {
-              fn();
-            });
-          };
-          s.onerror = function () {
-            loading = false;
-          };
-          document.head.appendChild(s);
-        }
-        function preload() {
-          ensureLoaded(function () {});
-        }
-        document.querySelectorAll("[data-calendly]").forEach(function (el) {
-          el.addEventListener("mouseenter", preload);
-          el.addEventListener("focus", preload);
-          el.addEventListener("click", function (e) {
-            e.preventDefault();
-            var url = e.currentTarget.href;
-            ensureLoaded(function () {
-              Calendly.initPopupWidget({ url: url });
-            });
-          });
-        });
-      })();
-    </script>
 
     <script
       data-goatcounter="https://mturatti.goatcounter.com/count"
