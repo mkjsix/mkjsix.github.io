@@ -101,6 +101,7 @@ const pageJsonLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 const structuredData = [websiteJsonLd, personJsonLd, ...pageJsonLd];
 
 const isAbout = Astro.url.pathname === "/about/";
+const contactEvent = `contact-nav:${Astro.url.pathname}`;
 const isWriting = Astro.url.pathname.startsWith("/writing");
 ---
 
@@ -177,7 +178,8 @@ const isWriting = Astro.url.pathname.startsWith("/writing");
       </ul>
       <a
         href="mailto:info@maurizioturatti.com"
-        class="btn">Write to me</a
+        class="btn"
+        data-goatcounter-click={contactEvent}>Write to me</a
       >
       <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
         <span class="nav-hamburger"></span>
@@ -197,7 +199,8 @@ const isWriting = Astro.url.pathname.startsWith("/writing");
         </ul>
         <a
           href="mailto:info@maurizioturatti.com"
-          class="btn">Write to me</a
+          class="btn"
+        data-goatcounter-click={contactEvent}>Write to me</a
         >
       </div>
     </nav>
