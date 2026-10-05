@@ -159,6 +159,14 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--line);
 }
 
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 48px;
+  align-items: center;
+}
+.hero-visual { width: 100%; max-width: 360px; height: auto; }
+
 /* Hero variants */
 .hero--about { padding: 50px 0 40px; }
 .hero--about .hero-about-flex {
@@ -598,6 +606,8 @@ section.tight { padding: 24px 0; }
   .steps--3 { grid-template-columns: 1fr; }
   .ai-grid { grid-template-columns: 1fr; gap: 28px; }
   .ai-visual { max-width: 260px; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
 
 }
 
