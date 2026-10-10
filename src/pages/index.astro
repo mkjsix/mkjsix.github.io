@@ -22,14 +22,58 @@ const consultingJsonLd = {
   description:
     "I work with founders, CTOs and boards on the technical decisions that come before a significant investment, and bring architectural discipline to AI-assisted development.",
   areaServed: "Europe and North America",
+  founder: { "@id": "https://maurizioturatti.com/#person" },
   knowsAbout: [
     "Software Architecture",
-    "Technical Assessment",
-    "Legacy System Modernization",
+    "System Design",
+    "AI-Assisted Development",
     "Java",
     "AWS",
     "MongoDB",
   ],
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Typical engagements",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Build from architecture to production",
+          description:
+            "You have an MVP to build, starting from an idea or a prototype, and need senior technical leadership to design and deliver it.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Scale a system in production",
+          description:
+            "Your system starts to break under growth: response times, security findings or infrastructure costs grow faster than the number of users.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Oversee an external supplier",
+          description:
+            "Your software is built by a supplier and you need someone on your side who can judge estimates, answers and releases.",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Discovery",
+          url: "https://maurizioturatti.com/#discovery",
+          description:
+            "A new product starts with a Discovery. It takes two to four weeks at a fixed price.",
+        },
+      },
+    ],
+  },
 };
 ---
 

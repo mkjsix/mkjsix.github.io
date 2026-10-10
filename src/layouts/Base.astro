@@ -33,7 +33,7 @@ const {
   noindex = false,
   ogType = "website",
   ogImage = "/images/og-image.png",
-  ogImageAlt = "Portrait of Maurizio Turatti",
+  ogImageAlt = "Maurizio Turatti: decisions made before certainty. Software architecture and system design.",
   publishedTime,
   modifiedTime,
   articleTags = [],
@@ -58,7 +58,8 @@ const websiteJsonLd = {
   "@id": `${siteOrigin}#website`,
   url: siteOrigin,
   name: "Maurizio Turatti",
-  description,
+  description:
+    "I work with founders, CTOs and boards on the technical decisions that come before a significant investment.",
   inLanguage: "en",
 };
 
@@ -68,12 +69,12 @@ const personJsonLd = {
   "@id": `${siteOrigin}#person`,
   name: "Maurizio Turatti",
   url: siteOrigin,
-  image: ogImageURL,
+  image: new URL("/images/maurizio.jpeg", siteOrigin).toString(),
   jobTitle: "Software Architect",
   knowsAbout: [
     "Software Architecture",
     "System Design",
-    "Technical Due Diligence",
+    "AI-Assisted Development",
     "Distributed Systems",
     "API Design",
     "Data Platforms",
