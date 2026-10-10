@@ -419,29 +419,6 @@ const consultingJsonLd = {
     </div>
   </section>
 
-  {
-    posts.length > 0 && (
-      <section>
-        <div class="wrap">
-          <div class="section-label">
-            <div class="rule" />
-            <h2>Latest writing</h2>
-          </div>
-
-          <div class="article-list">
-            {posts.map((post) => (
-              <div class="article-row">
-                <span class="cat">{post.data.tags[0] ?? "Article"}</span>
-                <a href={postPath(post.id)}>{post.data.title}</a>
-                <span class="date">{formatDate(post.data.date)}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    )
-  }
-
   <section id="discovery">
     <div class="wrap">
       <div class="section-label">
@@ -500,4 +477,27 @@ const consultingJsonLd = {
       <ContactCta />
     </div>
   </section>
+
+  {
+    posts.length > 0 && (
+      <section>
+        <div class="wrap">
+          <div class="section-label">
+            <div class="rule" />
+            <h2>Latest writing</h2>
+          </div>
+
+          <div class="article-list">
+            {posts.map((post) => (
+              <div class="article-row">
+                <span class="cat">{post.data.tags[0] ?? "Article"}</span>
+                <a href={postPath(post.id)}>{post.data.title}</a>
+                <span class="date">{formatDate(post.data.date)}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
 </Base>
