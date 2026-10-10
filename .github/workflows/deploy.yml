@@ -48,3 +48,41 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+      # Tells Bing and the other IndexNow engines which pages changed.
+      # The key is public by design: it is also served at /32dc3693d1cb3467ef133b54b405fcda.txt
+      - name: Notify IndexNow
+        continue-on-error: true
+        env:
+          SITE_HOST: maurizioturatti.com
+          INDEXNOW_KEY: 32dc3693d1cb3467ef133b54b405fcda
+        run: |
+          python3 - <<'PY'
+          import datetime, json, os, re, urllib.request
+
+          host = os.environ["SITE_HOST"]
+          key = os.environ["INDEXNOW_KEY"]
+          sitemap = urllib.request.urlopen(f"https://{host}/sitemap.xml", timeout=30).read().decode()
+          # Pages modified today or yesterday (UTC): the static pages carry the
+          # build date, the posts their own publication or update date.
+          since = (datetime.datetime.now(datetime.timezone.utc).date() - datetime.timedelta(days=1)).isoformat()
+          urls = [
+              loc
+              for loc, lastmod in re.findall(r"<loc>(.*?)</loc><lastmod>(.*?)</lastmod>", sitemap)
+              if lastmod >= since
+          ]
+          print(f"{len(urls)} URL(s) to submit:", *urls, sep="\n  ")
+          if urls:
+              body = json.dumps({
+                  "host": host,
+                  "key": key,
+                  "keyLocation": f"https://{host}/{key}.txt",
+                  "urlList": urls,
+              }).encode()
+              request = urllib.request.Request(
+                  "https://api.indexnow.org/indexnow",
+                  data=body,
+                  headers={"Content-Type": "application/json; charset=utf-8"},
+              )
+              print("IndexNow response:", urllib.request.urlopen(request, timeout=30).status)
+          PY
