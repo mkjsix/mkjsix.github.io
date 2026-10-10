@@ -470,6 +470,15 @@ section.tight { padding: 24px 0; }
 }
 .cta-sub a { color: inherit; text-decoration: none; }
 .cta-sub a:hover { color: var(--accent); }
+.cta-person { display: flex; align-items: center; gap: 20px; }
+.cta-photo {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
 
 /* ============================================
    Post content (blog articles)

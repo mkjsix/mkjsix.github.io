@@ -4,6 +4,7 @@ interface Props {
   subtext?: string;
   email?: string;
   buttonLabel?: string;
+  photo?: boolean;
 }
 
 const {
@@ -11,21 +12,34 @@ const {
   email = 'info@maurizioturatti.com',
   subtext = email,
   buttonLabel = 'Write to me',
+  photo = false,
 } = Astro.props;
 ---
 
 <div class="cta-block">
-  <div>
-    <p class="cta-text">{title}</p>
-    {subtext && (
-      <p class="cta-sub">
-        {subtext.includes('@') ? (
-          <a href={`mailto:${subtext}?subject=From%20your%20website`}>{subtext}</a>
-        ) : (
-          subtext
-        )}
-      </p>
+  <div class="cta-person">
+    {photo && (
+      <img
+        class="cta-photo"
+        src="/images/maurizio.webp"
+        alt="Maurizio Turatti"
+        width="64"
+        height="64"
+        loading="lazy"
+      />
     )}
+    <div>
+      <p class="cta-text">{title}</p>
+      {subtext && (
+        <p class="cta-sub">
+          {subtext.includes('@') ? (
+            <a href={`mailto:${subtext}?subject=From%20your%20website`}>{subtext}</a>
+          ) : (
+            subtext
+          )}
+        </p>
+      )}
+    </div>
   </div>
   <a href={`mailto:${email}?subject=From%20your%20website`} class="btn" data-goatcounter-click={`contact-box:${Astro.url.pathname}`}>{buttonLabel}</a>
 </div>
