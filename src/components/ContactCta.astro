@@ -20,12 +20,12 @@ const {
     {subtext && (
       <p class="cta-sub">
         {subtext.includes('@') ? (
-          <a href={`mailto:${subtext}`}>{subtext}</a>
+          <a href={`mailto:${subtext}?subject=From%20your%20website`}>{subtext}</a>
         ) : (
           subtext
         )}
       </p>
     )}
   </div>
-  <a href={`mailto:${email}`} class="btn" data-goatcounter-click={`contact-box:${Astro.url.pathname}`}>{buttonLabel}</a>
+  <a href={`mailto:${email}?subject=From%20your%20website`} class="btn" data-goatcounter-click={`contact-box:${Astro.url.pathname}`}>{buttonLabel}</a>
 </div>
