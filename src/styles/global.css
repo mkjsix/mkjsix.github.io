@@ -563,6 +563,8 @@ section.tight { padding: 24px 0; }
 .post-content tbody tr:hover { background: var(--bg-raised); }
 
 .post-footer { padding-bottom: 48px; }
+.post-product { font-size: .88rem; color: var(--text-muted); margin-bottom: 16px; }
+.post-product a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-dim); }
 .post-back-link {
   font-size: .88rem;
   color: var(--text-muted);
