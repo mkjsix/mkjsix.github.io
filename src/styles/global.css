@@ -355,8 +355,6 @@ section.tight { padding: 24px 0; }
   color: var(--text);
 }
 .step p { color: var(--text-muted); font-size: .9rem; }
-.skills-grid ul { list-style: none; }
-.skills-grid li { color: var(--text-muted); font-size: .95rem; padding: 4px 0; }
 
 
 
