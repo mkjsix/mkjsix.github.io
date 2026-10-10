@@ -55,7 +55,8 @@ const consultingJsonLd = {
           <a
             href="mailto:info@maurizioturatti.com"
             class="btn"
-            data-goatcounter-click="contact-hero:/">Tell me what you're building</a
+            data-goatcounter-click="contact-hero:/"
+            >Tell me what you're building</a
           >
           <a href="#work" class="link">Selected work</a>
         </div>
@@ -122,9 +123,9 @@ const consultingJsonLd = {
           <div>
             <span class="category">Scale a system in production</span>
             <p>
-              Your system starts to break under growth: response times,
-              security findings or infrastructure costs grow faster than the
-              number of users.
+              Your system starts to break under growth: response times, security
+              findings or infrastructure costs grow faster than the number of
+              users.
             </p>
           </div>
         </div>
@@ -143,8 +144,8 @@ const consultingJsonLd = {
           <div>
             <span class="category">Oversee an external supplier</span>
             <p>
-              Your software is built by a supplier and you need someone
-              on your side who can judge estimates, answers and releases.
+              Your software is built by a supplier and you need someone on your
+              side who can judge estimates, answers and releases.
             </p>
           </div>
         </div>
@@ -162,62 +163,77 @@ const consultingJsonLd = {
       <div class="case-grid">
         <div class="case">
           <div class="stat">
-            &lt;4 h<span class="stat-label">downtime since 2017, none in the last three years</span>
+            &lt;4 h<span class="stat-label"
+              >downtime since 2017, none in the last three years</span
+            >
           </div>
           <div class="content">
-            <span class="category">Mobility &middot; National traffic information</span>
+            <span class="category"
+              >Mobility &middot; National traffic information</span
+            >
             <h3>Replacing an inherited traffic information system</h3>
             <p>
               After ACI group acquired its traffic agency, I assessed the
               inherited PHP and Oracle system: it could not scale and went down
-              repeatedly. I designed its
-              replacement: 18 services on AWS that merge six sources on DATEX II,
-              GTFS and TMC every 3 to 5 minutes and serve about 10,000 events a
-              day to HERE, TomTom, Radio24 and others.
+              repeatedly. I designed its replacement: 18 services on AWS that
+              merge six sources on DATEX II, GTFS and TMC every 3 to 5 minutes
+              and serve about 10,000 events a day to HERE, TomTom, Radio24 and
+              others.
             </p>
           </div>
         </div>
 
         <div class="case">
           <div class="stat">
-            9%<span class="stat-label">average database CPU at 9M API calls per hour</span>
+            9%<span class="stat-label"
+              >average database CPU at 9M API calls per hour</span
+            >
           </div>
           <div class="content">
-            <span class="category">Public sector &middot; National compliance register</span>
+            <span class="category"
+              >Public sector &middot; National compliance register</span
+            >
             <h3>Locating the load on a register of 400,000 business sites</h3>
             <p>
               54% of database waits came from writing a log row for every API
-              request: 2 billion rows, 13 TB. Caching token validation cut
-              total SQL time by 77% and database CPU by 89% in load tests. I led
-              the architecture review and the caching strategy with Redis on top
-              of the database.
+              request: 2 billion rows, 13 TB. Caching token validation cut total
+              SQL time by 77% and database CPU by 89% in load tests. I led the
+              architecture review and the caching strategy with Redis on top of
+              the database.
             </p>
           </div>
         </div>
 
         <div class="case">
           <div class="stat">
-            216&times;<span class="stat-label">query time, from 325 s to 1.5 s</span>
+            216&times;<span class="stat-label"
+              >query time, from 325 s to 1.5 s</span
+            >
           </div>
           <div class="content">
-            <span class="category">Retail &middot; Fiscal and EDI documents</span>
+            <span class="category"
+              >Retail &middot; Fiscal and EDI documents</span
+            >
             <h3>Moving 150 million documents off SQL Server</h3>
             <p>
               12 servers processed 6,000 files an hour, but searches took
               minutes and history was limited to two months. MongoDB won a
               competitive PoC against SQL Server and Oracle. In the design
-              benchmark, the new write path sustained 537 writes per
-              second against the 300 required for ten times the volume.
+              benchmark, the new write path sustained 537 writes per second
+              against the 300 required for ten times the volume.
             </p>
           </div>
         </div>
 
         <div class="case">
           <div class="stat">
-            7,500<span class="stat-label">historical responses as statistical baseline</span>
+            7,500<span class="stat-label"
+              >historical responses as statistical baseline</span
+            >
           </div>
           <div class="content">
-            <span class="category">HR tech &middot; Behavioural assessment</span>
+            <span class="category">HR tech &middot; Behavioural assessment</span
+            >
             <h3>Moving a scoring method out of Excel</h3>
             <p>
               A behavioural assessment method, which scores candidates against
@@ -238,10 +254,10 @@ const consultingJsonLd = {
             <span class="category">Luxury e-commerce</span>
             <h3>One architecture across four cities</h3>
             <p>
-              A single shared architecture for a luxury brand: frontend in
-              Berlin, backend in Gurgaon, deployment in Shanghai, client in
-              Geneva. Local compliance and localization were built into the
-              design.
+              A single shared e-commerce platform on Adobe AEM for a luxury
+              brand: frontend in Berlin, backend in Gurgaon, deployment in
+              Shanghai, client in Geneva. Local compliance and Chinese localization were
+              built into the design.
             </p>
           </div>
         </div>
@@ -259,7 +275,8 @@ const consultingJsonLd = {
               production, adopted by Unisys, Northrop Grumman, Crownpeak and
               others.{" "}
               <a href="https://cloud.restheart.com/">RESTHeart Cloud</a>,{" "}
-              <a href="https://www.softinstigate.com/en/mobility/">MobiStream</a>{" "}
+              <a href="https://www.softinstigate.com/en/mobility/">MobiStream</a
+              >{" "}
               and <a href="https://bysophia.ai/">Sophia</a>, a RAG platform, are
               built on it.
             </p>
@@ -278,34 +295,141 @@ const consultingJsonLd = {
 
       <div class="steps steps--3">
         <div class="step">
-          <svg class="step-visual" viewBox="0 0 240 120" fill="none" aria-hidden="true">
-            <rect x="12" y="12" width="76" height="48" rx="4" stroke="var(--text-muted)" stroke-opacity=".55" stroke-dasharray="3 3"></rect>
-            <rect x="152" y="12" width="76" height="48" rx="4" stroke="var(--text-muted)" stroke-opacity=".55" stroke-dasharray="3 3"></rect>
-            <rect x="82" y="64" width="76" height="48" rx="4" stroke="var(--text-muted)" stroke-opacity=".55" stroke-dasharray="3 3"></rect>
-            <rect x="22" y="22" width="56" height="28" rx="2" stroke="var(--accent)" stroke-width="1.4"></rect>
-            <rect x="162" y="22" width="56" height="28" rx="2" stroke="var(--accent)" stroke-width="1.4"></rect>
-            <rect x="92" y="74" width="56" height="28" rx="2" stroke="var(--accent)" stroke-width="1.4"></rect>
-            <path d="M78 36H162M50 50L100 74M190 50L140 74" stroke="var(--text-muted)" stroke-width="1.2"></path>
+          <svg
+            class="step-visual"
+            viewBox="0 0 240 120"
+            fill="none"
+            aria-hidden="true"
+          >
+            <rect
+              x="12"
+              y="12"
+              width="76"
+              height="48"
+              rx="4"
+              stroke="var(--text-muted)"
+              stroke-opacity=".55"
+              stroke-dasharray="3 3"></rect>
+            <rect
+              x="152"
+              y="12"
+              width="76"
+              height="48"
+              rx="4"
+              stroke="var(--text-muted)"
+              stroke-opacity=".55"
+              stroke-dasharray="3 3"></rect>
+            <rect
+              x="82"
+              y="64"
+              width="76"
+              height="48"
+              rx="4"
+              stroke="var(--text-muted)"
+              stroke-opacity=".55"
+              stroke-dasharray="3 3"></rect>
+            <rect
+              x="22"
+              y="22"
+              width="56"
+              height="28"
+              rx="2"
+              stroke="var(--accent)"
+              stroke-width="1.4"></rect>
+            <rect
+              x="162"
+              y="22"
+              width="56"
+              height="28"
+              rx="2"
+              stroke="var(--accent)"
+              stroke-width="1.4"></rect>
+            <rect
+              x="92"
+              y="74"
+              width="56"
+              height="28"
+              rx="2"
+              stroke="var(--accent)"
+              stroke-width="1.4"></rect>
+            <path
+              d="M78 36H162M50 50L100 74M190 50L140 74"
+              stroke="var(--text-muted)"
+              stroke-width="1.2"></path>
           </svg>
           <h3>Architecture</h3>
           <p>
-            Architecture sets the boundaries between components and the
-            patterns that connect them, such as microservices or event-driven
+            Architecture sets the boundaries between components and the patterns
+            that connect them, such as microservices or event-driven
             integration. Once the system is in production, it is the hardest
             part of the design to change.
           </p>
         </div>
         <div class="step">
-          <svg class="step-visual" viewBox="0 0 240 120" fill="none" aria-hidden="true">
-            <rect x="6" y="6" width="140" height="108" rx="10" stroke="var(--text-muted)" stroke-dasharray="4 3"></rect>
-            <rect x="160" y="6" width="74" height="108" rx="2" stroke="var(--text-muted)"></rect>
+          <svg
+            class="step-visual"
+            viewBox="0 0 240 120"
+            fill="none"
+            aria-hidden="true"
+          >
+            <rect
+              x="6"
+              y="6"
+              width="140"
+              height="108"
+              rx="10"
+              stroke="var(--text-muted)"
+              stroke-dasharray="4 3"></rect>
+            <rect
+              x="160"
+              y="6"
+              width="74"
+              height="108"
+              rx="2"
+              stroke="var(--text-muted)"></rect>
             <path d="M160 30H234M160 90H234" stroke="var(--line)"></path>
-            <text x="14" y="108" fill="var(--text-muted)" font-family="IBM Plex Mono, monospace" font-size="9">cloud</text>
-            <text x="166" y="108" fill="var(--text-muted)" font-family="IBM Plex Mono, monospace" font-size="9">on-prem</text>
-            <rect x="22" y="22" width="56" height="28" rx="2" stroke="var(--accent)" stroke-width="1.4"></rect>
-            <rect x="72" y="66" width="56" height="28" rx="2" stroke="var(--accent)" stroke-width="1.4"></rect>
-            <rect x="169" y="46" width="56" height="28" rx="2" stroke="var(--accent)" stroke-width="1.4"></rect>
-            <path d="M50 50L92 66M78 36H150V60H169M128 80H150V70H169" stroke="var(--text-muted)" stroke-width="1.2"></path>
+            <text
+              x="14"
+              y="108"
+              fill="var(--text-muted)"
+              font-family="IBM Plex Mono, monospace"
+              font-size="9">cloud</text
+            >
+            <text
+              x="166"
+              y="108"
+              fill="var(--text-muted)"
+              font-family="IBM Plex Mono, monospace"
+              font-size="9">on-prem</text
+            >
+            <rect
+              x="22"
+              y="22"
+              width="56"
+              height="28"
+              rx="2"
+              stroke="var(--accent)"
+              stroke-width="1.4"></rect>
+            <rect
+              x="72"
+              y="66"
+              width="56"
+              height="28"
+              rx="2"
+              stroke="var(--accent)"
+              stroke-width="1.4"></rect>
+            <rect
+              x="169"
+              y="46"
+              width="56"
+              height="28"
+              rx="2"
+              stroke="var(--accent)"
+              stroke-width="1.4"></rect>
+            <path
+              d="M50 50L92 66M78 36H150V60H169M128 80H150V70H169"
+              stroke="var(--text-muted)"
+              stroke-width="1.2"></path>
           </svg>
           <h3>System design</h3>
           <p>
@@ -315,12 +439,38 @@ const consultingJsonLd = {
           </p>
         </div>
         <div class="step">
-          <svg class="step-visual" viewBox="0 0 240 120" fill="none" aria-hidden="true">
-            <rect x="40" y="8" width="160" height="104" rx="3" stroke="var(--accent)" stroke-width="1.4"></rect>
+          <svg
+            class="step-visual"
+            viewBox="0 0 240 120"
+            fill="none"
+            aria-hidden="true"
+          >
+            <rect
+              x="40"
+              y="8"
+              width="160"
+              height="104"
+              rx="3"
+              stroke="var(--accent)"
+              stroke-width="1.4"></rect>
             <path d="M40 26H200" stroke="var(--accent)" stroke-width="1"></path>
-            <path d="M56 42H136M64 54H156M64 66H120M56 78H144M64 90H108" stroke="var(--text-muted)" stroke-width="1.6" stroke-linecap="round"></path>
-            <circle cx="176" cy="92" r="11" stroke="var(--accent)" stroke-width="1.4"></circle>
-            <path d="M171 92L175 96L182 88" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path
+              d="M56 42H136M64 54H156M64 66H120M56 78H144M64 90H108"
+              stroke="var(--text-muted)"
+              stroke-width="1.6"
+              stroke-linecap="round"></path>
+            <circle
+              cx="176"
+              cy="92"
+              r="11"
+              stroke="var(--accent)"
+              stroke-width="1.4"></circle>
+            <path
+              d="M171 92L175 96L182 88"
+              stroke="var(--accent)"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
           </svg>
           <h3>Software design</h3>
           <p>
@@ -352,38 +502,117 @@ const consultingJsonLd = {
             inside. To assess it, you need to know the practices by which it was
             designed, tested and prepared for production.
           </p>
+          <p>I organize agentic development with Lean engineering practices.</p>
           <p>
-            I organize agentic development with Lean engineering practices.
+            Agents need explicit job descriptions and hard guardrails. The
+            workflow operates as a pull system: well-specified tasks wait on a
+            board, where dedicated agents pull work within their scope,
+            implement changes, and validate them against tests.
           </p>
           <p>
-            Agents need explicit job descriptions and hard guardrails. The workflow
-            operates as a pull system: well-specified tasks wait on a board, where
-            dedicated agents pull work within their scope, implement changes, and
-            validate them against tests.
-          </p>
-          <p>
-            Without that structure, agents generate more code than anyone
-            can review.
+            Without that structure, agents generate more code than anyone can
+            review.
           </p>
         </div>
-        <svg class="ai-visual" viewBox="0 0 260 200" fill="none" aria-hidden="true">
+        <svg
+          class="ai-visual"
+          viewBox="0 0 260 200"
+          fill="none"
+          aria-hidden="true"
+        >
           <defs>
-            <marker id="ai-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <marker
+              id="ai-arrow"
+              viewBox="0 0 8 8"
+              refX="7"
+              refY="4"
+              markerWidth="6"
+              markerHeight="6"
+              orient="auto-start-reverse"
+            >
               <path d="M0 0L8 4L0 8z" fill="var(--text-muted)"></path>
             </marker>
           </defs>
-          <rect x="86" y="12" width="88" height="44" rx="3" stroke="var(--accent)" stroke-width="2"></rect>
-          <circle cx="130" cy="34" r="10" stroke="var(--accent)" stroke-width="1.4"></circle>
-          <path d="M125 34L129 38L136 30" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
-          <path d="M100 56L42 137" stroke="var(--text-muted)" stroke-width="1.2" marker-end="url(#ai-arrow)"></path>
-          <path d="M124 56V129" stroke="var(--text-muted)" stroke-width="1.2" marker-end="url(#ai-arrow)"></path>
-          <path d="M160 56L218 137" stroke="var(--text-muted)" stroke-width="1.2" marker-end="url(#ai-arrow)"></path>
-          <path d="M54 140L112 59" stroke="var(--text-muted)" stroke-opacity=".6" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ai-arrow)"></path>
-          <path d="M136 132V59" stroke="var(--text-muted)" stroke-opacity=".6" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ai-arrow)"></path>
-          <path d="M206 140L148 59" stroke="var(--text-muted)" stroke-opacity=".6" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#ai-arrow)"></path>
-          <rect x="24" y="140" width="48" height="28" rx="2" stroke="var(--accent)" stroke-width="1.2"></rect>
-          <rect x="100" y="132" width="60" height="40" rx="2" stroke="var(--accent)" stroke-width="1.4"></rect>
-          <rect x="190" y="140" width="44" height="24" rx="2" stroke="var(--accent)" stroke-width="1.1"></rect>
+          <rect
+            x="86"
+            y="12"
+            width="88"
+            height="44"
+            rx="3"
+            stroke="var(--accent)"
+            stroke-width="2"></rect>
+          <circle
+            cx="130"
+            cy="34"
+            r="10"
+            stroke="var(--accent)"
+            stroke-width="1.4"></circle>
+          <path
+            d="M125 34L129 38L136 30"
+            stroke="var(--accent)"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+          <path
+            d="M100 56L42 137"
+            stroke="var(--text-muted)"
+            stroke-width="1.2"
+            marker-end="url(#ai-arrow)"></path>
+          <path
+            d="M124 56V129"
+            stroke="var(--text-muted)"
+            stroke-width="1.2"
+            marker-end="url(#ai-arrow)"></path>
+          <path
+            d="M160 56L218 137"
+            stroke="var(--text-muted)"
+            stroke-width="1.2"
+            marker-end="url(#ai-arrow)"></path>
+          <path
+            d="M54 140L112 59"
+            stroke="var(--text-muted)"
+            stroke-opacity=".6"
+            stroke-width="1.2"
+            stroke-dasharray="3 3"
+            marker-end="url(#ai-arrow)"></path>
+          <path
+            d="M136 132V59"
+            stroke="var(--text-muted)"
+            stroke-opacity=".6"
+            stroke-width="1.2"
+            stroke-dasharray="3 3"
+            marker-end="url(#ai-arrow)"></path>
+          <path
+            d="M206 140L148 59"
+            stroke="var(--text-muted)"
+            stroke-opacity=".6"
+            stroke-width="1.2"
+            stroke-dasharray="3 3"
+            marker-end="url(#ai-arrow)"></path>
+          <rect
+            x="24"
+            y="140"
+            width="48"
+            height="28"
+            rx="2"
+            stroke="var(--accent)"
+            stroke-width="1.2"></rect>
+          <rect
+            x="100"
+            y="132"
+            width="60"
+            height="40"
+            rx="2"
+            stroke="var(--accent)"
+            stroke-width="1.4"></rect>
+          <rect
+            x="190"
+            y="140"
+            width="44"
+            height="24"
+            rx="2"
+            stroke="var(--accent)"
+            stroke-width="1.1"></rect>
         </svg>
       </div>
     </div>
