@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import { getCollection } from "astro:content";
 import ContactCta from "../components/ContactCta.astro";
+import { ACTION_QUERY_PARAMS } from "astro:actions";
 
 const posts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
@@ -91,7 +92,9 @@ const consultingJsonLd = {
         </div>
         <h1><em>Decisions</em> made before certainty</h1>
         <p>
-          I work with founders, CTOs and boards on critical technical decisions, from early investment and system design to production and scale. I bring architectural discipline to AI-assisted development.
+          I work with founders, CTOs and boards on critical technical decisions,
+          from early investment and system design to production and scale. I
+          bring architectural discipline to AI-assisted development.
         </p>
         <div class="actions">
           <a
@@ -330,30 +333,22 @@ const consultingJsonLd = {
     <div class="wrap">
       <div class="section-label">
         <div class="rule"></div>
-        <h2>AI-assisted development</h2>
+        <h2>AI-assisted development needs engineering discipline</h2>
       </div>
       <div class="ai-grid">
         <div class="prose">
           <p>
-            Building software with AI keeps getting faster. When producing code
-            takes less time, it matters more to know what that code will cost in
-            fixes, maintenance and downtime.
+            AI makes it possible to build software faster. It doesn't eliminate
+            the need for sound architecture, explicit specifications, or
+            rigorous testing.
           </p>
           <p>
-            AI-written code almost always looks good, even when it is fragile
-            inside. To assess it, you need to know the practices by which it was
-            designed, tested and prepared for production.
-          </p>
-          <p>I organize agentic development with Lean engineering practices.</p>
-          <p>
-            Agents need explicit job descriptions and hard guardrails. The
-            workflow operates as a pull system: well-specified tasks wait on a
-            board, where dedicated agents pull work within their scope,
-            implement changes, and validate them against tests.
+            I structure AI-assisted development around well-defined
+            tasks, clear boundaries, and continuous validation.
           </p>
           <p>
-            Without that structure, agents generate more code than anyone can
-            review.
+            The goal is to increase delivery capacity without sacrificing
+            maintainability, reliability, or control over the system.
           </p>
         </div>
         <svg
