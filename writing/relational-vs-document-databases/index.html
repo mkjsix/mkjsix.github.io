@@ -1,0 +1,157 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="shortcut icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="generator" content="Astro v7.2.8"><link rel="preconnect" href="https://m.maurizioturatti.com" crossorigin><title>Relational vs Document Databases: a Domain-Driven Perspective | Maurizio Turatti</title><meta name="description" content="The debate between relational and document databases is often treated as a technology choice. Underneath, it is a modeling choice. What is the natural shape of the domain?"><meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"><meta name="author" content="Maurizio Turatti"><meta name="theme-color" content="#1a1410"><link rel="canonical" href="https://maurizioturatti.com/writing/relational-vs-document-databases/"><meta property="og:type" content="article"><meta property="og:url" content="https://maurizioturatti.com/writing/relational-vs-document-databases/"><meta property="og:title" content="Relational vs Document Databases: a Domain-Driven Perspective | Maurizio Turatti"><meta property="og:description" content="The debate between relational and document databases is often treated as a technology choice. Underneath, it is a modeling choice. What is the natural shape of the domain?"><meta property="og:site_name" content="Maurizio Turatti"><meta property="og:image" content="https://maurizioturatti.com/_astro/relational_document.DWtyC2JF.png"><meta property="og:locale" content="en_US"><meta property="og:image:alt" content="A diagram showing the difference between a relational model and a document model"><meta name="twitter:site" content="@mkj6"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Relational vs Document Databases: a Domain-Driven Perspective | Maurizio Turatti"><meta name="twitter:description" content="The debate between relational and document databases is often treated as a technology choice. Underneath, it is a modeling choice. What is the natural shape of the domain?"><meta name="twitter:image" content="https://maurizioturatti.com/_astro/relational_document.DWtyC2JF.png"><meta property="article:published_time" content="2026-07-10T00:00:00.000Z"><meta property="article:modified_time" content="2026-07-10T00:00:00.000Z"><meta property="article:tag" content="Databases"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://maurizioturatti.com/#website","url":"https://maurizioturatti.com/","name":"Maurizio Turatti","description":"I work with founders, CTOs and boards on the technical decisions that come before a significant investment.","inLanguage":"en"}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://maurizioturatti.com/#person","name":"Maurizio Turatti","url":"https://maurizioturatti.com/","image":"https://maurizioturatti.com/images/maurizio.jpeg","jobTitle":"Software Architect","knowsAbout":["Software Architecture","System Design","AI-Assisted Development","Distributed Systems","API Design","Data Platforms","AWS","Docker","MongoDB","Java","Test-Driven Development","Continuous Refactoring","Continuous Integration","AI Integration","Technical Leadership","Client-Side Technical Governance"],"sameAs":["https://www.linkedin.com/in/maurizioturatti","https://github.com/mkjsix","https://stackoverflow.com/users/615095/mturatti","https://x.com/mkj6"]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Relational vs Document Databases: a Domain-Driven Perspective","description":"The debate between relational and document databases is often treated as a technology choice. Underneath, it is a modeling choice. What is the natural shape of the domain?","datePublished":"2026-07-10T00:00:00.000Z","dateModified":"2026-07-10T00:00:00.000Z","mainEntityOfPage":"https://maurizioturatti.com/writing/relational-vs-document-databases/","image":["https://maurizioturatti.com/_astro/relational_document.DWtyC2JF.png"],"author":{"@type":"Person","name":"Maurizio Turatti","url":"https://maurizioturatti.com/"},"publisher":{"@type":"Person","name":"Maurizio Turatti"},"keywords":["Databases"],"inLanguage":"en"}</script><link rel="stylesheet" href="/_astro/ContactCta.CfDacidt.css"></head><body><nav class="site-nav grid-bg"><a href="/" class="brand">Maurizio Turatti</a><ul class="site-nav-links"><li><a href="/about">About</a></li><li><a href="/writing" aria-current="page">Writing</a></li></ul><a href="mailto:info@maurizioturatti.com?subject=From%20your%20website" class="btn" data-goatcounter-click="contact-nav:/writing/relational-vs-document-databases/">Write to me</a><button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span class="nav-hamburger"></span></button><div class="nav-drawer" hidden><ul class="nav-drawer-links"><li><a href="/about">About</a></li><li><a href="/writing" aria-current="page">Writing</a></li></ul><a href="mailto:info@maurizioturatti.com?subject=From%20your%20website" class="btn" data-goatcounter-click="contact-nav:/writing/relational-vs-document-databases/">Write to me</a></div></nav><script type="module">(function(){let e=document.querySelector(`.nav-toggle`),t=document.querySelector(`.nav-drawer`);if(!e||!t)return;function n(){t!==null&&t.removeAttribute(`hidden`),e!==null&&(e.setAttribute(`aria-expanded`,`true`),e.classList.add(`nav-toggle--open`))}function r(){t!==null&&t.setAttribute(`hidden`,``),e!==null&&(e.setAttribute(`aria-expanded`,`false`),e.classList.remove(`nav-toggle--open`))}e.addEventListener(`click`,function(){t.hasAttribute(`hidden`)?n():r()}),t.querySelectorAll(`a`).forEach(function(e){e.addEventListener(`click`,r)}),document.addEventListener(`click`,function(n){!t.hasAttribute(`hidden`)&&!t.contains(n.target)&&!e.contains(n.target)&&r()})})();</script><main><header class="hero hero--writing grid-bg"><div class="wrap"><div class="eyebrow mono">10 July 2026 &middot; Databases</div><h1>Relational vs Document Databases: a Domain-Driven Perspective</h1></div></header><div class="wrap"><hr class="post-divider"></div><div class="post-cover-wrap"><figure class="post-cover"><img src="/_astro/relational_document.DWtyC2JF_Z1NYbec.webp" alt="A diagram showing the difference between a relational model and a document model" loading="eager" decoding="async" width="1536" height="1024"></figure></div><div class="wrap"><div class="post-content"><p>Over the last decade, MongoDB has been my default database. That default shaped a strong point of view: a large share of application domains can be modeled directly with documents, in a simple way, without an ORM.</p>
+<p>The debate between relational and document databases gets treated as a technology choice: SQL versus NoSQL, MongoDB versus PostgreSQL. Underneath, it is a modeling choice.</p>
+<blockquote>
+<p><strong>What is the natural shape of the domain?</strong></p>
+</blockquote>
+<h2 id="the-natural-shape-of-most-application-domains">The natural shape of most application domains</h2>
+<p>My view is that the natural representation of most application domains is hierarchical rather than relational.</p>
+<p>When we look at modern software systems, the unit that applications manipulate is almost always an aggregate.</p>
+<p>An order is a single object: customer information, shipping details, order lines, payments, totals.</p>
+<p>A customer carries addresses, preferences, contacts and settings as one unit.</p>
+<p>The same applies to projects, invoices, users, tickets, medical records, product catalogs, conversations, IoT devices and configuration objects.</p>
+<p>Modern APIs expose these concepts exactly this way.</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>GET /orders/123</span></span></code></pre>
+<p>returns</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "customer"</span><span style="color:#E1E4E8">: { </span><span style="color:#FDAEB7;font-style:italic">...</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#79B8FF">  "shippingAddress"</span><span style="color:#E1E4E8">: { </span><span style="color:#FDAEB7;font-style:italic">...</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#79B8FF">  "lines"</span><span style="color:#E1E4E8">: [ </span><span style="color:#FDAEB7;font-style:italic">...</span><span style="color:#E1E4E8"> ],</span></span>
+<span class="line"><span style="color:#79B8FF">  "payments"</span><span style="color:#E1E4E8">: [ </span><span style="color:#FDAEB7;font-style:italic">...</span><span style="color:#E1E4E8"> ]</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Nobody expects an API to return ten normalized tables.</p>
+<p>This observation is independent from the database technology. The application itself already thinks in terms of documents.</p>
+<h2 id="why-relational-databases-became-dominant">Why relational databases became dominant</h2>
+<p>Relational databases were designed in a very different technological context.</p>
+<ul>
+<li>Disk space was expensive.</li>
+<li>Memory was scarce.</li>
+<li>Network communication was negligible.</li>
+<li>Duplicating data had a real economic cost.</li>
+</ul>
+<p>Normalization was an excellent solution to minimize redundancy while preserving consistency. Those design principles are still mathematically elegant.</p>
+<p>Modern systems operate under almost opposite constraints.</p>
+<ul>
+<li>Storage is inexpensive.</li>
+<li>CPU resources are abundant.</li>
+<li>Network latency is often more expensive than disk space.</li>
+<li>Applications exchange JSON documents.</li>
+</ul>
+<p>The trade-offs around normalization have shifted. Today, duplicating a few kilobytes is often significantly cheaper than reconstructing an aggregate through multiple joins, ORM mappings and network round trips.</p>
+<h2 id="the-hidden-cost-of-relational-systems">The hidden cost of relational systems</h2>
+<p>Relational databases are often combined with an ORM.</p>
+<ol>
+<li>The domain is modeled as an object graph.</li>
+<li>Persistence is modeled as normalized tables.</li>
+</ol>
+<p>The ORM becomes responsible for translating between the two.</p>
+<p>Combining an ORM with a relational database adds an additional modeling dimension. The development team designs the business domain and, alongside it, an efficient mapping between two fundamentally different representations.</p>
+<p>As systems evolve, this mapping frequently becomes the most fragile part of the architecture.</p>
+<p>Developers start fighting:</p>
+<ul>
+<li>N+1 queries</li>
+<li>lazy versus eager loading</li>
+<li>fetch graphs</li>
+<li>projection DTOs</li>
+<li>cache invalidation</li>
+<li>query optimization</li>
+</ul>
+<p>Eventually many teams bypass the ORM and write SQL manually for critical queries. The object model and the relational model have drifted apart.</p>
+<h2 id="the-document-model-removes-an-entire-layer">The document model removes an entire layer</h2>
+<p>A document database approaches the problem differently.</p>
+<p>The persistence model is intentionally designed to resemble the application model.</p>
+<p>The aggregate that the application manipulates is the same aggregate stored in the database. There is no need to reconstruct it through joins, no object-relational impedance mismatch, and usually no need for a sophisticated ORM.</p>
+<p>The analysis remains almost entirely focused on the business domain.</p>
+<p>Relational modeling starts from a persistence question:</p>
+<blockquote>
+<p>How should these tables be joined?</p>
+</blockquote>
+<p>Document modeling starts from a domain question:</p>
+<blockquote>
+<p>What belongs to the same consistency boundary?</p>
+</blockquote>
+<h2 id="aggregates-and-the-impedance-mismatch">Aggregates and the impedance mismatch</h2>
+<p>Domain-Driven Design gives this idea a name: the aggregate, a cluster of objects treated as a single unit for data changes, with one object acting as the aggregate root and enforcing the invariants of the whole. The order example above is a textbook aggregate: the root is the order, and the shipping address, lines and payments only make sense as part of it.</p>
+<p>The mismatch between the object model and the relational model also has a name: <strong>the object-relational impedance mismatch</strong>. Objects form graphs with identity and behavior. Relational tables form sets of rows connected by foreign keys. An ORM exists to translate between the two, and every cost described earlier, N+1 queries, fetch graphs, cache invalidation, follows from that translation.</p>
+<p>The aggregate is a domain concept, independent from any specific database. What a document database offers is a boundary in the persistence layer that lines up with the boundary already defined by the aggregate.</p>
+<h2 id="complexity-does-not-disappear">Complexity does not disappear</h2>
+<p>It is important not to oversimplify.</p>
+<p>Document databases shift where complexity lives, into:</p>
+<ul>
+<li>aggregate boundaries</li>
+<li>embedding versus references</li>
+<li>controlled duplication</li>
+<li>schema evolution</li>
+</ul>
+<p>These decisions are usually expressed in the language of the business domain. The relational approach adds a second analysis concerned with persistence itself.</p>
+<h2 id="two-different-cognitive-models">Two different cognitive models</h2>
+<p>This distinction is often underestimated.</p>
+<p>With a document database the designer mainly reasons about one dimension:</p>
+<blockquote>
+<p>What does the business concept look like?</p>
+</blockquote>
+<p>With a relational database plus an ORM the designer reasons simultaneously about two dimensions:</p>
+<ul>
+<li>what the business concept looks like</li>
+<li>how that concept should be decomposed into normalized relations</li>
+</ul>
+<p>Maintaining both representations over time introduces additional cognitive overhead.</p>
+<h2 id="when-joins-represent-the-domain">When joins represent the domain</h2>
+<p>Joins can express genuine relationships, or simply reconstruct an aggregate that has been artificially fragmented.</p>
+<p>Suppose every request for an order requires joining:</p>
+<ul>
+<li>Orders</li>
+<li>OrderLines</li>
+<li>ShippingAddress</li>
+<li>BillingAddress</li>
+<li>Payments</li>
+<li>Taxes</li>
+</ul>
+<p>One may reasonably ask: are these truly independent entities, or are we rebuilding the object that the business already considers a single order?</p>
+<p>In many applications, joins reconstruct what the persistence model has fragmented.</p>
+<h2 id="when-joins-are-the-natural-solution">When joins are the natural solution</h2>
+<p>There are, however, domains where joins express the domain itself.</p>
+<p>Imagine an analytical system where a user asks:</p>
+<blockquote>
+<p>Show all customers who purchased products supplied by vendors that also serve customers in another region during the last three years.</p>
+</blockquote>
+<p>This query has no obvious aggregate root. It combines independent entities in ways that may never have been anticipated during system design.</p>
+<p>The relational model allows independent datasets to remain independent while enabling arbitrary composition later. This is precisely what the relational model was designed to do.</p>
+<h2 id="the-real-strength-of-relational-databases">The real strength of relational databases</h2>
+<p>In my opinion, the relational model is at its best when the application is composed of genuinely independent entities whose future combinations cannot be predicted.</p>
+<p>The value of the system lies in discovering relationships between independent entities.</p>
+<p>Typical examples include:</p>
+<ul>
+<li>business intelligence</li>
+<li>operational analytics</li>
+<li>reporting platforms</li>
+<li>data exploration</li>
+<li>systems serving many independent consumers with different questions</li>
+</ul>
+<p>These systems optimize for queries nobody has written yet.</p>
+<h2 id="the-real-strength-of-document-databases">The real strength of document databases</h2>
+<p>Document databases excel in a different scenario.</p>
+<p>The domain already has stable aggregates. The application repeatedly loads and updates those aggregates as a whole. The persistence model naturally follows the business model.</p>
+<p>Examples include:</p>
+<ul>
+<li>SaaS applications</li>
+<li>REST APIs</li>
+<li>product catalogs</li>
+<li>content management systems</li>
+<li>configuration platforms</li>
+<li>workflow systems</li>
+<li>user profiles</li>
+<li>IoT device management</li>
+<li>conversational applications</li>
+</ul>
+<p>In these systems the document is the domain itself.</p>
+<h2 id="a-practical-rule">A practical rule</h2>
+<p>The technology question, MongoDB or PostgreSQL, is secondary. The useful question is:</p>
+<blockquote>
+<p>Is my domain primarily aggregate-centric or relation-centric?</p>
+</blockquote>
+<p>If the application mostly manipulates well-defined aggregates, a document model often provides a simpler and more direct architecture.</p>
+<p>If the application’s value comes from combining independent entities through unpredictable relationships, the relational model remains the better fit.</p>
+<p>Each approach optimizes for a different kind of complexity.</p>
+<p>The mistake is assuming that every business domain is naturally relational simply because relational databases have dominated software engineering for the last forty years. Most operational applications are naturally hierarchical.</p>
+<p>Relational databases dominated because storage was expensive and networks were unreliable. That history explains the choice more than the nature of the domains it was applied to.</p>
+</div></div><div class="wrap"><div class="cta-block"><div class="cta-person"><div><p class="cta-text">Tell me what you&#39;re building.</p><p class="cta-sub"><a href="mailto:info@maurizioturatti.com?subject=From%20your%20website">info@maurizioturatti.com</a></p></div></div><a href="mailto:info@maurizioturatti.com?subject=From%20your%20website" class="btn" data-goatcounter-click="contact-box:/writing/relational-vs-document-databases/">Write to me</a></div></div><div class="wrap"><div class="post-footer"><p class="post-product">I'm the co-founder of <a href="https://ulabase.com" data-goatcounter-click="ulabase:/writing/relational-vs-document-databases/">Ulabase</a>, the agent-native backend for MongoDB.</p><a href="/writing" class="post-back-link">&larr; All posts</a></div></div></main><footer class="site-footer"><div class="wrap"><span class="mono"><a href="mailto:info@maurizioturatti.com?subject=From%20your%20website">info@maurizioturatti.com</a></span><div class="mono footer-social"><a href="https://www.linkedin.com/in/maurizioturatti" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://github.com/mkjsix" target="_blank" rel="noopener">GitHub</a> &middot; <a href="https://stackoverflow.com/users/615095/mturatti" target="_blank" rel="noopener">Stack Overflow</a></div><div class="footer-legal"><span>VAT n. 02452460039</span></div></div></footer><script data-goatcounter="https://mturatti.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script></body></html>
